@@ -1,5 +1,6 @@
 .section {
     width: 100%;
+    text-align: center;
 }
 
 .section-head {
@@ -7,16 +8,19 @@
     background-image: url(../images/banner1.jpg);
     background-position: center bottom;
     background-repeat: no-repeat;
+    background-size: contain;
     background-color: #000000;
-    text-align: center;
+}
+
+.section-content {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-head .section-content {
-    width: 980px;
     position: relative;
     top: 50%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .section-content h1 {
@@ -38,10 +42,25 @@
     color: #fff;
 }
 
+.section-content h3 {
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.section-content h4 {
+    font-size: 40px;
+    line-height: 1.16667;
+    font-weight: 600;
+    letter-spacing: .009em;
+}
+
 .section-content p {
-    margin: 6px;
-    font-size: 17px;
-    color: #888;
+    font-size: 18px;
+    line-height: 1.4211;
+    font-weight: 400;
+    letter-spacing: .012em;
 }
 
 .section-content .link a {
@@ -68,63 +87,85 @@
     font-family: "SF Pro Icons";
 }
 
+.section-list {
+    margin-top: 24px;
+}
 
+.section-list li {
+    display: flex;
+    margin-top: 28px;
+}
 
-.banner {
+.section-list li .section-img {
+    width: 78px;
+    height: 78px;
+    margin-right: 18px;
+}
+
+.section-list li .section-text {
+    flex: 1;
+    text-align: left;
+}
+
+.lower {
+    display: flex;
+    margin-top: 48px;
+}
+
+.lower .section-img {
+    width: 158px;
+    height: 158px;
+    margin-right: 20px;
+}
+
+.lower .section-text {
+    flex: 1;
+    text-align: left;
+}
+
+.page1-top {
     width: 100%;
-    height: 692px;
-    background-image: url(../images/banner1.jpg);
-    background-position: center bottom;
+    height: 327px;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url(../images/page/apple-airpods.jpg);
     background-repeat: no-repeat;
-    background-color: #000;
-    text-align: center;
-    padding-top: 55px;
+    background-position: center;
+    background-size: 100% 100%;
 }
 
-.banner h1 {
-    color: #fff;
-    font-size: 56px;
-    line-height: 1.07143;
-    font-weight: 600;
-    letter-spacing: -.005em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.page1 .section-img1 {
+    display: inline-block;
+    width: 120px;
+    height: 80px;
+    margin-top: 20px;
 }
 
-.banner h2 {
-    font-size: 27px;
-    line-height: 1.14815;
-    font-weight: 400;
-    letter-spacing: .008em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    margin-top: 6px;
-    color: #fff;
+.page1 .section-img2 {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin-top: 20px;
 }
 
-.banner p {
-    margin: 6px;
-    font-size: 17px;
-    color: #888;
+.page2, .page3 {
+    padding-top: 30px;
 }
 
-.banner .link a {
-    font-size: 21px;
-    line-height: 1.38105;
-    font-weight: 400;
-    letter-spacing: .011em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    color: #6bf;
-    text-decoration: none;
+.page2 .section-img {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin-top: 20px;
 }
 
-.banner .link a:hover {
-    text-decoration: underline;
+.mt40 {
+    margin-top: 40px;
 }
 
-.banner .link a:nth-child(3) {
-    margin-left: 26px;
+.page7 {
+    position: relative;
+    max-width: 1200px;
 }
 
-.banner .link {
-    color: #6bf;
-    font-family: "SF Pro Icons";
-}

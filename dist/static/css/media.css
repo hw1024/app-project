@@ -1,0 +1,87 @@
+/*媒体查询*/
+
+@media only screen and (max-width: 1100px) {
+    .section .section-content {
+        width: calc(100% - 30px);
+    }
+
+    .section-content p {
+        line-height: 1.42859;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .section-content h3 {
+        font-size: 32px;
+        line-height: 1.125;
+        font-weight: 600;
+    }
+
+    .section-content h4 {
+        font-size: 16px;
+        line-height: 1.322;
+        font-weight: 600;
+        letter-spacing: .009em;
+    }
+
+    .section-list li {
+        margin-top: 16px;
+    }
+
+    .section-list li .section-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lower {
+        margin-top: 32px;
+    }
+
+    .lower .section-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .section .section-content {
+        width: calc(100% - 30px);
+    }
+
+    .section-content p {
+        line-height: 1.42859;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .section-content h3 {
+        font-size: 32px;
+        line-height: 1.125;
+        font-weight: 600;
+    }
+
+    .section-content h4 {
+        font-size: 16px;
+        line-height: 1.322;
+        font-weight: 600;
+        letter-spacing: .009em;
+    }
+
+    .section-list li {
+        margin-top: 16px;
+    }
+
+    .section-list li .section-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lower {
+        margin-top: 32px;
+    }
+
+    .lower .section-img {
+        width: 80px;
+        height: 80px;
+    }
+}
