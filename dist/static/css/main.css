@@ -43,16 +43,22 @@
 }
 
 .section-content h3 {
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1.07143;
     font-weight: 600;
     letter-spacing: 0;
 }
 
 .section-content h4 {
-    font-size: 40px;
+    font-size: 38px;
     line-height: 1.16667;
     font-weight: 600;
+    letter-spacing: .009em;
+}
+
+.section-content h5 {
+    font-size: 28px;
+    line-height: 1.322;
     letter-spacing: .009em;
 }
 
@@ -169,3 +175,99 @@
     max-width: 1200px;
 }
 
+/*维修订单页*/
+.maintain-page3 {
+    padding-top: 120px;
+}
+
+.maintain-list {
+    text-align: left;
+    margin-top: 80px;
+}
+
+.maintain-list li{
+    list-style: circle;
+    font-size: 16px;
+}
+
+.maintain-page4 {
+    padding-top: 120px;
+
+}
+
+.maintain-bill .desc {
+    margin-top: 20px;
+}
+
+.maintain-bill .zs {
+    margin-top: 30px;
+}
+
+.maintain-bill .quote {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.maintain-bill .quote-list {
+    color: #cccccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #666666;
+    margin-top: 6px;
+}
+
+.maintain-bill .quote-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.maintain-bill .quote-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cccccc;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.maintain-bill .quote-total .label {
+    font-weight: 600;
+    color: #666666;
+    padding: 4px 0;
+}
+
+.maintain-bill .quote-lower {
+    margin-top: 20px;
+}
+
+.maintain-bill .strong {
+    font-weight: 600;
+}
+.maintain-page5 {
+    padding-top: 120px;
+}
+
+/*问卷逻辑页面样式*/
+.sku-list {
+    text-align: left;
+    padding-top: 50px;
+}
+
+.sku-list.page1 {
+    padding-top: 70px;
+}
+
+.sku-list h3 {
+    text-align: center;
+}
+
+.sku-list h4 {
+    margin-top: 18px;
+}
+
+.sku-list h5 {
+    margin-top: 12px;
+}

@@ -7,7 +7,7 @@
 
     .section-content p {
         line-height: 1.42859;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 0;
     }
 
@@ -21,6 +21,12 @@
         font-size: 16px;
         line-height: 1.322;
         font-weight: 600;
+        letter-spacing: .009em;
+    }
+
+    .section-content h5 {
+        font-size: 12px;
+        line-height: 1.322;
         letter-spacing: .009em;
     }
 
@@ -40,6 +46,19 @@
     .lower .section-img {
         width: 80px;
         height: 80px;
+    }
+
+    /*维修订单页*/
+    .maintain-list li {
+        font-size: 12px;
+    }
+
+    .maintain-bill .quote-list li {
+        font-size: 12px;
+    }
+
+    .maintain-bill .quote-total {
+        font-size: 12px;
     }
 }
 
@@ -50,7 +69,7 @@
 
     .section-content p {
         line-height: 1.42859;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 0;
     }
 
@@ -60,10 +79,9 @@
         font-weight: 600;
     }
 
-    .section-content h4 {
-        font-size: 16px;
+    .section-content h5 {
+        font-size: 12px;
         line-height: 1.322;
-        font-weight: 600;
         letter-spacing: .009em;
     }
 
@@ -84,4 +102,18 @@
         width: 80px;
         height: 80px;
     }
+
+    /*维修订单页*/
+    .maintain-list li {
+        font-size: 12px;
+    }
+
+    .maintain-bill .quote-list li {
+        font-size: 12px;
+    }
+
+    .maintain-bill .quote-total {
+        font-size: 12px;
+    }
+
 }
