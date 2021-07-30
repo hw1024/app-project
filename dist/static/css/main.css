@@ -1,5 +1,6 @@
 .section {
     width: 100%;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -131,7 +132,7 @@
 
 .page1-top {
     width: 100%;
-    height: 327px;
+    height: 197px;
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
@@ -143,15 +144,13 @@
 
 .page1 .section-img1 {
     display: inline-block;
-    width: 120px;
-    height: 80px;
+    width: 100px;
     margin-top: 20px;
 }
 
 .page1 .section-img2 {
     display: inline-block;
-    width: 140px;
-    height: 140px;
+    width: 120px;
     margin-top: 20px;
 }
 
@@ -159,11 +158,80 @@
     padding-top: 30px;
 }
 
-.page2 .section-img {
+.page2 .section-img-icon1 {
     display: inline-block;
-    width: 140px;
-    height: 140px;
+    width: 60px;
+    vertical-align: 50px;
+}
+
+.page2 .section-img-icon2 {
+    display: inline-block;
+    width: 18px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.page2 .section-img-icon3 {
+    display: inline-block;
+    width: 46px;
+}
+
+.page2 .section-img-icon4 {
+    display: inline-block;
+    vertical-align: 34px;
+    width: 14px;
+    margin-left: -24px;
+}
+
+.page2 .section-img-icon5 {
+    display: inline-block;
+    vertical-align: 4px;
+    width: 14px;
+    margin-left: -20px;
+}
+
+.page2 .section-img-icon6 {
+    display: inline-block;
+    vertical-align: 16px;
+    width: 14px;
+    margin-left: -1px;
+}
+
+.page2 .section-img2 {
+    display: inline-block;
+    width: 120px;
     margin-top: 20px;
+}
+
+.page2 .section-problem {
+    font-size: 64px;
+    color: #cccccc;
+    vertical-align: 10px;
+    margin-left: 20px;
+}
+
+.section-faq-title {
+    margin-top: 10px;
+}
+
+.section-faq {
+    text-align: left;
+    font-size: 14px;
+}
+
+.serial-list-title {
+    margin-top: 20px;
+}
+
+.section-contact {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 300px;
+}
+
+.section-contact li {
+    width: 33.33%;
+    text-align: left;
 }
 
 .mt40 {
@@ -174,8 +242,66 @@
     position: relative;
     max-width: 1200px;
 }
+.promo-image-box {
+    margin-top: 30px;
+}
+.promo-image-box .promo-image1{
+    width: 100px;
+}
+
+.promo-image-box .promo-image2{
+    width: 100px;
+}
+
+.promo-image-box .promo-image3{
+    width: 100px;
+}
+
+.promo-image-box .promo-image4{
+    width: 60px;
+}
+
+.promo-image-box .promo-image5{
+    width: 60px;
+}
+
+.promo-image-box .promo-image6{
+    width: 60px;
+}
+
+.promo-image-box .promo-image7{
+    width: 80px;
+}
+.promo-image-box .promo-image8{
+    width: 100px;
+}
+.promo-image-box .promo-image9{
+    width: 60px;
+}
+.promo-image-box .promo-image10{
+    width: 60px;
+}
+.promo-image-box .promo-image11{
+    width: 100px;
+}
+.promo-image-box .promo-image12{
+    width: 100px;
+}
+.promo-image-box .promo-image13{
+    width: 100px;
+}
 
 /*维修订单页*/
+.maintain-page1 {
+    padding-top: 140px;
+    text-align: left;
+}
+
+.maintain-page2 {
+    padding-top: 120px;
+    text-align: left;
+}
+
 .maintain-page3 {
     padding-top: 120px;
 }
@@ -185,7 +311,7 @@
     margin-top: 80px;
 }
 
-.maintain-list li{
+.maintain-list li {
     list-style: circle;
     font-size: 16px;
 }
@@ -246,6 +372,7 @@
 .maintain-bill .strong {
     font-weight: 600;
 }
+
 .maintain-page5 {
     padding-top: 120px;
 }
@@ -270,4 +397,115 @@
 
 .sku-list h5 {
     margin-top: 12px;
+}
+
+.serial-number-form {
+    margin-top: 140px;
+}
+
+.serial-number-form .serial-number-label {
+    display: block;
+    font-size: 18px;
+    line-height: 1.3333333333;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.serial-number-form #serial-number {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    -webkit-box-shadow: inset 0 2px 2px #c2c2c2;
+    box-shadow: inset 0 2px 2px #c2c2c2;
+    color: #262626;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid #D6D6D6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: inherit;
+    margin: 14px auto 8px;
+    height: 45px;
+    width: 386px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.serial-number-form .serial-number-article {
+    margin-top: 24px;
+}
+
+.serial-number-form .serial-number-article a {
+    text-decoration: none;
+    color: #158CFB;
+}
+
+.serial-number-form .button-wrapper {
+    margin-top: 60px;
+}
+
+.serial-number-form .serial-btn {
+    color: #FFFFFF;
+    background-color: #158CFB;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.2222222222;
+    font-weight: 600;
+    letter-spacing: normal;
+    border: 1px #0088cc solid;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-transition: background-color .15s ease-in-out;
+    transition: background-color .15s ease-in-out;
+    padding: 10px 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 160px;
+}
+
+.serial-title {
+    margin-top: 120px;
+}
+
+.serial-product {
+    margin-top: 14px;
+}
+
+.serial-list {
+    overflow: hidden;
+    margin-top: 28px;
+}
+
+.serial-list li {
+    width: 44%;
+    float: left;
+    margin: 3%;
+}
+
+.serial-list .button-content-container {
+    width: 100%;
+    height: 172px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+    border-color: #d6d6d6;
+    border-style: solid;
+    border-width: 1px;
+    padding: 32px 16px 27px;
+    box-sizing: border-box;
+}
+
+.serial-list .button-content-container .button-content-img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 16px;
+}
+
+.serial-list .button-content-container .button-content-desc {
+    font-size: 14px;
+    line-height: 1.2105263158;
+    font-weight: 600;
+    letter-spacing: .012em;
 }

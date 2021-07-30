@@ -48,6 +48,11 @@
         height: 80px;
     }
 
+    .section-faq {
+        text-align: left;
+        font-size: 12px;
+    }
+
     /*维修订单页*/
     .maintain-list li {
         font-size: 12px;
@@ -71,6 +76,11 @@
         line-height: 1.42859;
         font-size: 12px;
         letter-spacing: 0;
+    }
+
+    .section-faq {
+        text-align: left;
+        font-size: 12px;
     }
 
     .section-content h3 {
