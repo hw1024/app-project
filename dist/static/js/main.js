@@ -127,6 +127,7 @@ $(document).ready(function () {
         distance: 100
     });
 
+
     $(window).fadeThis({
         speed: 1000,
     });

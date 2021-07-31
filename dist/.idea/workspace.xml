@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d594ef09-f809-41c8-ae62-f0140f1bdfb8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maintain.html" beforeDir="false" afterPath="$PROJECT_DIR$/maintain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question1.html" beforeDir="false" afterPath="$PROJECT_DIR$/question1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question2.html" beforeDir="false" afterPath="$PROJECT_DIR$/question2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question3.html" beforeDir="false" afterPath="$PROJECT_DIR$/question3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question4.html" beforeDir="false" afterPath="$PROJECT_DIR$/question4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/questionnaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/questionnaire.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/media.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/page/serial-image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +23,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectId" id="1w3nNNVGHobxTPEycehC3XvSOxe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -28,7 +49,30 @@
       <recent name="C:\Users\weihu\vue-demo\app-project\dist" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="question3.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/dist/question3.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.question3.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d594ef09-f809-41c8-ae62-f0140f1bdfb8" name="Default Changelist" comment="" />
+      <created>1627696101948</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627696101948</updated>
+      <workItem from="1627696104230" duration="13211000" />
+      <workItem from="1627711801820" duration="4254000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
