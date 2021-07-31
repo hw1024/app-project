@@ -5,15 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maintain.html" beforeDir="false" afterPath="$PROJECT_DIR$/maintain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question1.html" beforeDir="false" afterPath="$PROJECT_DIR$/question1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question2.html" beforeDir="false" afterPath="$PROJECT_DIR$/question2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question3.html" beforeDir="false" afterPath="$PROJECT_DIR$/question3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question4.html" beforeDir="false" afterPath="$PROJECT_DIR$/question4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/questionnaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/questionnaire.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/media.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/page/serial-image1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +64,7 @@
       <updated>1627696101948</updated>
       <workItem from="1627696104230" duration="13211000" />
       <workItem from="1627711801820" duration="4254000" />
+      <workItem from="1627721298921" duration="5593000" />
     </task>
     <servers />
   </component>

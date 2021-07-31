@@ -8,19 +8,15 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/media.css"/>
+    <link rel="stylesheet" href="static/layui/css/layui.css" media="all">
 </head>
 
 <body>
 <!-- 菜单导航部分 -->
 <div class="nav">
-    <a href="javascript:void(0)" class="logo"></a>
-    <a href="maintain.html" class="text">MAC</a>
-    <a href="questionnaire.html" class="text">IPAD</a>
-    <a href="javascript:void(0)" class="text">IPHONE</a>
-    <a href="javascript:void(0)" class="text">WATCH</a>
-    <a href="javascript:void(0)" class="text">TV</a>
-    <a href="javascript:void(0)" class="text">MUSIC</a>
-    <a href="javascript:void(0)" class="text">SUPPORT</a>
+    <a href="index.html" class="logo"></a>
+    <a href="javascript:void(0)" class="text">维修订单</a>
+    <a href="questionnaire.html" class="text">问卷</a>
     <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
     <label for="choose" class="toggle-btn">
         <span class="line"></span>
@@ -35,126 +31,217 @@
             </div>
             <hr/>
             <div class="nav-list">
-                <a href="maintain.html" class="nav-text">MAC</a>
-                <a href="questionnaire.html" class="nav-text">IPAD</a>
-                <a href="javascript:void(0)" class="nav-text">IPHONE</a>
-                <a href="javascript:void(0)" class="nav-text">WATCH</a>
-                <a href="javascript:void(0)" class="nav-text">TV</a>
-                <a href="javascript:void(0)" class="nav-text">MUSIC</a>
-                <a href="javascript:void(0)" class="nav-text">SUPORT</a>
+                <a href="indexn.html" class="nav-text">首页</a>
+                <a href="javascript:void(0)" class="nav-text">维修订单</a>
+                <a href="questionnaire.html" class="nav-text">问卷</a>
             </div>
         </div>
     </div>
 </div>
 
-<section class="section">
+<section class="section section-form">
     <div class="section-content maintain-page1">
         <h4>Shipping</h4>
         <p>Where should we send your replacement product?</p>
-        <form class="serial-number-form" action="#" method="post" novalidate="">
-            <div class="serial-number-wrapper">
-                <label for="serial-firstName" class="serial-number-label">First Name</label>
-                <input type="text" name="firstName" id="serial-firstName" value="">
+        <form class="layui-form" action="">
+            <div class="layui-form-item mob-box">
+                <div class="layui-inline layui-inline-active">
+                    <label class="layui-form-label">First Name</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="firstName" lay-verify="firstName" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">Last Name</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="lastName" lay-verify="lastName" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-lastName" class="serial-number-label">Last Name</label>
-                <input type="text" name="lastName" id="serial-lastName" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Street Address</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="address" lay-verify="address" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-address" class="serial-number-label">Street Address</label>
-                <input type="text" name="address" id="serial-address" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Apt, Suite, Bldg</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="apt" lay-verify="apt" placeholder="" autocomplete="off"
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-apt" class="serial-number-label">Apt, Suite, Bldg</label>
-                <input type="text" name="apt" id="serial-apt" value="">
+            <div class="layui-form-item mob-box">
+                <div class="layui-inline layui-inline-active">
+                    <label class="layui-form-label">City</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="city" lay-verify="city" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">State</label>
+                    <div class="layui-input-inline">
+                        <select name="state" lay-verify="state">
+                            <option value="-"></option>
+                            <option value="0">United States</option>
+                            <option value="1">United States1</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-city" class="serial-number-label">City</label>
-                <input type="text" name="city" id="serial-city" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Zip code</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="zipCode" lay-verify="zipCode" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-state" class="serial-number-label">State</label>
-                <input type="text" name="state" id="serial-state" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Country or Region</label>
+                <div class="layui-input-inline">
+                    <select name="region" lay-verify="region">
+                        <option value=""></option>
+                        <option value="0">United States</option>
+                        <option value="1">United States1</option>
+                    </select>
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-zipCode" class="serial-number-label">Zip code</label>
-                <input type="text" name="zipCode" id="serial-zipCode" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Email Address</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">We send repair status</div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-region" class="serial-number-label">Country or Region</label>
-                <input type="text" name="region" id="serial-region" value="">
-            </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-email" class="serial-number-label">Email Address</label>
-                <input type="text" name="email" id="serial-email" value="">
-            </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-phone" class="serial-number-label">Phone Number</label>
-                <input type="text" name="phone" id="serial-phone" value="">
-            </div>
-            <div class="button-wrapper" id="view-selector-3">
-                <button class="serial-btn" type="submit">
-                    <div class="button-label">Continue</div>
-                </button>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Phone Number</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="phone" lay-verify="phone" placeholder="" autocomplete="off"
+                           class="layui-input">
+                </div>
             </div>
         </form>
+        <div class="button-wrapper" id="view-selector-3">
+            <button class="serial-btn" type="submit">
+                <div class="button-label">Continue</div>
+            </button>
+        </div>
     </div>
 </section>
 
-<section class="section">
-    <div class="section-content maintain-page2">
+<section class="section section-form">
+    <div class="section-content maintain-page2 maintain-bill">
         <h4>Here’s your estimated quote:</h4>
-        <form class="serial-number-form" action="#" method="post" novalidate="">
-            <div class="serial-number-wrapper">
-                <label for="serial-card" class="serial-number-label">Name on Card</label>
-                <input type="text" name="card" id="serial-card" value="">
+        <ul class="quote-list">
+            <li>
+                <span>Out of Warnaty Service</span><span>$299.00</span>
+            </li>
+            <li>
+                <span>Shipping</span><span>$6.95</span>
+            </li>
+            <li>
+                <span>Tax</span><span>$23.17</span>
+            </li>
+        </ul>
+        <div class="quote-total">
+            <span class="label">Total</span><span>$329.12</span>
+        </div>
+        <div class="quote-billing">
+            <h4>Billing</h4>
+            <p>Credit Card Information</p>
+        </div>
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Name on Card</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="card" lay-verify="card" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-creditNumber" class="serial-number-label">Credit Card Number</label>
-                <input type="text" name="creditNumber" id="serial-creditNumber" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Credit Card Number</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="creditNumber" lay-verify="creditNumber" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-cvv" class="serial-number-label">CVV</label>
-                <input type="text" name="cvv" id="serial-cvv" value="">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">CVV</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="cvv" lay-verify="cvv" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">Expiration, Date</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="expiration" id="expiration" lay-verify="expiration" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-expiration" class="serial-number-label">Expiration, Date</label>
-                <input type="text" name="expiration" id="serial-expiration" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Billing Address</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="" title="Same as Shipping" lay-skin="primary">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-address2" class="serial-number-label">Billing Address</label>
-                <span>Same as Shipping</span>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Street Address</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="address2" lay-verify="address2" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-address2" class="serial-number-label">Street Address</label>
-                <input type="text" name="address2" id="serial-address2" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Apt, Suite, Bldg</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="apt2" lay-verify="apt2" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-apt2" class="serial-number-label">Apt, Suite, Bldg</label>
-                <input type="text" name="apt2" id="serial-apt2" value="">
+            <div class="layui-form-item mob-box">
+                <div class="layui-inline  layui-inline-active">
+                    <label class="layui-form-label">City</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="city2" lay-verify="city2" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">State</label>
+                    <div class="layui-input-inline">
+                        <select name="state2" lay-verify="state2">
+                            <option value="-"></option>
+                            <option value="0">United States</option>
+                            <option value="1">United States1</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-city2" class="serial-number-label">City</label>
-                <input type="text" name="city2" id="serial-city2" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Zip code</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="zipCode2" lay-verify="zipCode2" autocomplete="off" placeholder=""
+                           class="layui-input">
+                </div>
             </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-state2" class="serial-number-label">State</label>
-                <input type="text" name="state2" id="serial-state2" value="">
-            </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-zipCode2" class="serial-number-label">Zip code</label>
-                <input type="text" name="zipCode2" id="serial-zipCode2" value="">
-            </div>
-            <div class="serial-number-wrapper">
-                <label for="serial-region2" class="serial-number-label">Country or Region</label>
-                <input type="text" name="region2" id="serial-region2" value="">
-            </div>
-            <div class="button-wrapper" id="view-selector-4">
-                <button class="serial-btn" type="submit">
-                    <div class="button-label">Continue</div>
-                </button>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Country or Region</label>
+                <div class="layui-input-inline">
+                    <select name="region2" lay-verify="region2">
+                        <option value=""></option>
+                        <option value="0">United States</option>
+                        <option value="1">United States1</option>
+                    </select>
+                </div>
             </div>
         </form>
+        <div class="button-wrapper" id="view-selector-4">
+            <button class="serial-btn" type="submit">
+                <div class="button-label">Continue</div>
+            </button>
+        </div>
     </div>
 </section>
 
@@ -163,15 +250,21 @@
         <h3>账单</h3>
         <ul class="maintain-list">
             <li>You agree to return</li>
-            <li>InstantPods will inspect the product you returned and refund the replacement deposit once the inspection is completed.</li>
-            <li>If the product you returned was determined fake, physically damaged, has unauthorized modification, or you had never returned the product, the replacement deposit won’t be refunded. We will notify you in this case</li>
+            <li>InstantPods will inspect the product you returned and refund the replacement deposit once the inspection
+                is completed.
+            </li>
+            <li>If the product you returned was determined fake, physically damaged, has unauthorized modification, or
+                you had never returned the product, the replacement deposit won’t be refunded. We will notify you in
+                this case
+            </li>
         </ul>
         <div class="maintain-accept">
             <p>I accept and agree to the InstantPods Repair Terms and Conditions.</p>
         </div>
         <div class="maintain-submit">
             <div class="btn">Submit Repair</div>
-            <p>By submitting this repair, you accept InstantPods’s Terms and Conditions. If you don’t agree with Terms & Conditions, find other options.</p>
+            <p>By submitting this repair, you accept InstantPods’s Terms and Conditions. If you don’t agree with Terms &
+                Conditions, find other options.</p>
         </div>
     </div>
 </section>
@@ -261,7 +354,16 @@
         </div>
     </div>
 </section>
-
+<script src="static/layui/layui.js" type="application/javascript"></script>
+<script>
+    layui.use(['laydate'], function(){
+        var laydate = layui.laydate;
+        //日期
+        laydate.render({
+            elem: '#expiration'
+        });
+    });
+</script>
 </body>
 
 </html>

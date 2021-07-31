@@ -104,8 +104,12 @@ li {
 .nav-content .nav-page {
     width: 100%;
 }
-
-
+.layui-form {
+    margin-top: 20px;
+}
+.layui-form-item .layui-form-label {
+    width: 120px;
+}
 /* 设定屏幕小于 768px 时的样式 */
 
 @media only screen and (max-width: 768px) {

@@ -5,6 +5,10 @@
     height: 100vh;
 }
 
+.section-form {
+    height: auto;
+}
+
 .section-head {
     background-image: url(../images/banner1.jpg);
     background-position: center bottom;
@@ -402,11 +406,38 @@
     text-align: left;
 }
 
+.maintain-page1 h4 {
+    padding-left: 40px;
+}
+
+.maintain-page1 p {
+    padding-left: 40px;
+    margin-top: 8px;
+}
+.serial-btn {
+    width: 120px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    margin-left: 148px;
+    line-height: 24px;
+    background: #158CFB;
+}
+
 .maintain-page2 {
     padding-top: 120px;
     text-align: left;
 }
 
+.maintain-page2 .quote-list{
+    width: 70%;
+}
+.quote-billing {
+    padding-top: 8px;
+    margin-top: 8px;
+    border-top:  1px solid #6e6e73;
+}
 .maintain-page3 {
     padding-top: 120px;
 }

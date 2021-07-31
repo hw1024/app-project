@@ -20,18 +20,22 @@
         line-height: 1.125;
         font-weight: 600;
     }
+
     .section-list li h4 {
         font-size: 16px;
     }
+
     .section-content h4 {
         font-size: 16px;
         line-height: 1.322;
         font-weight: 600;
         letter-spacing: .009em;
     }
+
     .section-list li h5 {
         font-size: 12px;
     }
+
     .section-content h5 {
         font-size: 12px;
         line-height: 1.322;
@@ -87,7 +91,7 @@
     }
 
     .promo-image-box .promo-image4 {
-        width:36px;
+        width: 36px;
         top: 84px;
         left: 104px;
     }
@@ -110,7 +114,7 @@
     }
 
     .promo-image-box .promo-image8 {
-        width:75px;
+        width: 75px;
         top: 149px;
         left: 0px;
     }
@@ -185,18 +189,22 @@
         line-height: 1.125;
         font-weight: 600;
     }
+
     .section-list li h4 {
         font-size: 16px;
     }
+
     .section-list li h5 {
         font-size: 12px;
     }
+
     .section-content h4 {
         font-size: 16px;
         line-height: 1.322;
         font-weight: 600;
         letter-spacing: .009em;
     }
+
     .section-content h5 {
         font-size: 12px;
         line-height: 1.322;
@@ -247,7 +255,7 @@
     }
 
     .promo-image-box .promo-image4 {
-        width:36px;
+        width: 36px;
         top: 84px;
         left: 104px;
     }
@@ -270,7 +278,7 @@
     }
 
     .promo-image-box .promo-image8 {
-        width:75px;
+        width: 75px;
         top: 149px;
         left: 0px;
     }
@@ -317,6 +325,74 @@
 
     .serial-blue-list li .serial-bluetooth1 {
         height: 116px;
+    }
+
+    .maintain-page1 {
+        padding-top: 60px;
+    }
+
+    .maintain-page1 h4 {
+        padding-left: 0;
+    }
+
+    .maintain-page1 p {
+        padding-left: 0;
+    }
+
+    .layui-form-item .layui-form-label {
+        padding: 4px 0;
+        text-align: left;
+    }
+
+    .layui-form {
+        margin-top: 6px;
+    }
+
+    .layui-form .layui-form-item .layui-inline {
+        margin-bottom: 8px;
+    }
+
+    .layui-form .layui-form-item {
+        margin-bottom: 8px;
+    }
+
+    .layui-form .layui-word-aux {
+        display: none;
+    }
+
+    .button-wrapper {
+        text-align: center;
+        margin-top: 4px;
+    }
+    .layui-form  .layui-form-select .layui-edge {
+        margin-top: 13px;
+    }
+    .serial-btn {
+        margin-left: 0;
+    }
+
+    .layui-form .mob-box {
+        display: flex;
+    }
+
+    .layui-form .mob-box .layui-inline-active {
+        margin-right: 10px;
+    }
+
+    .layui-form .mob-box .layui-inline {
+        margin-bottom: 0;
+    }
+
+    .layui-form-item .layui-input, .layui-form-item .layui-select, .layui-form-item .layui-textarea {
+        height: 28px
+    }
+
+    .layui-form .layui-form-item .layui-input-inline {
+        margin: 0px;
+    }
+
+    .maintain-page2 {
+        padding-top: 20px;
     }
 
 }
