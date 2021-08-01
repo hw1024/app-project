@@ -896,3 +896,7 @@
 .section-head p {
     color: #ffffff;
 }
+
+.section-faq h5 {
+    margin-top: 8px;
+}
