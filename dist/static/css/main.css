@@ -25,7 +25,7 @@
 
 .section-head .section-content {
     position: relative;
-    top: 50%;
+    top: 40%;
 }
 
 .section-content h1 {
@@ -129,7 +129,7 @@
 .section-list li .section-img {
     width: 68px;
     height: 68px;
-    margin-right: 24px;
+    margin-right: 16px;
 }
 
 .section-list li h4 {
@@ -147,13 +147,13 @@
 
 .lower {
     display: flex;
-    margin-top: 36px;
+    margin-top: 28px;
 }
 
 .lower .section-img {
     width: 128px;
     height: 128px;
-    margin-right: 24px;
+    margin-right: 16px;
 }
 
 .lower .section-img.section-img6 {
@@ -187,7 +187,7 @@
 
 .page1 .section-img1 {
     display: inline-block;
-    width: 100px;
+    width: 94px;
     margin-top: 20px;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .page2, .page3 {
-    padding-top: 30px;
+    padding-top: 24px;
 }
 
 .page2 .section-img-icon1 {
@@ -256,7 +256,7 @@
 .page2 .section-work-problem {
     width: 24px;
     height: 24px;
-    vertical-align: 18px;
+    vertical-align: 8px;
     margin-left: 6px;
 }
 
@@ -414,6 +414,7 @@
     padding-left: 40px;
     margin-top: 8px;
 }
+
 .serial-btn {
     width: 120px;
     padding: 6px 10px;
@@ -430,14 +431,16 @@
     text-align: left;
 }
 
-.maintain-page2 .quote-list{
+.maintain-page2 .quote-list {
     width: 70%;
 }
+
 .quote-billing {
     padding-top: 8px;
     margin-top: 8px;
-    border-top:  1px solid #6e6e73;
+    border-top: 1px solid #6e6e73;
 }
+
 .maintain-page3 {
     padding-top: 120px;
 }
@@ -596,9 +599,11 @@
     font-weight: 400;
     letter-spacing: normal;
 }
+
 .serial-number-form .serial-number {
     width: 240px;
 }
+
 .serial-number-form #serial-number {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -867,11 +872,13 @@
     padding: 18px 0;
     border-bottom: 1px solid #6e6e73;
 }
+
 .serial-ques-list {
     display: flex;
     flex-wrap: wrap;
 }
-.serial-ques-list li{
+
+.serial-ques-list li {
     width: 244px;
     text-align: center;
     line-height: 48px;
@@ -899,4 +906,12 @@
 
 .section-faq h5 {
     margin-top: 8px;
+}
+
+.layui-laydate .layui-laydate-main .layui-this {
+    background-color: #158CFB!important;
+}
+
+.layui-form-item .layui-form-select dl dd.layui-this {
+    background-color: #158CFB!important;
 }

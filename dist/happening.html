@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>AirPods</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/media.css"/>
+</head>
+
+<body>
+<!-- 菜单导航部分 -->
+<div class="nav">
+    <a href="index.html" class="logo"></a>
+    <a href="maintain.html" class="text">维修订单</a>
+    <a href="questionnaire.html" class="text">问卷</a>
+    <a href="faq.html" class="text">FAQ</a>
+    <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
+    <label for="choose" class="toggle-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+    </label>
+    <!-- 菜单导航中，隐藏的变成移动端后才显示的菜单 -->
+    <div class="nav-content">
+        <div class="nav-page">
+            <div class="search-input">
+                <div class="icon"></div>
+                <input type="text" placeholder="search apple.com"/>
+            </div>
+            <hr/>
+            <div class="nav-list">
+                <a href="index.html" class="nav-text">首页</a>
+                <a href="maintain.html" class="nav-text">维修订单</a>
+                <a href="questionnaire.html" class="nav-text">问卷</a>
+                <a href="faq.html" class="nav-text">FAQ</a>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section">
+    <div class="section-content page5">
+        <h3 class="serial-title" style="margin-top: 70px">What’s happening with your AirPods?</h3>
+        <p class="serial-product">Your Product: AirPods, 2nd Gen</p>
+        <ul class="serial-list">
+            <li>
+                <a data-method="offset" data-title="Battery & Charging"  data-type="auto" data-item="question1" class="button-content-container">
+                    <img class="button-content-img" src="static/images/page/wix-image4.png" alt="image4">
+                </a>
+            </li>
+            <li>
+                <a  data-method="offset" data-title="Audio & Sound"  data-type="auto" data-item="question2" class="button-content-container">
+                    <img class="button-content-img" src="static/images/page/wix-image3.png" alt="image4">
+                </a>
+            </li>
+            <li>
+                <a  data-method="offset" data-title="Physical or Liquid Damage"  data-type="auto"  data-item="question3" class="button-content-container">
+                    <img class="button-content-img" src="static/images/page/wix-image2.png" alt="image4">
+                </a>
+            </li>
+            <li>
+                <a  data-method="offset" data-title="Lost or Missing Airpods"  data-type="auto"  data-item="question4"  class="button-content-container">
+                    <img class="button-content-img" src="static/images/page/wix-image1.png" alt="image4">
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-content maintain-bill maintain-page4">
+        <h3>We will replace your AirPods</h3>
+        <p class="desc">We will replace both sides of your AirPods to</p>
+        <p>ensure the quality of the repair and best</p>
+        <p>customer experience.</p>
+        <h5 class="quote">Here’s your estimated quote:</h5>
+        <ul class="quote-list">
+            <li>
+                <span>Service Fee - AirPods, 1st Gen, Tier 1</span><span>$59.99</span>
+            </li>
+            <li>
+                <span>Replacement Deposit - AirPods, 1st Gen, RFB</span><span>$59.99</span>
+            </li>
+            <li>
+                <span>Shipping</span><span>$5.99</span>
+            </li>
+            <li>
+                <span>Tax</span><span>$5.99</span>
+            </li>
+        </ul>
+        <div class="quote-total">
+            <span class="label">Total</span><span>$131.96</span>
+        </div>
+        <p class="quote-lower">We will charge a deposit of the product you are</p>
+        <p>replacing so that we can send you the replacement</p>
+        <p>first. Once we receive your returned faulty</p>
+        <p>product, we will <span class="strong">refund</span> the replacement deposit.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-content maintain-bill maintain-page5">
+        <h3>We will replace your Charging Case</h3>
+        <p class="zs">***</p>
+        <h5 class="quote">Here’s your estimated quote:</h5>
+        <ul class="quote-list">
+            <li>
+                <span>Service Fee - Charging Case, 1st Gen, Tier 1</span><span>$59.99</span>
+            </li>
+            <li>
+                <span>Replacement Deposit - Charging Case, 1st Gen, RFB</span><span>$59.99</span>
+            </li>
+            <li>
+                <span>Shipping</span><span>$5.99</span>
+            </li>
+            <li>
+                <span>Tax</span><span>$5.99</span>
+            </li>
+        </ul>
+        <div class="quote-total">
+            <span class="label">Total</span><span>$131.96</span>
+        </div>
+        <p class="quote-lower">We will charge a deposit of the product you are</p>
+        <p>replacing so that we can send you the replacement</p>
+        <p>first. Once we receive your returned faulty</p>
+        <p>product, we will <span class="strong">refund</span> the replacement deposit.</p>
+    </div>
+</section>
+<script src="static/layui/layui.js" type="application/javascript"></script>
+<script>
+    layui.use(['layer'], function(){
+        var $ = layui.jquery,layer = layui.layer;
+        var layText = '<ul class="section-list" style="margin-top: 48px">\n' +
+            '            <li>\n' +
+            '                <img class="section-img serial-bluetooth" src="static/images/page/serial-image11.png" alt="promo1">\n' +
+            '                <div class="section-text serial-text">\n' +
+            '                    <p>1. Go to Settings > Bluetooth.</p>\n' +
+            '                    <p>2. Find your AirPods in the list. </p>\n' +
+            '                    <p>3. Tap the Info button next to your AirPods, and you\'ll see the serial number</p>\n' +
+            '                </div>\n' +
+            '            </li>\n' +
+            '        </ul>\n' +
+            '        <ul class="serial-blue-list">\n' +
+            '            <li style="margin-right: 28px;">\n' +
+            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image1.png" alt="promo1">\n' +
+            '                <p>You can find the serial number on the underside of the lid of your Charging Case or Wireless Charging Case.</p>\n' +
+            '            </li>\n' +
+            '            <li>\n' +
+            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image2.png" alt="promo1">\n' +
+            '                <p>If you have the original packaging, you can find the serial number next to the barcode.</p>\n' +
+            '            </li>\n' +
+            '        </ul>';
+        var question1 = '<ul class="serial-ques-list">\n' +
+            '            <li><a href="question1.html?#page2">AirPods won’t charge</a></li>\n' +
+            '            <li><a href="question1.html?#page3">Charging Case won’t charge</a></li>\n' +
+            '            <li><a href="question1.html?#page4">AirPods Battery Service</a></li>\n' +
+            '            <li><a href="question1.html?#page5">Charging Case Battery Service</a></li>\n' +
+            '        </ul>';
+        var question2 = ' <ul class="serial-ques-list">\n' +
+            '            <li><a href="question2.html?#page2">AirPods won’t connect</a></li>\n' +
+            '            <li><a href="question2.html?#page3">Unable to hear any sound</a></li>\n' +
+            '            <li><a href="question2.html?#page4">AirPods keep disconnecting</a></li>\n' +
+            '            <li><a href="question2.html?#page5">Microphone Issue</a></li>\n' +
+            '            <li class="li-active"><a href="question2.html?#page6">Crackling, Static, or other sound issues</a></li>\n' +
+            '            <li><a href="question2.html?#page7">Sensor Issues</a></li>\n' +
+            '        </ul>';
+        var question3 = ' <ul class="serial-ques-list">\n' +
+            '            <li><a href="question3.html?#page2">AirPods physically damaged</a></li>\n' +
+            '            <li><a href="question3.html?#page4">AirPods water damage</a></li>\n' +
+            '            <li class="li-active"><a href="question3.html?#page3">Charging Case physically damaged</a></li>\n' +
+            '            <li><a href="question3.html?#page5">Charging Case water damage</a></li>\n' +
+            '        </ul>'
+        var question4 = ' <ul class="serial-ques-list">\n' +
+            '            <li class="li-active"><a href="question4.html?#page2">AirPods Missing</a></li>\n' +
+            '            <li class="li-active"><a href="question4.html?#page3">Charging Case Missing</a></li>\n' +
+            '        </ul>'
+        var active = {
+            offset: function(othis){
+                var type = othis.data('type');
+                var item = othis.data('item');
+                var title = othis.data('title');
+                var text = layText;
+                if(item == 'question1') {
+                    text = question1;
+                } else if(item == 'question2') {
+                    text = question2;
+                } else if(item == 'question3') {
+                    text = question3;
+                } else if(item == 'question4') {
+                    text = question4;
+                }
+                layer.open({
+                    type: 1
+                    ,title: title
+                    ,maxWidth: 650
+                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                    ,id: 'layerDemo'+type //防止重复弹出
+                    ,content: '<div style="padding: 20px 10px 30px;">'+text +'</div>'
+                    ,btnAlign: 'c' //按钮居中
+                    ,shade: 0 //不显示遮罩
+                    ,yes: function(){
+                        layer.closeAll();
+                    }
+                });
+            }
+        }
+        $('.button-content-container').on('click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

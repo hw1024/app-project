@@ -11,44 +11,49 @@
 
     .section-content p {
         line-height: 1.42859;
-        font-size: 12px;
+        font-size: 14px;
         letter-spacing: 0;
     }
 
     .section-faq {
         text-align: left;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .section-content h3 {
-        font-size: 32px;
+        font-size: 30px;
         line-height: 1.125;
+        color: #1d1d1f;
         font-weight: 600;
     }
 
     .section-list li h4 {
-        font-size: 18px;
+        font-size: 20px;
+        color: #1d1d1f;
     }
 
     .section-list li h5 {
-        font-size: 14px;
+        font-size: 16px;
+        color: #1d1d1f;
     }
 
     .section-content h4 {
-        font-size: 18px;
+        font-size: 20px;
+        color: #1d1d1f;
         line-height: 1.322;
         font-weight: 600;
         letter-spacing: .009em;
     }
 
     .section-content h5 {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.322;
+        color: #1d1d1f;
         letter-spacing: .009em;
     }
 
     .section-list li {
-        margin-top: 16px;
+        margin-top: 12px;
     }
 
     .section-list li .section-img {
@@ -57,7 +62,7 @@
     }
 
     .lower {
-        margin-top: 32px;
+        margin-top: 24px;
     }
 
     .lower .section-img {
@@ -65,6 +70,21 @@
         height: 80px;
     }
 
+
+    .lower h4 {
+        font-size: 16px;
+    }
+
+    .section-contact {
+        display: block;
+        align-items: flex-end;
+        margin-top: 332px;
+    }
+
+    .section-contact li {
+        width: 100%;
+        margin-top: 18px;
+    }
 
     .serial-list-title {
         margin-top: 80px;
@@ -148,7 +168,16 @@
 
     /*维修订单页*/
     .maintain-list li {
-        font-size: 12px;
+        font-size: 14px;
+    }
+
+    .section-list li .section-img.serial-bluetooth {
+        width: 140px;
+        height: 168px;
+    }
+
+    .section-list li .serial-text {
+        margin-top: 72px;
     }
 
     .maintain-bill .quote-list li {
@@ -156,7 +185,7 @@
     }
 
     .maintain-bill .quote-total {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .serial-blue-list li .serial-bluetooth1 {
@@ -250,7 +279,10 @@
         font-size: 12px;
         box-sizing: border-box;
     }
-
+    .serial-ques-list li a {
+        color: #1d1d1f;
+        text-decoration: none;
+    }
     .serial-ques-list li.li-active {
         width: 96%;
     }
