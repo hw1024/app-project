@@ -143,7 +143,7 @@
             '            <div class="question-back-left">\n' +
             '                <div class="question-charge">\n' +
             '                    <p class="question-charge-top">Is AirPods connecting to your phone? </p>\n' +
-            '                    <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '                    <p class="question-charge-lower"><span>YES</span><span  class="serial-chileren" data-method="setTop" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
             '                </div>\n' +
             '                <div>\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
@@ -156,6 +156,30 @@
             '                <p class="question-back-go">Go Back</p>\n' +
             '            </div>\n' +
             '        </div>';
+        var children12 = '   <div class="question-charge">\n' +
+            '            <div class="question-charge-top">\n' +
+            '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
+            '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
+            '            </div>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '        </div>\n' +
+            '        <div class="question-back">\n' +
+            '            <div class="question-back-left">\n' +
+            '                <div class="question-charge">\n' +
+            '                    <p class="question-charge-top">Is AirPods connecting to your phone? </p>\n' +
+            '                    <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '                </div>\n' +
+            '                <div>\n' +
+            '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
+            '                    <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '                </div>\n' +
+            '            </div>\n' +
+            '            <div class="question-back-right">\n' +
+            '                <p class="question-back-probably">You probably have a faulty charging case. Try to charge your AirPods again with a known good charging case.\n' +
+            '                </p>\n' +
+            '                <p class="question-back-go">Go Back  拒绝维修</p>\n' +
+            '            </div>\n' +
+            '        </div>';
         var children2 = '   <div class="question-charge" style="border: none;">\n' +
             '            <div class="question-charge-top">\n' +
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
@@ -163,7 +187,24 @@
             '            </div>\n' +
             '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
             '        </div>';
-        var children3 = '<div class="question-hear question-hear-active">\n' +
+        var children3 ='<div class="question-hear">\n' +
+            '            <p>Is AirPods connecting to your phone? </p>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span class="serial-chileren" data-method="setTop" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
+            '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
+            '        </div>\n' +
+            '        <ul class="question-hear-list">\n' +
+            '            <li>\n' +
+            '                <p class="top">YES</p>\n' +
+            '                <p class="question-replaced">Which side of your AirPods needs to be replaced? </p>\n' +
+            '                <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '            </li>\n' +
+            '            <li>\n' +
+            '                <p class="top">NO</p>\n' +
+            '                <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
+            '                <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '            </li>\n' +
+            '        </ul>';
+        var children31 = '<div class="question-hear question-hear-active">\n' +
             '            <p style="margin-bottom: 10px">Is AirPods connecting to your phone? </p>\n' +
             '            <p class="question-charge-lower"><span>NO</span></p>\n' +
             '            <div>\n' +
@@ -195,13 +236,7 @@
         var children8 = '  <p style="padding: 12px 80px;border-top:1px solid #6e6e73;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
             '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span>Let me think about it</span></p>';
-        var children9 = ' <div class="question-title" style="margin-top: 18px;padding: 4px 40px;">订购充电仓</div>\n' +
-            '        <p style="margin-top: 24px" class="serial-product">To ensure the best experiences possible, we will send you the replacement product\n' +
-            '            first. We will charge your credit card to secure a deposit for the replacement product, and we will refund\n' +
-            '            it once we receive your returned product.\n' +
-            '        </p>\n' +
-            '        <div style="margin-top: 18px">I am comfortable with that</div>\n' +
-            '        <div style="margin-top: 12px">I need to think about it.</div>';
+        var children9 = ' <div class="question-title" style="margin-top: 18px;padding: 4px 40px;">订购充电仓</div>';
         var question1 = '<ul class="serial-ques-list">\n' +
             '            <li class="serial-chileren" data-method="setTop" data-title="AirPods won’t charge"  data-type="auto" data-item="children1">AirPods won’t charge</li>\n' +
             '            <li class="serial-chileren" data-method="setTop" data-title="Charging Case won’t charge"  data-type="auto" data-item="children2">Charging Case won’t charge</a></li>\n' +
@@ -254,6 +289,12 @@
                         break;
                     case 'children9':
                         text = children9
+                        break;
+                    case 'children12':
+                        text = children12
+                        break;
+                    case 'children31':
+                        text = children31
                         break;
                     case 'question1':
                         text = question1

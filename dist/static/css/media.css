@@ -279,11 +279,28 @@
         font-size: 12px;
         box-sizing: border-box;
     }
+
     .serial-ques-list li a {
         color: #1d1d1f;
         text-decoration: none;
     }
+
     .serial-ques-list li.li-active {
         width: 96%;
+    }
+
+    .question-charge {
+        font-size: 12px;
+    }
+    .question-hear {
+        font-size: 12px;
+    }
+
+    .question-back {
+        font-size: 12px;
+    }
+
+    .question-hear-list {
+        font-size: 12px;
     }
 }
