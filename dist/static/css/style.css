@@ -110,6 +110,12 @@ li {
 .layui-form-item .layui-form-label {
     width: 120px;
 }
+.error-text {
+    font-size: 12px!important;
+    color: #eb7350!important;
+    display: none;
+    padding: 4px 24px;
+}
 /* 设定屏幕小于 768px 时的样式 */
 
 @media only screen and (max-width: 768px) {

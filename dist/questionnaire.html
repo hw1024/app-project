@@ -113,13 +113,15 @@
         <form class="serial-number-form" action="#" method="post" novalidate="">
             <div class="serial-number-wrapper">
                 <label for="serial-number" class="serial-number-label">Enter your serial number</label>
-                <input type="text" name="sno"  class="serial-number" id="serial-number" value="">
-                <div class="serial-number-article"><a href="javascript: void(0);" data-method="offset" data-type="auto" data-title="说明书" class="serial-number-btn">How
+                <input type="text" name="sno" class="serial-number" id="serial-number" value="">
+                <p class="error-text">序列号的后4位必须是H8TT、LX2Y、JMMT、LKKT、0C6L中的一个</p>
+                <div class="serial-number-article"><a href="javascript: void(0);" data-method="offset" data-type="auto"
+                                                      data-title="说明书" class="serial-number-btn">How
                     to find your serial number ></a>
                 </div>
             </div>
             <div class="button-wrapper" id="view-selector-3">
-                <button class="serial-btn" id="serial-btn" type="submit">
+                <button class="serial-btn" id="serial-btn" type="button">
                     <div class="button-label">Continue</div>
                 </button>
             </div>
@@ -156,8 +158,8 @@
 <script src="static/js/jquery.min.js" type="application/javascript"></script>
 <script src="static/layui/layui.js" type="application/javascript"></script>
 <script>
-    layui.use(['layer'], function(){
-        var $ = layui.jquery,layer = layui.layer;
+    layui.use(['layer'], function () {
+        var $ = layui.jquery, layer = layui.layer;
         var layText = '<ul class="section-list" style="margin-top: 48px">\n' +
             '            <li>\n' +
             '                <img class="section-img serial-bluetooth" src="static/images/page/serial-image11.png" alt="promo1">\n' +
@@ -203,50 +205,65 @@
             '            <li class="li-active"><a href="question4.html?#page3">Charging Case Missing</a></li>\n' +
             '        </ul>'
         var active = {
-            offset: function(othis){
+            offset: function (othis) {
                 var type = othis.data('type');
                 var item = othis.data('item');
                 var title = othis.data('title');
                 var text = layText;
-                if(item == 'question1') {
+                if (item == 'question1') {
                     text = question1;
-                } else if(item == 'question2') {
+                } else if (item == 'question2') {
                     text = question2;
-                } else if(item == 'question3') {
+                } else if (item == 'question3') {
                     text = question3;
-                } else if(item == 'question4') {
+                } else if (item == 'question4') {
                     text = question4;
                 }
                 layer.open({
                     type: 1
-                    ,title: title
-                    ,maxWidth: 650
-                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
-                    ,id: 'layerDemo'+type //防止重复弹出
-                    ,content: '<div style="padding: 20px 10px 30px;">'+text +'</div>'
-                    ,btnAlign: 'c' //按钮居中
-                    ,shade: 0 //不显示遮罩
-                    ,yes: function(){
+                    , title: title
+                    , maxWidth: 650
+                    , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                    , id: 'layerDemo' + type //防止重复弹出
+                    , content: '<div style="padding: 20px 10px 30px;">' + text + '</div>'
+                    , btnAlign: 'c' //按钮居中
+                    , shade: 0 //不显示遮罩
+                    , yes: function () {
                         layer.closeAll();
                     }
                 });
             }
         }
-        $('.serial-number-btn').on('click', function(){
+        $('.serial-number-btn').on('click', function () {
             var othis = $(this), method = othis.data('method');
             active[method] ? active[method].call(this, othis) : '';
         });
 
-        $('.button-content-container').on('click', function(){
+        $('.button-content-container').on('click', function () {
             var othis = $(this), method = othis.data('method');
             active[method] ? active[method].call(this, othis) : '';
         });
 
     });
     $("#serial-btn").on("click", function () {
-        window.location.href= 'happening.html';
-        window.event.returnValue=false;
+        var code = $("#serial-number").val();
+        var subCode = code.substr(-4)
+        console.log(subCode,code)
+        var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
+        console.log(isInArray(codeArr, subCode))
+        if(isInArray(codeArr, subCode)) {
+            $(".error-text").hide();
+            window.location.href= 'happening.html';
+            window.event.returnValue=false;
+        } else {
+            $(".error-text").show();
+        }
     })
+
+    function isInArray(arr, str) {
+        var curStr = ',' + arr.join(",") + ",";
+        return curStr.indexOf("," + str + ",") != -1;
+    }
 </script>
 </body>
 
