@@ -892,3 +892,7 @@
     flex-direction: column;
     padding: 20px 40px;
 }
+
+.section-head p {
+    color: #ffffff;
+}
