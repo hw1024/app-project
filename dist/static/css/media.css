@@ -186,6 +186,7 @@
 
     .layui-form .layui-form-item .layui-inline {
         margin-bottom: 8px;
+        width: 50%;
     }
 
     .layui-form .layui-form-item {
