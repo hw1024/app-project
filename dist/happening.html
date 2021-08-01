@@ -45,22 +45,22 @@
         <p class="serial-product">Your Product: AirPods, 2nd Gen</p>
         <ul class="serial-list">
             <li>
-                <a data-method="offset" data-title="Battery & Charging"  data-type="auto" data-item="question1" class="button-content-container">
+                <a data-method="setTop" data-title="Battery & Charging"  data-type="auto" data-item="question1" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image4.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a  data-method="offset" data-title="Audio & Sound"  data-type="auto" data-item="question2" class="button-content-container">
+                <a  data-method="setTop" data-title="Audio & Sound"  data-type="auto" data-item="question2" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image3.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a  data-method="offset" data-title="Physical or Liquid Damage"  data-type="auto"  data-item="question3" class="button-content-container">
+                <a  data-method="setTop" data-title="Physical or Liquid Damage"  data-type="auto"  data-item="question3" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image2.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a  data-method="offset" data-title="Lost or Missing Airpods"  data-type="auto"  data-item="question4"  class="button-content-container">
+                <a  data-method="setTop" data-title="Lost or Missing Airpods"  data-type="auto"  data-item="question4"  class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image1.png" alt="image4">
                 </a>
             </li>
@@ -127,80 +127,181 @@
         <p>product, we will <span class="strong">refund</span> the replacement deposit.</p>
     </div>
 </section>
+
 <script src="static/layui/layui.js" type="application/javascript"></script>
 <script>
     layui.use(['layer'], function(){
         var $ = layui.jquery,layer = layui.layer;
-        var layText = '<ul class="section-list" style="margin-top: 48px">\n' +
-            '            <li>\n' +
-            '                <img class="section-img serial-bluetooth" src="static/images/page/serial-image11.png" alt="promo1">\n' +
-            '                <div class="section-text serial-text">\n' +
-            '                    <p>1. Go to Settings > Bluetooth.</p>\n' +
-            '                    <p>2. Find your AirPods in the list. </p>\n' +
-            '                    <p>3. Tap the Info button next to your AirPods, and you\'ll see the serial number</p>\n' +
+        var children1 = '  <div class="question-charge">\n' +
+            '            <div class="question-charge-top">\n' +
+            '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
+            '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
+            '            </div>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '        </div>\n' +
+            '        <div class="question-back">\n' +
+            '            <div class="question-back-left">\n' +
+            '                <div class="question-charge">\n' +
+            '                    <p class="question-charge-top">Is AirPods connecting to your phone? </p>\n' +
+            '                    <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
             '                </div>\n' +
-            '            </li>\n' +
-            '        </ul>\n' +
-            '        <ul class="serial-blue-list">\n' +
-            '            <li style="margin-right: 28px;">\n' +
-            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image1.png" alt="promo1">\n' +
-            '                <p>You can find the serial number on the underside of the lid of your Charging Case or Wireless Charging Case.</p>\n' +
-            '            </li>\n' +
-            '            <li>\n' +
-            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image2.png" alt="promo1">\n' +
-            '                <p>If you have the original packaging, you can find the serial number next to the barcode.</p>\n' +
-            '            </li>\n' +
-            '        </ul>';
+            '                <div>\n' +
+            '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
+            '                    <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '                </div>\n' +
+            '            </div>\n' +
+            '            <div class="question-back-right">\n' +
+            '                <p class="question-back-probably">You probably have a faulty charging case. Try to charge your AirPods again with a known good charging case.\n' +
+            '                </p>\n' +
+            '                <p class="question-back-go">Go Back</p>\n' +
+            '            </div>\n' +
+            '        </div>';
+        var children2 = '   <div class="question-charge" style="border: none;">\n' +
+            '            <div class="question-charge-top">\n' +
+            '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
+            '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
+            '            </div>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '        </div>';
+        var children3 = '<div class="question-hear question-hear-active">\n' +
+            '            <p style="margin-bottom: 10px">Is AirPods connecting to your phone? </p>\n' +
+            '            <p class="question-charge-lower"><span>NO</span></p>\n' +
+            '            <div>\n' +
+            '                <p class="question-replaced">Which side of your AirPods needs to be replaced? </p>\n' +
+            '                <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '            </div>\n' +
+            '        </div>';
+        var children4 = '<div class="question-charge" style="border: none;">\n' +
+            '            <div class="question-charge-top">\n' +
+            '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
+            '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
+            '            </div>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '        </div>';
+        var children6 = '  <div class="question-charge" style="border: none;">\n' +
+            '            <div class="question-charge-top">\n' +
+            '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
+            '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
+            '            </div>\n' +
+            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '        </div>';
+        var children7 = '<p style="padding: 12px 80px;border-top:1px solid #6e6e73;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+            '        </p>\n' +
+            '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span>Let me think about it</span></p>\n' +
+            '        <div class="question-needs">\n' +
+            '            <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
+            '            <p class="question-lower"><span>Left</span><span>Right</span><span>Both Sides</span></p>\n' +
+            '        </div>';
+        var children8 = '  <p style="padding: 12px 80px;border-top:1px solid #6e6e73;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+            '        </p>\n' +
+            '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span>Let me think about it</span></p>';
+        var children9 = ' <div class="question-title" style="margin-top: 18px;padding: 4px 40px;">订购充电仓</div>\n' +
+            '        <p style="margin-top: 24px" class="serial-product">To ensure the best experiences possible, we will send you the replacement product\n' +
+            '            first. We will charge your credit card to secure a deposit for the replacement product, and we will refund\n' +
+            '            it once we receive your returned product.\n' +
+            '        </p>\n' +
+            '        <div style="margin-top: 18px">I am comfortable with that</div>\n' +
+            '        <div style="margin-top: 12px">I need to think about it.</div>';
         var question1 = '<ul class="serial-ques-list">\n' +
-            '            <li><a href="question1.html?#page2">AirPods won’t charge</a></li>\n' +
-            '            <li><a href="question1.html?#page3">Charging Case won’t charge</a></li>\n' +
-            '            <li><a href="question1.html?#page4">AirPods Battery Service</a></li>\n' +
-            '            <li><a href="question1.html?#page5">Charging Case Battery Service</a></li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods won’t charge"  data-type="auto" data-item="children1">AirPods won’t charge</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Charging Case won’t charge"  data-type="auto" data-item="children2">Charging Case won’t charge</a></li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods Battery Service"  data-type="auto" data-item="children3">AirPods Battery Service</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Charging Case Battery Service"  data-type="auto" data-item="children4">Charging Case Battery Service</li>\n' +
             '        </ul>';
         var question2 = ' <ul class="serial-ques-list">\n' +
-            '            <li><a href="question2.html?#page2">AirPods won’t connect</a></li>\n' +
-            '            <li><a href="question2.html?#page3">Unable to hear any sound</a></li>\n' +
-            '            <li><a href="question2.html?#page4">AirPods keep disconnecting</a></li>\n' +
-            '            <li><a href="question2.html?#page5">Microphone Issue</a></li>\n' +
-            '            <li class="li-active"><a href="question2.html?#page6">Crackling, Static, or other sound issues</a></li>\n' +
-            '            <li><a href="question2.html?#page7">Sensor Issues</a></li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods won’t connect" data-type="auto" data-item="children6">AirPods won’t connect</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Unable to hear any sound" data-type="auto" data-item="children6">Unable to hear any sound</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods keep disconnecting"  data-type="auto" data-item="children6">AirPods keep disconnecting</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Microphone Issue"  data-type="auto" data-item="children6">Microphone Issue</li>\n' +
+            '            <li class="serial-chileren li-active" data-method="setTop" data-title="Crackling, Static, or other sound issues"  data-type="auto" data-item="children6">Crackling, Static, or other sound issues</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Sensor Issues"  data-type="auto" data-item="children6">Sensor Issues</li>\n' +
             '        </ul>';
         var question3 = ' <ul class="serial-ques-list">\n' +
-            '            <li><a href="question3.html?#page2">AirPods physically damaged</a></li>\n' +
-            '            <li><a href="question3.html?#page4">AirPods water damage</a></li>\n' +
-            '            <li class="li-active"><a href="question3.html?#page3">Charging Case physically damaged</a></li>\n' +
-            '            <li><a href="question3.html?#page5">Charging Case water damage</a></li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods physically damaged" data-type="auto" data-item="children7">AirPods physically damaged</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="AirPods water damage" data-type="auto" data-item="children7">AirPods water damage</li>\n' +
+            '            <li class="li-active serial-chileren" data-method="setTop" data-title="Charging Case physically damaged" data-type="auto" data-item="children8">Charging Case physically damaged</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-title="Charging Case water damage" data-type="auto" data-item="children8">Charging Case water damage</li>\n' +
             '        </ul>'
         var question4 = ' <ul class="serial-ques-list">\n' +
-            '            <li class="li-active"><a href="question4.html?#page2">AirPods Missing</a></li>\n' +
-            '            <li class="li-active"><a href="question4.html?#page3">Charging Case Missing</a></li>\n' +
+            '            <li class="li-active serial-chileren" data-method="setTop" data-title="AirPods Missing" data-type="auto" data-item="children6">AirPods Missing</li>\n' +
+            '            <li class="li-active serial-chileren" data-method="setTop" data-title="Charging Case Missing" data-type="auto" data-item="children9">Charging Case Missing</li>\n' +
             '        </ul>'
         var active = {
-            offset: function(othis){
+            setTop: function(othis){
+                console.log(othis)
                 var type = othis.data('type');
                 var item = othis.data('item');
                 var title = othis.data('title');
-                var text = layText;
-                if(item == 'question1') {
-                    text = question1;
-                } else if(item == 'question2') {
-                    text = question2;
-                } else if(item == 'question3') {
-                    text = question3;
-                } else if(item == 'question4') {
-                    text = question4;
+                var text = children6;
+                switch(item) {
+                    case 'children1':
+                        text = children1
+                        break;
+                    case 'children2':
+                        text = children2
+                        break;
+                    case 'children3':
+                        text = children3
+                        break;
+                    case 'children4':
+                        text = children4
+                        break;
+                    case 'children7':
+                        text = children7
+                        break;
+                    case 'children8':
+                        text = children8
+                        break;
+                    case 'children9':
+                        text = children9
+                        break;
+                    case 'question1':
+                        text = question1
+                        break;
+                    case 'question2':
+                        text = question2
+                        break;
+                    case 'question3':
+                        text = question3
+                        break;
+                    case 'question4':
+                        text = question4
+                        break;
+                    default:
+                        text = children6
                 }
                 layer.open({
                     type: 1
                     ,title: title
                     ,maxWidth: 650
-                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
-                    ,id: 'layerDemo'+type //防止重复弹出
+                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#setTop
                     ,content: '<div style="padding: 20px 10px 30px;">'+text +'</div>'
                     ,btnAlign: 'c' //按钮居中
                     ,shade: 0 //不显示遮罩
                     ,yes: function(){
                         layer.closeAll();
+                    }
+                    ,zIndex: layer.zIndex //重点1
+                    ,success: function(layero, index){
+                        layer.setTop(layero); //重点2. 保持选中窗口置顶
+
+                        //记录索引，以便按 esc 键关闭。事件见代码最末尾处。
+                        layer.escIndex = layer.escIndex || [];
+                        layer.escIndex.unshift(index);
+                        //选中当前层时，将当前层索引放置在首位
+                        layero.on('mousedown', function(){
+                            var _index = layer.escIndex.indexOf(index);
+                            if(_index !== -1){
+                                layer.escIndex.splice(_index, 1); //删除原有索引
+                            }
+                            layer.escIndex.unshift(index); //将索引插入到数组首位
+                        });
+                    }
+                    ,end: function(){
+                        //更新索引
+                        if(typeof layer.escIndex === 'object'){
+                            layer.escIndex.splice(0, 1);
+                        }
                     }
                 });
             }
@@ -209,7 +310,10 @@
             var othis = $(this), method = othis.data('method');
             active[method] ? active[method].call(this, othis) : '';
         });
-
+        $(document).delegate('.serial-chileren','click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
     });
 </script>
 
