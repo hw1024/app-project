@@ -199,7 +199,7 @@
 
     .button-wrapper {
         text-align: center;
-        margin-top: 4px;
+        margin-top: 20px;
     }
 
     .layui-form .layui-form-select .layui-edge {
@@ -223,7 +223,7 @@
     }
 
     .layui-form-item .layui-input, .layui-form-item .layui-select, .layui-form-item .layui-textarea {
-        height: 28px
+        height: 32px
     }
 
     .layui-form .layui-form-item .layui-input-inline {
