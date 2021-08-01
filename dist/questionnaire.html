@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/media.css"/>
+    <link rel="stylesheet" href="static/layui/css/layui.css" media="all">
 </head>
 
 <body>
@@ -126,8 +127,10 @@
 
 <section class="section">
     <div class="section-content page4">
-        <h3>How to find your serial number</h3>
-        <ul class="section-list">
+        <h3 data-method="offset" data-type="auto" data-title="说明书" class="serial-number-btn">
+            How to find your serial number
+        </h3>
+        <ul class="section-list" style="margin-top: 48px">
             <li>
                 <img class="section-img serial-bluetooth" src="static/images/page/serial-image11.png" alt="promo1">
                 <div class="section-text serial-text">
@@ -135,16 +138,6 @@
                     <p>2. Find your AirPods in the list. </p>
                     <p>3. Tap the Info button next to your AirPods, and you'll see the serial number</p>
                 </div>
-            </li>
-        </ul>
-        <ul class="serial-blue-list">
-            <li style="margin-right: 28px;">
-                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image1.png" alt="promo1">
-                <p>You can find the serial number on the underside of the lid of your Charging Case or Wireless Charging Case.</p>
-            </li>
-            <li>
-                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image2.png" alt="promo1">
-                <p>If you have the original packaging, you can find the serial number next to the barcode.</p>
             </li>
         </ul>
     </div>
@@ -156,22 +149,22 @@
         <p class="serial-product">Your Product: AirPods, 2nd Gen</p>
         <ul class="serial-list">
             <li>
-                <a href="question1.html" class="button-content-container">
+                <a data-method="offset" data-title="Battery & Charging"  data-type="auto" data-item="question1" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image4.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a href="question2.html" class="button-content-container">
+                <a  data-method="offset" data-title="Audio & Sound"  data-type="auto" data-item="question2" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image3.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a href="question3.html" class="button-content-container">
+                <a  data-method="offset" data-title="Physical or Liquid Damage"  data-type="auto"  data-item="question3" class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image2.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a href="question4.html" class="button-content-container">
+                <a  data-method="offset" data-title="Lost or Missing Airpods"  data-type="auto"  data-item="question4"  class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image1.png" alt="image4">
                 </a>
             </li>
@@ -264,7 +257,95 @@
 
         </div>
     </div>
+    <div class="popup-box">
+        <div>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="content"></div>
+    </div>
 </section>
+<script src="static/layui/layui.js" type="application/javascript"></script>
+<script>
+    layui.use(['layer'], function(){
+        var $ = layui.jquery,layer = layui.layer;
+        var layText = '  <ul class="serial-blue-list">\n' +
+            '            <li style="margin-right: 28px;">\n' +
+            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image1.png" alt="promo1">\n' +
+            '                <p>You can find the serial number on the underside of the lid of your Charging Case or Wireless Charging Case.</p>\n' +
+            '            </li>\n' +
+            '            <li>\n' +
+            '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image2.png" alt="promo1">\n' +
+            '                <p>If you have the original packaging, you can find the serial number next to the barcode.</p>\n' +
+            '            </li>\n' +
+            '        </ul>';
+        var question1 = '<ul class="serial-ques-list">\n' +
+            '            <li><a href="question1.html?#page2">AirPods won’t charge</a></li>\n' +
+            '            <li><a href="question1.html?#page3">Charging Case won’t charge</a></li>\n' +
+            '            <li><a href="question1.html?#page4">AirPods Battery Service</a></li>\n' +
+            '            <li><a href="question1.html?#page5">Charging Case Battery Service</a></li>\n' +
+            '        </ul>';
+        var question2 = ' <ul class="serial-ques-list">\n' +
+            '            <li><a href="question2.html?#page2">AirPods won’t connect</a></li>\n' +
+            '            <li><a href="question2.html?#page3">Unable to hear any sound</a></li>\n' +
+            '            <li><a href="question2.html?#page4">AirPods keep disconnecting</a></li>\n' +
+            '            <li><a href="question2.html?#page5">Microphone Issue</a></li>\n' +
+            '            <li class="li-active"><a href="question2.html?#page6">Crackling, Static, or other sound issues</a></li>\n' +
+            '            <li><a href="question2.html?#page7">Sensor Issues</a></li>\n' +
+            '        </ul>';
+        var question3 = ' <ul class="serial-ques-list">\n' +
+            '            <li><a href="question3.html?#page2">AirPods physically damaged</a></li>\n' +
+            '            <li><a href="question3.html?#page4">AirPods water damage</a></li>\n' +
+            '            <li class="li-active"><a href="question3.html?#page3">Charging Case physically damaged</a></li>\n' +
+            '            <li><a href="question3.html?#page5">Charging Case water damage</a></li>\n' +
+            '        </ul>'
+        var question4 = ' <ul class="serial-ques-list">\n' +
+            '            <li class="li-active"><a href="question4.html?#page2">AirPods Missing</a></li>\n' +
+            '            <li class="li-active"><a href="question4.html?#page3">Charging Case Missing</a></li>\n' +
+            '        </ul>'
+        var active = {
+            offset: function(othis){
+                var type = othis.data('type');
+                var item = othis.data('item');
+                var title = othis.data('title');
+                var text = layText;
+                if(item == 'question1') {
+                    text = question1;
+                } else if(item == 'question2') {
+                    text = question2;
+                } else if(item == 'question3') {
+                    text = question3;
+                } else if(item == 'question4') {
+                    text = question4;
+                }
+                layer.open({
+                    type: 1
+                    ,title: title
+                    ,maxWidth: 650
+                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                    ,id: 'layerDemo'+type //防止重复弹出
+                    ,content: '<div style="padding: 20px 10px 30px;">'+text +'</div>'
+                    ,btnAlign: 'c' //按钮居中
+                    ,shade: 0 //不显示遮罩
+                    ,yes: function(){
+                        layer.closeAll();
+                    }
+                });
+            }
+        }
+        $('.serial-number-btn').on('click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+
+        $('.button-content-container').on('click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+
+    });
+
+</script>
 </body>
 
 </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+　　<head>
+    　　　　<meta charset="UTF-8">
+    　　　　<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    　　　　<title>移动从底部向上滑动弹出</title>
+    　　　　<style type="text/css">
+    　　　　　　.clickBtn{height: 40px;}
+    　　　　　　.clickBtn button{float: right;}
+    　　　　　　.willAlert{
+        　　　　　　　　position:absolute;
+        　　　　　　　　left:0;
+        　　　　　　　　bottom: 0;
+        　　　　　　　　width:100%;
+        　　　　　　　　height: 0;
+        　　　　　　　　overflow: hidden;
+        　　　　　　　　z-index:9;
+        　　　　　　　　background: #dedede;
+        　　　　　　　　transition: all 5s ease; /*弹出时间*/
+        　　　　　　}
+    　　　　　　.willAlert div{
+        　　　　　　　　box-sizing: border-box;
+        　　　　　　　　padding:20px;
+        　　　　　　}
+    　　　　</style>
+    　　</head>
+　　<body>
+　　　　<div class="clickBtn">
+    　　　　　　<!--点击后隐藏的div从底部滑上来-->
+    　　　　　　<button>点击试试</button>
+    　　　　</div>
+　　　　<div>
+    　　　　　　<ul>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　　　<li>啊啊啊啊啊啊啊啊啊啊啊啊啊</li>
+    　　　　　　</ul>
+    　　　　</div>
+　　　　<div class="willAlert">
+    　　　　　　<div>
+    　　　　　　　　啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    　　　　　　　　啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    　　　　　　　　啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    　　　　　　　　啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    　　　　　　</div>
+    　　　　</div>
+　　　　<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+　　　　<script type="text/javascript" charset="utf-8">
+    // 弹出和消失时间可修改
+    $(function(){
+        $(".clickBtn button").click(function(){
+            $('body').css({
+                'height':'100%',
+                'overflow':'hidden'
+            });
+            $('.willAlert').css({
+                'height': '200px'
+            });
+        });
+        $(document).on('click','.willAlert',function(){
+            $(this).css({
+                'height':0,
+                // 消失时间
+                'transition': 'all 10s ease'
+            });
+            // 此处如果需要可以用计时器（弹框关闭后，页面才能上下滑动）
+            setTimeout(function(){
+                $('body').css({
+                    'height':'auto',
+                    'overflow':'visible'
+                });
+                // 消失时间
+            }, 10000);
+        });
+    });
+</script>
+　　</body>
+</html>

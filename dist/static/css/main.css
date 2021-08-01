@@ -442,6 +442,10 @@
     padding-top: 120px;
 }
 
+.serial-number-btn {
+    cursor: pointer;
+}
+
 .maintain-list {
     text-align: left;
     margin-top: 80px;
@@ -862,4 +866,29 @@
     justify-content: space-between;
     padding: 18px 0;
     border-bottom: 1px solid #6e6e73;
+}
+.serial-ques-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.serial-ques-list li{
+    width: 244px;
+    text-align: center;
+    line-height: 48px;
+    padding: 8px 10px;
+    border: 1px solid #6e6e73;
+    margin: 8px;
+}
+
+.popup-box {
+    display: flex;
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000000;
+    color: #ffffff;
+    flex-direction: column;
+    padding: 20px 40px;
 }

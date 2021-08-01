@@ -1,169 +1,5 @@
 /*媒体查询*/
 
-@media only screen and (max-width: 1100px) {
-    .section .section-content {
-        width: calc(100% - 30px);
-    }
-
-    .page1-top {
-        height: 216px;
-    }
-
-    .section-content p {
-        line-height: 1.42859;
-        font-size: 12px;
-        letter-spacing: 0;
-    }
-
-    .section-content h3 {
-        font-size: 30px;
-        line-height: 1.125;
-        font-weight: 600;
-    }
-
-    .section-list li h4 {
-        font-size: 16px;
-    }
-
-    .section-content h4 {
-        font-size: 16px;
-        line-height: 1.322;
-        font-weight: 600;
-        letter-spacing: .009em;
-    }
-
-    .section-list li h5 {
-        font-size: 12px;
-    }
-
-    .section-content h5 {
-        font-size: 12px;
-        line-height: 1.322;
-        letter-spacing: .009em;
-    }
-
-    .section-list li {
-        margin-top: 16px;
-    }
-
-    .section-list li .section-img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .lower {
-        margin-top: 32px;
-    }
-
-    .lower .section-img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .section-faq {
-        text-align: left;
-        font-size: 12px;
-    }
-
-
-    .serial-list-title {
-        margin-top: 80px;
-    }
-
-    .promo-image-box {
-        width: 100%;
-    }
-
-    .promo-image-box .promo-image1 {
-        width: 120px;
-        margin-right: 1px;
-    }
-
-    .promo-image-box .promo-image2 {
-        width: 120px;
-    }
-
-
-    .promo-image-box .promo-image3 {
-        width: 70px;
-        left: 20px;
-        top: 12px;
-    }
-
-    .promo-image-box .promo-image4 {
-        width: 36px;
-        top: 84px;
-        left: 104px;
-    }
-
-    .promo-image-box .promo-image5 {
-        width: 40px;
-        top: 54px;
-        left: 140px;
-    }
-
-    .promo-image-box .promo-image6 {
-        width: 40px;
-        right: 68px;
-    }
-
-    .promo-image-box .promo-image7 {
-        width: 41px;
-        top: 42px;
-        right: 24px;
-    }
-
-    .promo-image-box .promo-image8 {
-        width: 75px;
-        top: 149px;
-        left: 0px;
-    }
-
-    .promo-image-box .promo-image9 {
-        width: 40px;
-        top: 182px;
-        left: 120px;
-    }
-
-    .promo-image-box .promo-image10 {
-        width: 30px;
-        top: 138px;
-        left: 115px;
-    }
-
-    .promo-image-box .promo-image11 {
-        width: 60px;
-        top: 402px;
-    }
-
-    .promo-image-box .promo-image12 {
-        width: 70px;
-    }
-
-    .promo-image-box .promo-image13 {
-        width: 60px;
-        top: 204px;
-        right: 104px;
-    }
-
-    /*维修订单页*/
-    .maintain-list li {
-        font-size: 12px;
-    }
-
-    .maintain-bill .quote-list li {
-        font-size: 12px;
-    }
-
-    .maintain-bill .quote-total {
-        font-size: 12px;
-    }
-
-    .serial-blue-list li .serial-bluetooth1 {
-        height: 116px;
-    }
-}
-
 @media only screen and (max-width: 740px) {
     .section .section-content {
         width: calc(100% - 30px);
@@ -364,9 +200,11 @@
         text-align: center;
         margin-top: 4px;
     }
-    .layui-form  .layui-form-select .layui-edge {
+
+    .layui-form .layui-form-select .layui-edge {
         margin-top: 13px;
     }
+
     .serial-btn {
         margin-left: 0;
     }
@@ -395,4 +233,24 @@
         padding-top: 20px;
     }
 
+    .serial-ques-list {
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .serial-ques-list li {
+        width: 47%;
+        text-align: center;
+        line-height: 48px;
+        border: 1px solid #6e6e73;
+        margin: 4px;
+        padding: 0;
+        float: left;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .serial-ques-list li.li-active {
+        width: 96%;
+    }
 }
