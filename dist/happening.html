@@ -106,15 +106,15 @@
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
             '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
             '            </div>\n' +
-            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '            <p class="question-charge-lower"><span class="question-charge-yes">YES</span><span class="question-charge-no">NO</span></p>\n' +
             '        </div>\n' +
             '        <div class="question-back">\n' +
             '            <div class="question-back-left">\n' +
             '                <div class="question-charge">\n' +
-            '                    <p class="question-charge-top">Is AirPods connecting to your phone? </p>\n' +
-            '                    <p class="question-charge-lower"><span>YES</span><span  class="serial-chileren" data-method="setTop"  data-index="18" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
+            '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
+            '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span><span  class="serial-chileren" data-method="setTop"  data-index="18" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
             '                </div>\n' +
-            '                <div>\n' +
+            '                <div class="question-connecting">\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                    <p class="question-lower"><span class="side-needs" data-level="T1" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T1" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T1" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '                </div>\n' +
@@ -130,15 +130,15 @@
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
             '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
             '            </div>\n' +
-            '            <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '            <p class="question-charge-lower"><span class="question-charge-yes">YES</span><span class="question-charge-no">NO</span></p>\n' +
             '        </div>\n' +
             '        <div class="question-back">\n' +
             '            <div class="question-back-left">\n' +
             '                <div class="question-charge">\n' +
-            '                    <p class="question-charge-top">Is AirPods connecting to your phone? </p>\n' +
-            '                    <p class="question-charge-lower"><span>YES</span><span>NO</span></p>\n' +
+            '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
+            '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span></p>\n' +
             '                </div>\n' +
-            '                <div>\n' +
+            '                <div class="question-connecting">\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                    <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span  class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '                </div>\n' +
@@ -156,19 +156,20 @@
             '            </div>\n' +
             '            <p class="question-charge-lower"><span class="side-needs" data-level="T1" data-category="" data-status="C">YES</span><span class="side-needs" data-level="T1" data-category="" data-status="C">NO</span></p>\n' +
             '        </div>';
-        var children3 = '<div class="question-hear">\n' +
+        var children3 = '<div class="question-hear question-hear-one">\n' +
             '            <p>Is AirPods connecting to your phone? </p>\n' +
-            '            <p class="question-charge-lower"><span>YES</span><span class="serial-chileren" data-method="setTop"  data-index="17" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
-            '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
+            '            <p class="question-charge-lower"><span class="question-hear-yes">YES</span><span class="serial-chileren" data-method="setTop"  data-index="17" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
+            '        </div>\n' +
+            '<div class="question-hear-two">\n' +
+           '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
+            '            <p class="question-charge-lower"><span class="hear-lower-yes">YES</span><span class="hear-lower-no">NO</span></p>\n' +
             '        </div>\n' +
             '        <ul class="question-hear-list">\n' +
-            '            <li>\n' +
-            '                <p class="top">YES</p>\n' +
+            '            <li class="hears-yes">\n' +
             '                <p class="question-replaced">Which side of your AirPods needs to be replaced? </p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T1" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T1" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T1" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </li>\n' +
-            '            <li>\n' +
-            '                <p class="top">NO</p>\n' +
+            '            <li class="hears-no">\n' +
             '                <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </li>\n' +
@@ -190,24 +191,24 @@
             '        </div>';
         var children6 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
-            '                <p class="question-replaced" style="padding: 20px 30px">Which side of your AirPods needs to be replaced? </p>\n' +
-            '                <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
+            '                <p class="question-replaced" style="padding: 24px 30px;text-align: center">Which side of your AirPods needs to be replaced? </p>\n' +
+            '                <p class="question-lower" ><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </div>\n' +
             '        </div>';
-        var children7 = '<p style="padding: 12px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+        var children7 = '<p style="padding: 16px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
-            '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span class="close" style="margin-right: 6px">Let me think about it</span></p>\n' +
+            '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span class="close" style="margin-right: 14px">Let me think about it</span></p>\n' +
             '        <div class="question-needs">\n' +
             '            <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '            <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T3" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '        </div>';
-        var children8 = '  <p style="padding: 12px 30px;border-top:1px solid #6e6e73;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+        var children8 = '  <p style="padding: 18px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
-            '        <p class="question-think"><span style="margin-left: 40px"  class="side-needs" data-level="T3" data-category="" data-status="C">Ok</span><span class="close" style="margin-right: 6px">Let me think about it</span></p>';
+            '        <p class="question-think"><span style="margin-left: 40px"  class="side-needs" data-level="T3" data-category="" data-status="C">Ok</span><span class="close" style="margin-right: 14px">Let me think about it</span></p>';
         var children9 = ' <div style="margin-top: 18px;padding: 4px 40px;"  class="question-title side-needs" data-level="T3" data-category="" data-status="C">订购充电仓</div>';
         var children10 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
-            '                <p class="question-replaced" style="padding: 20px 30px">Which side of your AirPods needs to be replaced? </p>\n' +
+            '                <p class="question-replaced" style="padding: 20px 30px;text-align: center">Which side of your AirPods needs to be replaced? </p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T3" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </div>\n' +
             '        </div>';
@@ -348,6 +349,41 @@
             event.stopPropagation();
         });
     });
+    $(document).delegate('.question-charge-yes', 'click', function (event) {
+        $('.question-back-left').show();
+        $('.question-back-right').hide();
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $(document).delegate('.question-charge-no', 'click', function (event) {
+        $('.question-back-right').show();
+        $('.question-back-left').hide();
+        event.preventDefault();
+        event.stopPropagation();
+    })
+
+    $(document).delegate('.connecting-btn', 'click', function (event) {
+        $('.question-connecting').show();
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $(document).delegate('.question-hear-yes', 'click', function (event) {
+        $('.question-hear-two').show();
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $(document).delegate('.hear-lower-yes', 'click', function (event) {
+        $('.hears-yes').show();
+        $('.hears-no').hide();
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $(document).delegate('.hear-lower-no', 'click', function (event) {
+        $('.hears-no').show();
+        $('.hears-yes').hide();
+        event.preventDefault();
+        event.stopPropagation();
+    })
     $(document).delegate('.side-needs', 'click', function (event) {
         var othis = $(this);
         $("#type").val(othis.data('status'));

@@ -188,6 +188,27 @@
         font-size: 14px;
     }
 
+    .serial-blue-list {
+        display: block;
+        margin-top: 0;
+    }
+
+    .section-bluetooth-list {
+        margin-top: 2px !important;
+    }
+
+    .section-list.section-bluetooth-list li {
+        display: block;
+    }
+
+    .section-list.section-bluetooth-list li .serial-text {
+        margin-top: 18px;
+    }
+
+    .serial-blue-list li {
+        margin-top: 18px !important;
+    }
+
     .serial-blue-list li .serial-bluetooth1 {
         height: 116px;
     }
@@ -272,7 +293,7 @@
     .serial-ques-list li {
         width: 100%;
         text-align: center;
-        line-height: 40px;
+        line-height: 52px;
         border: 1px solid #6e6e73;
         margin: 4px 0;
         padding: 0;
@@ -284,21 +305,5 @@
     .serial-ques-list li a {
         color: #1d1d1f;
         text-decoration: none;
-    }
-
-    .question-charge {
-        font-size: 12px;
-    }
-
-    .question-hear {
-        font-size: 12px;
-    }
-
-    .question-back {
-        font-size: 12px;
-    }
-
-    .question-hear-list {
-        font-size: 12px;
     }
 }
