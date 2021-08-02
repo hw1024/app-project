@@ -253,7 +253,7 @@
         console.log(isInArray(codeArr, subCode))
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();
-            window.location.href= 'happening.html';
+            window.location.href= 'happening.html?code=' + code;
             window.event.returnValue=false;
         } else {
             $(".error-text").show();
