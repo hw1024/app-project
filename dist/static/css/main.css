@@ -434,9 +434,6 @@
     text-align: left;
 }
 
-.maintain-page2 .quote-list {
-    width: 70%;
-}
 
 .quote-billing {
     padding-top: 8px;
@@ -454,17 +451,18 @@
 
 .maintain-list {
     text-align: left;
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .maintain-accept {
     text-align: left;
     margin-top: 20px;
+    line-height: 1.7;
 }
 
 .maintain-submit {
     text-align: left;
-    margin-top: 48px;
+    margin-top: 28px;
 }
 
 .maintain-submit .btn {
@@ -507,6 +505,7 @@
     color: #6e6e73;
     padding-top: 10px;
     padding-bottom: 10px;
+    line-height: 1.7;
     border-bottom: 1px solid #6e6e73;
     margin-top: 6px;
 }
@@ -526,6 +525,7 @@
     color: #6e6e73;
     padding-right: 20px;
     font-size: 16px;
+    margin-top: 8px;
 }
 
 .maintain-bill .quote-total .label {
@@ -569,7 +569,7 @@
 }
 
 .serial-number-form {
-    margin-top: 140px;
+    margin-top: 110px;
 }
 
 .section-list li .section-img.serial-bluetooth {
@@ -629,7 +629,7 @@
 }
 
 .serial-number-form .serial-number-article {
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 .serial-number-form .serial-number-article a {
@@ -638,7 +638,7 @@
 }
 
 .serial-number-form .button-wrapper {
-    margin-top: 60px;
+    margin-top: 38px;
 }
 
 .serial-number-form .serial-btn {

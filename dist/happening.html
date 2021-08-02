@@ -54,7 +54,7 @@
         <!-- 问题级别-->
         <input hidden="hidden" type="text" name="level" id="level" value=""/>
         <h3 class="serial-title" style="margin-top: 70px">What’s happening with your AirPods?</h3>
-        <p class="serial-product">Your Product: AirPods, 2nd Gen</p>
+        <p class="serial-product">Your Product: <span id="yourProduct">AirPods, 2nd Gen</span></p>
         <ul class="serial-list">
             <li>
                 <a data-method="setTop" data-index="22" data-title="Battery & Charging" data-type="auto" data-item="question1"
@@ -88,6 +88,18 @@
 <script>
     $(function () {
         $("#code").val(getQueryVariable('code'));
+        var codeValue = getQueryVariable('code');
+        var subCode = codeValue.substr(-4);
+        console.log(subCode)
+        if(subCode == 'H8TT') {
+            $("#yourProduct").text('AirPods, 1st Gen');
+        } else if(subCode == 'LX2Y') {
+            $("#yourProduct").text('AirPods, 2nd Gen');
+        } else if(subCode == 'JMMT') {
+            $("#yourProduct").text('AirPods, 2nd Gen');
+        } else {
+            $("#yourProduct").text('AirPods Pro');
+        }
         function getQueryVariable(variable)
         {
             var query = window.location.search.substring(1);

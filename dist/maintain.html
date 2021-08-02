@@ -45,6 +45,7 @@
     <div class="section-content maintain-page1">
         <h4>Shipping</h4>
         <p>Where should we send your replacement product?</p>
+        <input hidden="hidden" type="checkbox" name="status" id="status" value="A"/>
         <form class="layui-form" action="">
             <div class="layui-form-item mob-box">
                 <div class="layui-inline layui-inline-active">
@@ -77,15 +78,15 @@
             </div>
             <div class="layui-form-item mob-box">
                 <div class="layui-inline layui-inline-active">
-                    <label class="layui-form-label">City</label>
+                    <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="city" lay-verify="city" autocomplete="off" class="layui-input">
+                        <select name="state" id="state" lay-filter="state"  lay-verify="state"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <label class="layui-form-label">State</label>
+                    <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="state" id="state"  lay-verify="state"></select>
+                        <select name="city" id="city" lay-filter="city"  lay-verify="city"></select>
                     </div>
                 </div>
             </div>
@@ -99,7 +100,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Country or Region</label>
                 <div class="layui-input-inline">
-                    <select name="region" lay-verify="region">
+                    <select name="region" disabled lay-verify="region">
                         <option value=""></option>
                         <option value="0" selected="selected">United States</option>
                     </select>
@@ -166,7 +167,7 @@
                 </div>
             </div>
             <div class="layui-form-item mob-box">
-                <div class="layui-inline  layui-inline-active">
+                <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">CVV</label>
                     <div class="layui-input-inline">
                         <input type="text" name="cvv" lay-verify="cvv" autocomplete="off" class="layui-input">
@@ -181,7 +182,7 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">Billing Address</label>
+                <label class="layui-form-label" style="margin-top: 5px;width: 102px;">Billing Address</label>
                 <div class="layui-input-inline">
                     <input type="checkbox" name="" title="Same as Shipping" lay-skin="primary">
                 </div>
@@ -202,15 +203,15 @@
             </div>
             <div class="layui-form-item mob-box">
                 <div class="layui-inline  layui-inline-active">
-                    <label class="layui-form-label">City</label>
+                    <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="city2" lay-verify="city2" autocomplete="off" class="layui-input">
+                        <select name="state2" id="state2" lay-verify="state2"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <label class="layui-form-label">State</label>
+                    <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="state2" id="state2" lay-verify="state2">
+                        <select name="city2" id="city2" lay-verify="city2">
                             <option value="-"></option>
                             <option value="0">United States</option>
                             <option value="1">United States1</option>
@@ -228,7 +229,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Country or Region</label>
                 <div class="layui-input-inline">
-                    <select name="region2" lay-verify="region2">
+                    <select name="region2" disabled  lay-verify="region2">
                         <option value=""></option>
                         <option value="0" selected="selected">United States</option>
                     </select>
@@ -246,19 +247,21 @@
 <section class="section" id="maintain-page3">
     <div class="section-content maintain-page3">
         <h4>Here’s your estimated quote:</h4>
-        <ul class="quote-list">
-            <li>
-                <span>Out of Warnaty Service</span><span>$299.00</span>
-            </li>
-            <li>
-                <span>Shipping</span><span>$6.95</span>
-            </li>
-            <li>
-                <span>Tax</span><span>$23.17</span>
-            </li>
-        </ul>
-        <div class="quote-total">
-            <span class="label">Total</span><span>$329.12</span>
+        <div class="maintain-bill">
+            <ul class="quote-list">
+                <li>
+                    <span>Out of Warnaty Service</span><span>$299.00</span>
+                </li>
+                <li>
+                    <span>Shipping</span><span>$6.95</span>
+                </li>
+                <li>
+                    <span>Tax</span><span>$23.17</span>
+                </li>
+            </ul>
+            <div class="quote-total">
+                <span class="label">Total</span><span>$329.12</span>
+            </div>
         </div>
         <ul class="maintain-list">
             <li>You agree to return</li>
@@ -271,7 +274,8 @@
             </li>
         </ul>
         <div class="maintain-accept">
-            <p>I accept and agree to the InstantPods Repair Terms and Conditions.</p>
+            <input style="vertical-align: -1px;" type="checkbox" name="" title="" lay-skin="primary" checked>
+            <span>I accept and agree to the InstantPods Repair Terms and Conditions.</span>
         </div>
         <div class="maintain-submit">
             <div class="btn" id="repair-btn">Submit Repair</div>
@@ -353,19 +357,34 @@
             elem: '#expiration'
         });
         var stateArr = [];
+        var cityArr = [];
         var stateData = window.stateData;
         for (var key in stateData) {
             stateArr.push(stateData[key])
-            console.log(stateData[key]);
         }
-        var option = '';
-        $("#state").html("");
+        $("#state").html("<option value=''>请选择</option>");
+        $("#state2").html("<option value=''>请选择</option>");
         for (var i = 0; i < stateArr.length; i++) {
             $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
+            $("#state2").append(new Option(stateArr[i].code, stateArr[i].code));
         }
         form.render('select');
         form.on('select(state)', function(data){
-            console.log(data);
+            $("#city").html("");
+            $("#city2").html("");
+            for (var i = 0; i < stateArr.length; i++) {
+                if(stateArr[i].code == data.value) {
+                    var children = stateArr[i].children;
+                    for (var val in children) {
+                        cityArr.push(children[val])
+                    }
+                    for (var j = 0; j < cityArr.length; j++) {
+                        $("#city").append(new Option(cityArr[j].code, cityArr[j].code));
+                        $("#city2").append(new Option(cityArr[j].code, cityArr[j].code));
+                    }
+                    form.render('select');
+                }
+            }
         });
     });
     $(function () {
@@ -379,8 +398,12 @@
         })
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
-            $("#maintain-page4").show();
-            $("#maintain-page5").show();
+            var curStatus = $("#status").val();
+            if(curStatus == 'A') {
+                $("#maintain-page4").show();
+            } else {
+                $("#maintain-page5").show();
+            }
         })
     })
 

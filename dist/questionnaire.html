@@ -108,7 +108,7 @@
 <!--</section>-->
 
 <section class="section" id="repairStart">
-    <div class="section-content page3" style="padding-top: 80px">
+    <div class="section-content page3" style="padding-top: 94px">
         <h3>We need your serial <br> number to get started.</h3>
         <form class="serial-number-form" action="#" method="post" novalidate="">
             <div class="serial-number-wrapper">
@@ -171,7 +171,7 @@
             '            </li>\n' +
             '        </ul>\n' +
             '        <ul class="serial-blue-list">\n' +
-            '            <li style="margin-right: 28px;">\n' +
+            '            <li>\n' +
             '                <img class="section-img serial-bluetooth1" src="static/images/page/serial-image1.png" alt="promo1">\n' +
             '                <p>You can find the serial number on the underside of the lid of your Charging Case or Wireless Charging Case.</p>\n' +
             '            </li>\n' +
@@ -253,7 +253,6 @@
         var subCode = code.substr(-4)
         console.log(subCode,code)
         var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
-        console.log(isInArray(codeArr, subCode))
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();
             window.location.href= 'happening.html?code=' + code;
