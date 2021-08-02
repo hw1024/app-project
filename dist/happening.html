@@ -330,16 +330,19 @@
             $("#desc").val(othis.data('title'));
             active[method] ? active[method].call(this, othis) : '';
             event.preventDefault();
+            event.stopPropagation();
         });
         $(document).delegate('.close', 'click', function (event) {
             layer.close(layer.escIndex ? layer.escIndex[0] : 0);
             event.preventDefault();
+            event.stopPropagation();
         });
         $(document).delegate('.serial-chileren', 'click', function (event) {
             var othis = $(this), method = othis.data('method');
             $("#subCategory").val(othis.data('title'));
             active[method] ? active[method].call(this, othis) : '';
             event.preventDefault();
+            event.stopPropagation();
         });
     });
     $(document).delegate('.side-needs', 'click', function (event) {
@@ -347,7 +350,8 @@
         $("#type").val(othis.data('status'));
         $("#category").val(othis.data('category'));
         $("#level").val(othis.data('level'));
-
+        event.preventDefault();
+        event.stopPropagation();
         var params = {
             code: $("#code").val(),
             desc: $("#desc").val(),
@@ -375,7 +379,6 @@
                 window.event.returnValue=false;
             }
         });
-        event.preventDefault();
     });
 
 </script>
