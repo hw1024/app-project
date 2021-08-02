@@ -288,7 +288,7 @@
                     default:
                         text = children6
                 }
-                layer.open({
+                var indexLayer = layer.open({
                     type: 1
                     , title: title
                     , maxWidth: 650
@@ -323,6 +323,9 @@
                         }
                     }
                 });
+                if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                    layer.full(indexLayer)
+                }
             }
         }
         $('.button-content-container').on('click', function (event) {
@@ -353,17 +356,17 @@
         event.preventDefault();
         event.stopPropagation();
         var params = {
-            code: $("#code").val(),
+            sn: $("#code").val(),
             desc: $("#desc").val(),
             subCategory: $("#subCategory").val(),
-            type: $("#type").val(),
-            category: $("#category").val(),
+            position: $("#type").val(),
+            type: $("#category").val(),
             level: $("#level").val()
         }
         console.log(params)
         $.ajax({
             type: "POST",
-            url: "demo/sdd",
+            url: "/api/order/getInfo",
             data: params,
             dataType: "json",
             success: function (data) {

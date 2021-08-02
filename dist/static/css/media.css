@@ -192,7 +192,7 @@
         height: 116px;
     }
 
-    .maintain-page1 {
+    .maintain-page1, .maintain-page2, .maintain-page3 {
         padding-top: 60px;
     }
 
@@ -229,6 +229,7 @@
     .button-wrapper {
         text-align: center;
         margin-top: 20px;
+        margin-bottom: 12px;
     }
 
     .layui-form .layui-form-select .layui-edge {
@@ -259,21 +260,21 @@
         margin: 0px;
     }
 
-    .maintain-page2 {
-        padding-top: 20px;
-    }
 
     .serial-ques-list {
-        display: inline-block;
         overflow: hidden;
     }
 
+    .serial-form-btn {
+        margin-left: 0;
+    }
+
     .serial-ques-list li {
-        width: 47%;
+        width: 100%;
         text-align: center;
-        line-height: 48px;
+        line-height: 40px;
         border: 1px solid #6e6e73;
-        margin: 4px;
+        margin: 4px 0;
         padding: 0;
         float: left;
         font-size: 12px;
@@ -285,13 +286,10 @@
         text-decoration: none;
     }
 
-    .serial-ques-list li.li-active {
-        width: 96%;
-    }
-
     .question-charge {
         font-size: 12px;
     }
+
     .question-hear {
         font-size: 12px;
     }

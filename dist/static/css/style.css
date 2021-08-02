@@ -110,6 +110,18 @@ li {
 .layui-form-item .layui-form-label {
     width: 120px;
 }
+
+.layui-layer .layui-layer-title {
+    text-align: center;
+    padding-right: 20px;
+}
+
+.layui-layer .layui-layer-setwin {
+    position: absolute;
+    left: 15px;
+    right: auto;
+
+}
 .error-text {
     font-size: 12px!important;
     color: #eb7350!important;

@@ -933,3 +933,7 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 123;
 }
+
+#maintain-page2, #maintain-page3, #maintain-page4, #maintain-page5 {
+    display: none;
+}
