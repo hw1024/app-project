@@ -14,8 +14,8 @@
 <!-- 菜单导航部分 -->
 <div class="nav">
     <a href="index.html" class="logo"></a>
-    <a href="maintain.html" class="text">维修订单</a>
-    <a href="questionnaire.html" class="text">问卷</a>
+    <a href="maintain.html" class="text">Repair order</a>
+    <a href="questionnaire.html" class="text">Questionnaire</a>
     <a href="faq.html" class="text">FAQ</a>
     <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
     <label for="choose" class="toggle-btn">
@@ -31,9 +31,9 @@
             </div>
             <hr/>
             <div class="nav-list">
-                <a href="index.html" class="nav-text">首页</a>
-                <a href="maintain.html" class="nav-text">维修订单</a>
-                <a href="questionnaire.html" class="nav-text">问卷</a>
+                <a href="index.html" class="nav-text">Home</a>
+                <a href="maintain.html" class="nav-text">Repair order</a>
+                <a href="questionnaire.html" class="nav-text">Questionnaire</a>
                 <a href="faq.html" class="nav-text">FAQ</a>
             </div>
         </div>
@@ -354,6 +354,7 @@
             event.stopPropagation();
         });
         $(document).delegate('.serial-chileren', 'click', function (event) {
+            layer.close(layer.escIndex ? layer.escIndex[0] : 0);
             var othis = $(this), method = othis.data('method');
             $("#subCategory").val(othis.data('title'));
             active[method] ? active[method].call(this, othis) : '';
@@ -419,6 +420,11 @@
             dataType: "json",
             success: function (data) {
                 layer.msg(params);
+                if($("#type").val() == 'A') {
+                    window.location.href= 'airPods.html';
+                } else {
+                    window.location.href= 'charging.html';
+                }
             },
             error: function (data) {
                 layer.msg('提交失败');

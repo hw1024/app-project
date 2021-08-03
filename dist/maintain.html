@@ -15,8 +15,8 @@
 <!-- 菜单导航部分 -->
 <div class="nav">
     <a href="index.html" class="logo"></a>
-    <a href="javascript:void(0)" class="text">维修订单</a>
-    <a href="questionnaire.html" class="text">问卷</a>
+    <a href="javascript:void(0)" class="text">Repair order</a>
+    <a href="questionnaire.html" class="text">Questionnaire</a>
     <a href="faq.html" class="text">FAQ</a>
     <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
     <label for="choose" class="toggle-btn">
@@ -32,9 +32,9 @@
             </div>
             <hr/>
             <div class="nav-list">
-                <a href="index.html" class="nav-text">首页</a>
-                <a href="javascript:void(0)" class="nav-text">维修订单</a>
-                <a href="questionnaire.html" class="nav-text">问卷</a>
+                <a href="index.html" class="nav-text">Home</a>
+                <a href="javascript:void(0)" class="nav-text">Repair order</a>
+                <a href="questionnaire.html" class="nav-text">Questionnaire</a>
                 <a href="faq.html" class="nav-text">FAQ</a>
             </div>
         </div>
@@ -51,28 +51,28 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">First Name</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="firstName" lay-verify="firstName" autocomplete="off"
+                        <input type="text" name="first_name" lay-verify="first_name" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">Last Name</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="lastName" lay-verify="lastName" autocomplete="off" class="layui-input">
+                        <input type="text" name="last_name" lay-verify="last_name" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="address" lay-verify="address" autocomplete="off" placeholder=""
+                    <input type="text" name="street_address" lay-verify="street_address" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Apt, Suite, Bldg</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="apt" lay-verify="apt" placeholder="" autocomplete="off"
+                    <input type="text" name="spt" lay-verify="spt" placeholder="" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Zip code</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="zipCode" lay-verify="zipCode" autocomplete="off" placeholder=""
+                    <input type="text" name="zip" lay-verify="zip" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -102,14 +102,14 @@
                 <div class="layui-input-inline">
                     <select name="region" disabled lay-verify="region">
                         <option value=""></option>
-                        <option value="0" selected="selected">United States</option>
+                        <option value="United States" selected="selected">United States</option>
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Email Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder=""
+                    <input type="text" name="email" lay-verify="c_email" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">We send repair status</div>
@@ -117,16 +117,16 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Phone Number</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="phone" placeholder="" autocomplete="off"
+                    <input type="text" name="phone" lay-verify="c_phone" placeholder="" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
+            <div class="layui-form-item">
+                <div class=" button-wrapper">
+                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn1">Continue</button>
+                </div>
+            </div>
         </form>
-        <div class="button-wrapper">
-            <button class="serial-form-btn" id="serial-btn1" type="button">
-                <div class="button-label">Continue</div>
-            </button>
-        </div>
     </div>
 </section>
 
@@ -190,14 +190,14 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="address2" lay-verify="address2" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_street" lay-verify="billing_street" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Apt, Suite, Bldg</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="apt2" lay-verify="apt2" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_apt" lay-verify="billing_apt" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -205,42 +205,38 @@
                 <div class="layui-inline  layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="state2" id="state2" lay-verify="state2"></select>
+                        <select name="billing_state"  lay-filter="billing_state" id="billing_state" lay-verify="billing_state"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="city2" id="city2" lay-verify="city2">
-                            <option value="-"></option>
-                            <option value="0">United States</option>
-                            <option value="1">United States1</option>
-                        </select>
+                        <select name="billing_city" id="billing_city" lay-verify="billing_city"> </select>
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Zip code</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="zipCode2" lay-verify="zipCode2" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_zip" lay-verify="billing_zip" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Country or Region</label>
                 <div class="layui-input-inline">
-                    <select name="region2" disabled  lay-verify="region2">
+                    <select name="billing_region" disabled  lay-verify="billing_region">
                         <option value=""></option>
-                        <option value="0" selected="selected">United States</option>
+                        <option value="United States" selected="selected">United States</option>
                     </select>
                 </div>
             </div>
+            <div class="layui-form-item">
+                <div class=" button-wrapper">
+                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn2">Continue</button>
+                </div>
+            </div>
         </form>
-        <div class="button-wrapper">
-            <button class="serial-form-btn" id="serial-btn2" type="button">
-                <div class="button-label">Continue</div>
-            </button>
-        </div>
     </div>
 </section>
 
@@ -362,16 +358,17 @@
         for (var key in stateData) {
             stateArr.push(stateData[key])
         }
-        $("#state").html("<option value=''>请选择</option>");
-        $("#state2").html("<option value=''>请选择</option>");
+        $("#state").html("<option value='-'>Please Select</option>");
+        $("#billing_state").html("<option value='-'>Please Select</option>");
         for (var i = 0; i < stateArr.length; i++) {
             $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
-            $("#state2").append(new Option(stateArr[i].code, stateArr[i].code));
+            $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
+            $("#billing_city").html("<option value='-'>Please Select</option>");
+            $("#city").html("<option value='-'>Please Select</option>");
         }
         form.render('select');
         form.on('select(state)', function(data){
-            $("#city").html("");
-            $("#city2").html("");
+            $("#city").html("<option value='-'>Please Select</option>");
             for (var i = 0; i < stateArr.length; i++) {
                 if(stateArr[i].code == data.value) {
                     var children = stateArr[i].children;
@@ -380,22 +377,41 @@
                     }
                     for (var j = 0; j < cityArr.length; j++) {
                         $("#city").append(new Option(cityArr[j].code, cityArr[j].code));
-                        $("#city2").append(new Option(cityArr[j].code, cityArr[j].code));
                     }
                     form.render('select');
                 }
             }
         });
-    });
-    $(function () {
-        $("#serial-btn1").on("click", function () {
+        form.on('select(billing_state)', function(data){
+            $("#billing_city").html("<option value='-'>Please Select</option>");
+            for (var i = 0; i < stateArr.length; i++) {
+                if(stateArr[i].code == data.value) {
+                    var children = stateArr[i].children;
+                    for (var val in children) {
+                        cityArr.push(children[val])
+                    }
+                    for (var j = 0; j < cityArr.length; j++) {
+                        $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
+                    }
+                    form.render('select');
+                }
+            }
+        });
+        form.on('submit(serial-btn1)', function(data){
+            console.log(JSON.stringify(data))
             $("#maintain-page1").hide();
             $("#maintain-page2").show();
-        })
-        $("#serial-btn2").on("click", function () {
+            return false;
+        });
+        form.on('submit(serial-btn2)', function(data){
+            console.log(JSON.stringify(data.field))
+            // layer.msg(JSON.stringify(data.field))
             $("#maintain-page2").hide();
             $("#maintain-page3").show();
-        })
+            return false;
+        });
+    });
+    $(function () {
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
             var curStatus = $("#status").val();

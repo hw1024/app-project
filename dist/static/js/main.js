@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // 首页动画
+    // Home动画
     $('.page1 .section-img1').fadeThis({
         speed: 600,
     });
