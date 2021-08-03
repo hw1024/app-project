@@ -124,7 +124,7 @@
             '        <div class="question-back">\n' +
             '            <div class="question-back-left">\n' +
             '                <div class="question-charge question-charge-connect">\n' +
-            '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
+            '                    <p class="question-charge-text" style="border-bottom: 1px solid #6e6e73">Is AirPods connecting to your phone? </p>\n' +
             '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span><span  class="serial-chileren" data-method="setTop"  data-index="18" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
             '                </div>\n' +
             '                <div class="question-connecting">\n' +
@@ -149,7 +149,7 @@
             '            <div class="question-back-left">\n' +
             '                <div class="question-charge question-charge-connect">\n' +
             '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
-            '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span></p>\n' +
+            '                    <p class="question-charge-lower connecting-btn-yes"><span class="connecting-btn">YES</span></p>\n' +
             '                </div>\n' +
             '                <div class="question-connecting">\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
@@ -170,7 +170,7 @@
             '            <p class="question-charge-lower"><span class="side-needs" data-level="T1" data-category="" data-status="C">YES</span><span class="side-needs" data-level="T1" data-category="" data-status="C">NO</span></p>\n' +
             '        </div>';
         var children3 = '<div class="question-hear question-hear-one">\n' +
-            '            <p>Is AirPods connecting to your phone? </p>\n' +
+            '            <p class="text">Is AirPods connecting to your phone? </p>\n' +
             '            <p class="question-charge-lower"><span class="question-hear-yes">YES</span><span class="serial-chileren" data-method="setTop"  data-index="17" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
             '        </div>\n' +
             '<div class="question-hear-two">\n' +
@@ -305,9 +305,9 @@
                 var indexLayer = layer.open({
                     type: 1
                     , title: title
-                    , maxWidth: 680
+                    , maxWidth: 780
                     , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#setTop
-                    , content: '<div style="padding: 20px 10px 30px;">' + text + '</div>'
+                    , content: '<div class="happen-content">' + text + '</div>'
                     ,id: 'layerDemo'+index
                     , btnAlign: 'c' //按钮居中
                     , shade: 0 //不显示遮罩
@@ -365,6 +365,7 @@
     });
     $(document).delegate('.question-charge-yes', 'click', function (event) {
         $('.question-charge-box').hide();
+        $('.question-back-right').hide();
         $('.question-back-left').show();
         $('.question-back-left').addClass('active');
         event.preventDefault();
@@ -372,6 +373,7 @@
     })
     $(document).delegate('.question-charge-no', 'click', function (event) {
         $('.question-charge-box').hide();
+        $('.question-back-left').hide();
         $('.question-back-right').show();
         $('.question-back-right').addClass('active');
         event.preventDefault();

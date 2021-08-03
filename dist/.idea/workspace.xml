@@ -4,8 +4,8 @@
     <list default="true" id="d2bda68c-f9e6-4908-980f-13cade8e9b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/happening.html" beforeDir="false" afterPath="$PROJECT_DIR$/happening.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question2.html" beforeDir="false" afterPath="$PROJECT_DIR$/question2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/media.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -767,8 +767,15 @@
     align-items: center;
 }
 
+.happen-content {
+    padding: 20px 38px 30px;
+    width: 680px;
+    overflow: hidden
+}
+
 .question-charge-lower span {
     padding: 4px 20px;
+    cursor: pointer;
     text-align: center;
     line-height: 24px;
     background: #158CFB;
@@ -778,6 +785,7 @@
 
 .side-needs {
     padding: 4px 22px;
+    cursor: pointer;
     text-align: center;
     line-height: 24px;
     background: #158CFB;
@@ -787,7 +795,7 @@
 
 .question-needs-ok {
     padding: 4px 22px;
-    /* width: 38%; */
+ cursor: pointer;
     text-align: center;
     line-height: 24px;
     background: #158CFB;
@@ -796,7 +804,7 @@
 }
 
 .question-need2 {
-    transform: translateX(-105%);
+    transform: translateX(-125%);
     transition: all 0.5s;
 }
 
@@ -806,6 +814,7 @@
 
 .question-think .close {
     margin-top: 4px;
+    cursor: pointer;
 }
 
 .question-charge-top .charge-img1 {
@@ -814,7 +823,7 @@
 }
 
 .question-connecting {
-    transform: translateX(-105%);
+    transform: translateX(-125%);
     transition: all 0.5s;
 }
 
@@ -826,11 +835,14 @@
 .question-connecting.active {
     transform: translateX(0);
 }
-
+.connecting-btn-yes {
+    border-top: 1px solid #6e6e73;
+    padding-top: 20px;
+}
 .question-charge-lower {
     display: flex;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 20px;
     justify-content: space-around;
 }
 
@@ -840,7 +852,7 @@
 
 .question-back .question-back-left {
     width: 100%;
-    transform: translateX(-105%);
+    transform: translateX(-125%);
     transition: all 0.5s;
 }
 
@@ -850,6 +862,7 @@
 
 .question-charge-text {
     padding: 18px 20px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -859,18 +872,25 @@
 
 .question-back .question-back-left .question-replaced {
     padding: 18px 20px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .question-back .question-back-left .question-lower {
-    padding: 10px 14px;
+    padding: 20px 14px;
     border-top: 1px solid #6e6e73;
     width: 100%
 }
 
 .question-back .question-back-right {
     width: 100%;
-    transform: translateX(105%);
+    transform: translateX(125%);
     transition: all 0.5s;
+}
+
+.question-hear-one .text {
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .question-back .question-back-right.active {
@@ -878,13 +898,16 @@
 }
 
 .question-back .question-back-right .question-back-probably {
-    padding: 10px 18px;
+    font-size: 16px;
+    padding: 20px 18px;
 }
 
 .question-back .question-back-right .question-back-go {
     padding: 12px 0 18px;
     text-align: center;
-    color: #6e6e73;
+    font-size: 14px;
+    cursor: pointer;
+    color: #158CFB;
 }
 
 .question-hear {
@@ -893,17 +916,21 @@
 }
 
 .question-hear .question-charge-lower {
+    border-top: 1px solid #6e6e73;
     margin-top: 0;
-    padding: 14px 0;
+    padding: 20px 0;
 }
 
 
 .question-hear-two .sound {
     padding: 16px 18px;
+    border-bottom: 1px solid #6e6e73;
+    text-align: center;
+    font-size: 16px;
 }
 
 .hears-yes {
-    transform: translateX(-105%);
+    transform: translateX(-125%);
     transition: all 0.5s;
 }
 
@@ -912,7 +939,7 @@
 }
 
 .hears-no {
-    transform: translateX(105%);
+    transform: translateX(125%);
     transition: all 0.5s;
 }
 
@@ -921,7 +948,7 @@
 }
 
 .question-hear-two {
-    transform: translateX(-105%);
+    transform: translateX(-125%);
     transition: all 0.5s;
     padding-bottom: 14px;
 }
@@ -931,10 +958,11 @@
 }
 
 .question-replaced-box {
-    transform: translateX(105%);
+    transform: translateX(125%);
     transition: all 0.5s;
     padding-bottom: 14px;
 }
+
 .question-replaced-box.active {
     transform: translateX(0);
 }
@@ -953,6 +981,8 @@
 
 .question-hear-list .question-replaced {
     padding: 28px 18px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .question-hear .question-replaced {
@@ -971,6 +1001,8 @@
 
 .question-needs .question-replaced {
     padding: 18px 34px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .question-lower {
@@ -990,7 +1022,7 @@
 }
 
 .serial-ques-list li {
-    width: 290px;
+    width: 302px;
     text-align: center;
     cursor: pointer;
     line-height: 54px;

@@ -318,8 +318,14 @@
         margin: 4px 0;
         padding: 0;
         float: left;
-        font-size: 12px;
+        font-size: 14px;
         box-sizing: border-box;
+    }
+
+    .happen-content {
+        padding: 20px 10px 30px;
+        width: 100%;
+        overflow: hidden
     }
 
     .serial-ques-list li a {
