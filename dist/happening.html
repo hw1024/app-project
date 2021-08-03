@@ -26,8 +26,8 @@
     <div class="nav-content">
         <div class="nav-page">
             <div class="search-input">
-                <div class="icon"></div>
-                <input type="text" placeholder="search apple.com"/>
+                <div class="icon" id="search-btn"></div>
+                <input type="text" name="searchName"  id="searchName" placeholder="search name"/>
             </div>
             <hr/>
             <div class="nav-list">
@@ -53,7 +53,7 @@
         <input hidden="hidden" type="text" name="category" id="category" value=""/>
         <!-- 问题级别-->
         <input hidden="hidden" type="text" name="level" id="level" value=""/>
-        <h3 class="serial-title" style="margin-top: 70px">What’s happening with your AirPods?</h3>
+        <h3 class="serial-title happen-box">What’s happening with your AirPods?</h3>
         <p class="serial-product">Your Product: <span id="yourProduct">AirPods, 2nd Gen</span></p>
         <ul class="serial-list">
             <li>
@@ -84,6 +84,7 @@
     </div>
 </section>
 <script src="static/js/jquery.min.js" type="application/javascript"></script>
+<script src="static/js/search.js" type="application/javascript"></script>
 <script src="static/layui/layui.js" type="application/javascript"></script>
 <script>
     $(function () {
@@ -304,7 +305,7 @@
                 var indexLayer = layer.open({
                     type: 1
                     , title: title
-                    , maxWidth: 650
+                    , maxWidth: 680
                     , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#setTop
                     , content: '<div style="padding: 20px 10px 30px;">' + text + '</div>'
                     ,id: 'layerDemo'+index

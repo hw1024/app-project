@@ -27,8 +27,8 @@
     <div class="nav-content">
         <div class="nav-page">
             <div class="search-input">
-                <div class="icon"></div>
-                <input type="text" placeholder="search apple.com"/>
+                <div class="icon" id="search-btn"></div>
+                <input type="text" name="searchName"  id="searchName" placeholder="search name"/>
             </div>
             <hr/>
             <div class="nav-list">
@@ -185,15 +185,15 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" style="margin-top: 5px;width: 102px;">Billing Address</label>
+                <label class="layui-form-label layui-active-label" style="width: 102px;">Billing Address</label>
                 <div class="layui-input-inline">
-                    <input type="checkbox" name="" title="Same as Shipping" lay-skin="primary">
+                    <input type="checkbox" name="is_send" id="is_send" lay-filter="is_send"  title="Same as Shipping" lay-skin="primary">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_street" lay-verify="billing_street" autocomplete="off"
+                    <input type="text" name="billing_street" id="billing_street" lay-verify="billing_street" autocomplete="off"
                            placeholder=""
                            class="layui-input">
                 </div>
@@ -201,7 +201,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Apt, Suite, Bldg</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_apt" lay-verify="billing_apt" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_apt" id="billing_apt" lay-verify="billing_apt" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -223,7 +223,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Zip code</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_zip" lay-verify="billing_zip" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_zip"  id="billing_zip" lay-verify="billing_zip" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -349,7 +349,7 @@
 <script src="static/js/jquery.min.js" type="application/javascript"></script>
 <script src="static/js/states_city.js" type="application/javascript"></script>
 <script src="static/layui/layui.js" type="application/javascript"></script>
-
+<script src="static/js/search.js" type="application/javascript"></script>
 <script>
     layui.use(['laydate', 'form'], function () {
         var laydate = layui.laydate;
@@ -404,14 +404,40 @@
             }
         });
         form.on('submit(serial-btn1)', function (data) {
-            console.log(JSON.stringify(data))
             window.serialData1 = data.field;
             $("#maintain-page1").hide();
             $("#maintain-page2").show();
             return false;
         });
+        form.on('checkbox(is_send)', function (data) {
+            if(data.elem.checked) {
+                $('#billing_street').val(window.serialData1.street_address);
+                $('#billing_apt').val(window.serialData1.spt);
+                $('#billing_state').val(window.serialData1.state);
+                form.render('select');
+                $('#billing_zip').val(window.serialData1.zip);
+                for (var i = 0; i < stateArr.length; i++) {
+                    if (stateArr[i].code == window.serialData1.state) {
+                        var children = stateArr[i].children;
+                        for (var val in children) {
+                            cityArr.push(children[val])
+                        }
+                        for (var j = 0; j < cityArr.length; j++) {
+                            $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
+                        }
+                        $('#billing_city').val(window.serialData1.city);
+                        form.render('select');
+                    }
+                }
+            } else {
+                $('#billing_street').val('');
+                $('#billing_apt').val('');
+                $('#billing_state').val('');
+                $('#billing_city').val('');
+                $('#billing_zip').val('');
+            }
+        });
         form.on('submit(serial-btn2)', function (data) {
-            console.log(JSON.stringify(data.field))
             window.serialData2 = data.field;
             // layer.msg(JSON.stringify(data.field))
             $("#maintain-page2").hide();

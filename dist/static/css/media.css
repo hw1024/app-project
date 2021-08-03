@@ -86,6 +86,22 @@
         margin-top: 18px;
     }
 
+    .happen-box {
+        margin-top: 70px;
+    }
+
+    .serial-list {
+        display: block;
+        overflow: hidden;
+        margin-top: 28px;
+    }
+
+    .serial-list li {
+        width: 46%;
+        float: left;
+        margin: 2%;
+    }
+
     .serial-list-title {
         margin-top: 80px;
     }
@@ -283,6 +299,11 @@
 
     .serial-ques-list {
         overflow: hidden;
+        width: 100%;
+    }
+
+    .layui-active-label {
+        margin-top: 5px;
     }
 
     .serial-form-btn {
