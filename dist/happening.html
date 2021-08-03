@@ -114,7 +114,7 @@
     })
     layui.use(['layer'], function () {
         var $ = layui.jquery, layer = layui.layer;
-        var children1 = '  <div class="question-charge">\n' +
+        var children1 = '  <div class="question-charge question-charge-box">\n' +
             '            <div class="question-charge-top">\n' +
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
             '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
@@ -123,7 +123,7 @@
             '        </div>\n' +
             '        <div class="question-back">\n' +
             '            <div class="question-back-left">\n' +
-            '                <div class="question-charge">\n' +
+            '                <div class="question-charge question-charge-connect">\n' +
             '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
             '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span><span  class="serial-chileren" data-method="setTop"  data-index="18" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
             '                </div>\n' +
@@ -138,7 +138,7 @@
             '                <p class="question-back-go close">Go Back</p>\n' +
             '            </div>\n' +
             '        </div>';
-        var children12 = '   <div class="question-charge">\n' +
+        var children12 = '   <div class="question-charge question-charge-box">\n' +
             '            <div class="question-charge-top">\n' +
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
             '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
@@ -147,7 +147,7 @@
             '        </div>\n' +
             '        <div class="question-back">\n' +
             '            <div class="question-back-left">\n' +
-            '                <div class="question-charge">\n' +
+            '                <div class="question-charge question-charge-connect">\n' +
             '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
             '                    <p class="question-charge-lower"><span class="connecting-btn">YES</span></p>\n' +
             '                </div>\n' +
@@ -200,7 +200,7 @@
             '                <img class="charge-img1" src="static/images/page/featured-content-icon2.png" alt="img2">\n' +
             '                <p>Connect AirPods to known good power resource. Is the indictor light on the charging case on?</p>\n' +
             '            </div>\n' +
-            '            <p class="question-charge-lower"><span class="side-needs" data-level="T1" data-category="" data-status="C">YES</span><span>NO</span></p>\n' +
+            '            <p class="question-charge-lower"><span class="side-needs" data-level="T1" data-category="" data-status="C">YES</span><span class="side-needs" data-level="T1" data-category="" data-status="C">NO</span></p>\n' +
             '        </div>';
         var children6 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
@@ -208,10 +208,10 @@
             '                <p class="question-lower" ><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </div>\n' +
             '        </div>';
-        var children7 = '<p style="padding: 16px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+        var children7 = '<div class="question-needs-box"><p style="padding: 16px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
-            '        <p class="question-think"><span style="margin-left: 40px">Ok</span><span class="close" style="margin-right: 14px">Let me think about it</span></p>\n' +
-            '        <div class="question-needs">\n' +
+            '        <p class="question-think"><span style="margin-left: 40px" class="question-needs-ok">Ok</span><span class="close" style="margin-right: 14px">Let me think about it</span></p></div>\n' +
+            '        <div class="question-needs question-need2">\n' +
             '            <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '            <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T3" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '        </div>';
@@ -364,20 +364,30 @@
         });
     });
     $(document).delegate('.question-charge-yes', 'click', function (event) {
+        $('.question-charge-box').hide();
         $('.question-back-left').show();
-        $('.question-back-right').hide();
+        $('.question-back-left').addClass('active');
         event.preventDefault();
         event.stopPropagation();
     })
     $(document).delegate('.question-charge-no', 'click', function (event) {
+        $('.question-charge-box').hide();
         $('.question-back-right').show();
-        $('.question-back-left').hide();
+        $('.question-back-right').addClass('active');
+        event.preventDefault();
+        event.stopPropagation();
+    })
+
+    $(document).delegate('.question-needs-ok', 'click', function (event) {
+        $('.question-need2').addClass('active');
+        $(".question-needs-box").hide();
         event.preventDefault();
         event.stopPropagation();
     })
 
     $(document).delegate('.connecting-btn', 'click', function (event) {
-        $('.question-connecting').show();
+        $(".question-charge-connect").hide();
+        $('.question-connecting').addClass('active');
         event.preventDefault();
         event.stopPropagation();
     })

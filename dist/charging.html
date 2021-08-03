@@ -74,10 +74,21 @@
         <p>replacing so that we can send you the replacement</p>
         <p>first. Once we receive your returned faulty</p>
         <p>product, we will <span class="strong">refund</span> the replacement deposit.</p>
+        <div class=" button-wrapper">
+            <button type="button" class="serial-form-btn" >Repair Order</button>
+        </div>
     </div>
 </section>
 <script src="static/js/jquery.min.js" type="application/javascript"></script>
 <script src="static/js/search.js" type="application/javascript"></script>
+<script>
+    $(function () {
+        $('.serial-form-btn').on("click",function () {
+            window.location.href= 'maintain.html';
+            window.event.returnValue=false;
+        })
+    })
+</script>
 </body>
 
 </html>
