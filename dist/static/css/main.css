@@ -799,6 +799,7 @@
     transform: translateX(-105%);
     transition: all 0.5s;
 }
+
 .question-need2.active {
     transform: translateX(0);
 }
@@ -815,6 +816,11 @@
 .question-connecting {
     transform: translateX(-105%);
     transition: all 0.5s;
+}
+
+.question-hear p {
+    margin-top: 24px;
+    text-align: center;
 }
 
 .question-connecting.active {
@@ -837,9 +843,11 @@
     transform: translateX(-105%);
     transition: all 0.5s;
 }
+
 .question-back .question-back-left.active {
     transform: translateX(0);
 }
+
 .question-charge-text {
     padding: 18px 20px;
     text-align: center;
@@ -889,22 +897,46 @@
     padding: 14px 0;
 }
 
-.question-hear-one {
-    border-bottom: 1px solid #6e6e73;
-}
 
 .question-hear-two .sound {
     padding: 16px 18px;
 }
 
+.hears-yes {
+    transform: translateX(-105%);
+    transition: all 0.5s;
+}
+
+.hears-yes.active {
+    transform: translateX(0);
+}
+
+.hears-no {
+    transform: translateX(105%);
+    transition: all 0.5s;
+}
+
+.hears-no.active {
+    transform: translateX(0);
+}
+
 .question-hear-two {
-    display: none;
-    border-bottom: 1px solid #6e6e73;
+    transform: translateX(-105%);
+    transition: all 0.5s;
     padding-bottom: 14px;
 }
 
-.question-hear-list {
-    display: flex;
+.question-hear-two.active {
+    transform: translateX(0);
+}
+
+.question-replaced-box {
+    transform: translateX(105%);
+    transition: all 0.5s;
+    padding-bottom: 14px;
+}
+.question-replaced-box.active {
+    transform: translateX(0);
 }
 
 /*.question-hear-active {*/
@@ -913,12 +945,10 @@
 
 .question-hear-active .question-charge-lower {
     border-top: 1px solid #6e6e73;
-    border-bottom: 1px solid #6e6e73;
 }
 
 .question-hear-list li {
     width: 100%;
-    display: none;
 }
 
 .question-hear-list .question-replaced {
@@ -926,7 +956,7 @@
 }
 
 .question-hear .question-replaced {
-    padding: 28px 18px;
+    padding: 28px 18px 14px;
 }
 
 .question-hear-list .top {

@@ -188,9 +188,9 @@
             '            </li>\n' +
             '        </ul>';
         var children31 = '<div class="question-hear question-hear-active">\n' +
-            '            <p style="margin-bottom: 10px">Is AirPods connecting to your phone? </p>\n' +
-            '            <p class="question-charge-lower"><span>NO</span></p>\n' +
-            '            <div>\n' +
+            '            <div class="question-replaced-top"><p style="margin-bottom: 24px">Is AirPods connecting to your phone? </p>\n' +
+            '            <p class="question-charge-lower question-phone-no"><span>NO</span></p></div>\n' +
+            '            <div class="question-replaced-box">\n' +
             '                <p class="question-replaced">Which side of your AirPods needs to be replaced? </p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </div>\n' +
@@ -392,22 +392,32 @@
         event.stopPropagation();
     })
     $(document).delegate('.question-hear-yes', 'click', function (event) {
-        $('.question-hear-two').show();
+        $(".question-hear-one").hide();
+        $('.question-hear-two').addClass('active');
         event.preventDefault();
         event.stopPropagation();
     })
     $(document).delegate('.hear-lower-yes', 'click', function (event) {
-        $('.hears-yes').show();
+        $('.question-hear-two').hide();
+        $('.hears-yes').addClass('active');
         $('.hears-no').hide();
         event.preventDefault();
         event.stopPropagation();
     })
     $(document).delegate('.hear-lower-no', 'click', function (event) {
-        $('.hears-no').show();
+        $('.question-hear-two').hide();
+        $('.hears-no').addClass('active');
         $('.hears-yes').hide();
         event.preventDefault();
         event.stopPropagation();
     })
+    $(document).delegate('.question-phone-no', 'click', function (event) {
+        $('.question-replaced-top').hide();
+        $('.question-replaced-box').addClass('active');
+        event.preventDefault();
+        event.stopPropagation();
+    })
+
     $(document).delegate('.side-needs', 'click', function (event) {
         var othis = $(this);
         $("#type").val(othis.data('status'));
