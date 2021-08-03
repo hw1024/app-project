@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2bda68c-f9e6-4908-980f-13cade8e9b92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/087248d915c74d8f7fbf7eb4dc25c589ea194a26" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/087248d915c74d8f7fbf7eb4dc25c589ea194a26" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/airPods.html" beforeDir="false" afterPath="$PROJECT_DIR$/airPods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charging.html" beforeDir="false" afterPath="$PROJECT_DIR$/charging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/happening.html" beforeDir="false" afterPath="$PROJECT_DIR$/happening.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintain.html" beforeDir="false" afterPath="$PROJECT_DIR$/maintain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionnaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/questionnaire.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/media.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +56,7 @@
       <workItem from="1627861568987" duration="6347000" />
       <workItem from="1627870729274" duration="13757000" />
       <workItem from="1627908229499" duration="3567000" />
-      <workItem from="1627964037561" duration="5674000" />
+      <workItem from="1627964037561" duration="5833000" />
     </task>
     <servers />
   </component>
