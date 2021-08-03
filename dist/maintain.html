@@ -58,14 +58,16 @@
                 <div class="layui-inline">
                     <label class="layui-form-label">Last Name</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="last_name" lay-verify="last_name" autocomplete="off" class="layui-input">
+                        <input type="text" name="last_name" lay-verify="last_name" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="street_address" lay-verify="street_address" autocomplete="off" placeholder=""
+                    <input type="text" name="street_address" lay-verify="street_address" autocomplete="off"
+                           placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -80,13 +82,13 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="state" id="state" lay-filter="state"  lay-verify="state"></select>
+                        <select name="state" id="state" lay-filter="state" lay-verify="state"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="city" id="city" lay-filter="city"  lay-verify="city"></select>
+                        <select name="city" id="city" lay-filter="city" lay-verify="city"></select>
                     </div>
                 </div>
             </div>
@@ -123,7 +125,8 @@
             </div>
             <div class="layui-form-item">
                 <div class=" button-wrapper">
-                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn1">Continue</button>
+                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn1">Continue
+                    </button>
                 </div>
             </div>
         </form>
@@ -190,7 +193,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_street" lay-verify="billing_street" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_street" lay-verify="billing_street" autocomplete="off"
+                           placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -205,7 +209,8 @@
                 <div class="layui-inline  layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="billing_state"  lay-filter="billing_state" id="billing_state" lay-verify="billing_state"></select>
+                        <select name="billing_state" lay-filter="billing_state" id="billing_state"
+                                lay-verify="billing_state"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -225,7 +230,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Country or Region</label>
                 <div class="layui-input-inline">
-                    <select name="billing_region" disabled  lay-verify="billing_region">
+                    <select name="billing_region" disabled lay-verify="billing_region">
                         <option value=""></option>
                         <option value="United States" selected="selected">United States</option>
                     </select>
@@ -233,7 +238,8 @@
             </div>
             <div class="layui-form-item">
                 <div class=" button-wrapper">
-                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn2">Continue</button>
+                    <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn2">Continue
+                    </button>
                 </div>
             </div>
         </form>
@@ -345,7 +351,7 @@
 <script src="static/layui/layui.js" type="application/javascript"></script>
 
 <script>
-    layui.use(['laydate','form'], function () {
+    layui.use(['laydate', 'form'], function () {
         var laydate = layui.laydate;
         var form = layui.form;
         //日期
@@ -367,10 +373,10 @@
             $("#city").html("<option value='-'>Please Select</option>");
         }
         form.render('select');
-        form.on('select(state)', function(data){
+        form.on('select(state)', function (data) {
             $("#city").html("<option value='-'>Please Select</option>");
             for (var i = 0; i < stateArr.length; i++) {
-                if(stateArr[i].code == data.value) {
+                if (stateArr[i].code == data.value) {
                     var children = stateArr[i].children;
                     for (var val in children) {
                         cityArr.push(children[val])
@@ -382,10 +388,10 @@
                 }
             }
         });
-        form.on('select(billing_state)', function(data){
+        form.on('select(billing_state)', function (data) {
             $("#billing_city").html("<option value='-'>Please Select</option>");
             for (var i = 0; i < stateArr.length; i++) {
-                if(stateArr[i].code == data.value) {
+                if (stateArr[i].code == data.value) {
                     var children = stateArr[i].children;
                     for (var val in children) {
                         cityArr.push(children[val])
@@ -397,14 +403,16 @@
                 }
             }
         });
-        form.on('submit(serial-btn1)', function(data){
+        form.on('submit(serial-btn1)', function (data) {
             console.log(JSON.stringify(data))
+            window.serialData1 = data.field;
             $("#maintain-page1").hide();
             $("#maintain-page2").show();
             return false;
         });
-        form.on('submit(serial-btn2)', function(data){
+        form.on('submit(serial-btn2)', function (data) {
             console.log(JSON.stringify(data.field))
+            window.serialData2 = data.field;
             // layer.msg(JSON.stringify(data.field))
             $("#maintain-page2").hide();
             $("#maintain-page3").show();
@@ -415,11 +423,29 @@
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
             var curStatus = $("#status").val();
-            if(curStatus == 'A') {
-                $("#maintain-page4").show();
-            } else {
-                $("#maintain-page5").show();
-            }
+            var orderData = {}
+            $.extend(orderData, serialData1, serialData2);
+            $.ajax({
+                type: "POST",
+                url: "/api/order/create",
+                data: JSON.stringify(orderData),
+                dataType: "json",
+                success: function (data) {
+                    if (curStatus == 'A') {
+                        $("#maintain-page4").show();
+                    } else {
+                        $("#maintain-page5").show();
+                    }
+                },
+                error: function (data) {
+                    if (curStatus == 'A') {
+                        $("#maintain-page4").show();
+                    } else {
+                        $("#maintain-page5").show();
+                    }
+                }
+            });
+
         })
     })
 

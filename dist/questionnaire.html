@@ -159,7 +159,6 @@
     $("#serial-btn").on("click", function () {
         var code = $("#serial-number").val();
         var subCode = code.substr(-4)
-        console.log(subCode,code)
         var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();
