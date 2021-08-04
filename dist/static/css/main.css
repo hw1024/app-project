@@ -43,7 +43,9 @@
     position: relative;
     top: 16%;
 }
-
+.search-list {
+    display: none;
+}
 .yes-bg {
     background: #008000 !important;
 }

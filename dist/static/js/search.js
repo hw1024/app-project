@@ -3,22 +3,32 @@ $(function () {
     var contactStr = 'Service Help Shipping After Repair Delivery InstantPods How it works Contact FAQs Local Customer Us 92 Corporate Park, C388 Irvine, CA 92606 Hours: MF 10am-5pm PST';
     var faqCurStr = faqStr.replace(/\s/g, '');
     var contactCurStr = contactStr.replace(/\s/g, '');
-    $(document).delegate('#search-btn', "click", function () {
+    $('#searchName').focus(function () {
+        $('.search-list').show();
+        $('.search-result').hide();
+        $('.nav-box').hide();
+    })
+    $('.search-close').on('click',function () {
+        $('.search-list').hide();
+        $("#searchName").val('');
+        $('.nav-box').show();
+    })
+    $("#searchName").on('input', function () {
         var searchNameStr = $("#searchName").val().replace(/\s/g, '');
         if (searchNameStr != "") {
-            if(faqCurStr.indexOf(searchNameStr)>=0){
-                window.location.href = 'faq.html';
-                window.event.returnValue = false;
-                $(".toggle-btn").click();
-            }else if (contactCurStr.indexOf(searchNameStr)>=0) {
-                window.location.href = 'index.html?#contact';
-                window.event.returnValue = false;
-                $(".toggle-btn").click();
+            $('.search-result').show();
+            if (faqCurStr.indexOf(searchNameStr) >= 0) {
+                $('.search-result').text(searchNameStr)
+                $('.search-result').attr('href', 'faq.html')
+            } else if (contactCurStr.indexOf(searchNameStr) >= 0) {
+                $('.search-result').text(searchNameStr)
+                $('.search-result').attr('href', 'index.html?#contact')
             } else {
-                return false;
+                $('.search-result').text('No Found');
+                $('.search-result').attr('href', 'javascript:void(0);')
             }
         } else {
-            return false;
+            $('.search-result').text('No Found')
         }
     })
 })
