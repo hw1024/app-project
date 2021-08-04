@@ -267,6 +267,9 @@ li {
         width: 50px;
         line-height: 37px;
     }
+    .nav-list a.search-faq-result {
+        display: none;
+    }
     .nav-list a:last-child {
         border-bottom: none;
     }

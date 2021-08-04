@@ -30,3 +30,9 @@ index.html,f\6\f6013a00b362253c64368d6eebc50ea2131754e2
 charging.html,5\6\56aa76bbd28a2c57a5544268d5285aacd3457955
 =
 maintain.html,9\0\90364550b39b22ec4e13c3fd1b2ff2f9052a2e00
+>
+question2.html,e\5\e592e1f7f245f695c23072fe234778e577a8b724
+A
+static/js/main.js,e\6\e6d5cd9de60b9ff1f000300864c911b16965c3c5
+C
+static/js/search.js,b\9\b9efab71349d5e4b4ac2e894fb2cc631b1253526
