@@ -1,5 +1,28 @@
 $(document).ready(function () {
     // Home动画
+    $('.section-head .fade1').fadeThis({
+        speed: 600,
+    });
+    $('.section-head .fade2').fadeThis({
+        speed: 800,
+        distance: 200
+    });
+    $('.section-head .fade3').fadeThis({
+        speed: 1000,
+        distance: 240
+    });
+    $('.section-head .fade4').fadeThis({
+        speed: 1000,
+        distance: 240
+    });
+    $('.section-head .fade5').fadeThis({
+        speed: 1400,
+        distance: 240
+    });
+    $('.section-head .fade6').fadeThis({
+        speed: 1400,
+        distance: 240
+    });
     $('.page1 .section-img1').fadeThis({
         speed: 600,
     });
