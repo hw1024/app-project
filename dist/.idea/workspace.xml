@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2bda68c-f9e6-4908-980f-13cade8e9b92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56aa76bbd28a2c57a5544268d5285aacd3457955" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56aa76bbd28a2c57a5544268d5285aacd3457955" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9efab71349d5e4b4ac2e894fb2cc631b1253526" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9efab71349d5e4b4ac2e894fb2cc631b1253526" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c836fff061a5a0c99e3d949a663f9239b49b8cbf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c836fff061a5a0c99e3d949a663f9239b49b8cbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6013a00b362253c64368d6eebc50ea2131754e2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6013a00b362253c64368d6eebc50ea2131754e2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/airPods.html" beforeDir="false" afterPath="$PROJECT_DIR$/airPods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charging.html" beforeDir="false" afterPath="$PROJECT_DIR$/charging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/happening.html" beforeDir="false" afterPath="$PROJECT_DIR$/happening.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maintain.html" beforeDir="false" afterPath="$PROJECT_DIR$/maintain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +58,7 @@
       <workItem from="1627908229499" duration="3567000" />
       <workItem from="1627964037561" duration="5833000" />
       <workItem from="1628053197567" duration="2933000" />
-      <workItem from="1628067586532" duration="2466000" />
+      <workItem from="1628067586532" duration="3350000" />
     </task>
     <servers />
   </component>
