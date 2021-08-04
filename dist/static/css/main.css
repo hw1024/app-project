@@ -22,6 +22,7 @@
     position: relative;
     margin-bottom: 30px;
 }
+
 .section-head-top h1 {
     width: 100%;
     color: #6e6e73;
@@ -41,6 +42,10 @@
 .section-head .section-content {
     position: relative;
     top: 16%;
+}
+
+.yes-bg {
+    background: #008000 !important;
 }
 
 .section-content h1 {
@@ -811,7 +816,7 @@
 
 .question-needs-ok {
     padding: 4px 22px;
- cursor: pointer;
+    cursor: pointer;
     text-align: center;
     line-height: 24px;
     background: #158CFB;
@@ -851,10 +856,12 @@
 .question-connecting.active {
     transform: translateX(0);
 }
+
 .connecting-btn-yes {
     border-top: 1px solid #6e6e73;
     padding-top: 20px;
 }
+
 .question-charge-lower {
     display: flex;
     align-items: center;
