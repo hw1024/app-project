@@ -34,7 +34,8 @@
             <div class="nav-list search-list">
                 <h4 style="margin-top: 12px;font-size: 18px;">Quick Links</h4>
                 <a href="javascript:void(0)" class="nav-text search-result">No Found</a>
-                <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No Found</a>
+                <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No
+                    Found</a>
             </div>
             <div class="nav-list nav-box">
                 <a href="index.html" class="nav-text">Home</a>
@@ -63,25 +64,29 @@
         <p class="serial-product">Your Product: <span id="yourProduct">AirPods, 2nd Gen</span></p>
         <ul class="serial-list">
             <li>
-                <a data-method="setTop" data-index="22" data-title="Battery & Charging" data-type="auto" data-item="question1"
+                <a data-method="setTop" data-index="22" data-title="Battery & Charging" data-type="auto"
+                   data-item="question1"
                    class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image4.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a data-method="setTop"  data-index="21" data-title="Audio & Sound" data-type="auto" data-item="question2"
+                <a data-method="setTop" data-index="21" data-title="Audio & Sound" data-type="auto"
+                   data-item="question2"
                    class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image3.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a data-method="setTop"  data-index="20" data-title="Physical or Liquid Damage" data-type="auto" data-item="question3"
+                <a data-method="setTop" data-index="20" data-title="Physical or Liquid Damage" data-type="auto"
+                   data-item="question3"
                    class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image2.png" alt="image4">
                 </a>
             </li>
             <li>
-                <a data-method="setTop"  data-index="19" data-title="Lost or Missing Airpods" data-type="auto" data-item="question4"
+                <a data-method="setTop" data-index="19" data-title="Lost or Missing Airpods" data-type="auto"
+                   data-item="question4"
                    class="button-content-container">
                     <img class="button-content-img" src="static/images/page/wix-image1.png" alt="image4">
                 </a>
@@ -98,24 +103,26 @@
         var codeValue = getQueryVariable('code');
         var subCode = codeValue.substr(-4);
         console.log(subCode)
-        if(subCode == 'H8TT') {
+        if (subCode == 'H8TT') {
             $("#yourProduct").text('AirPods, 1st Gen');
-        } else if(subCode == 'LX2Y') {
+        } else if (subCode == 'LX2Y') {
             $("#yourProduct").text('AirPods, 2nd Gen');
-        } else if(subCode == 'JMMT') {
+        } else if (subCode == 'JMMT') {
             $("#yourProduct").text('AirPods, 2nd Gen');
         } else {
             $("#yourProduct").text('AirPods Pro');
         }
-        function getQueryVariable(variable)
-        {
+
+        function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
+            for (var i = 0; i < vars.length; i++) {
                 var pair = vars[i].split("=");
-                if(pair[0] == variable){return pair[1];}
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
             }
-            return(false);
+            return (false);
         }
     })
     layui.use(['layer'], function () {
@@ -180,7 +187,7 @@
             '            <p class="question-charge-lower"><span class="question-hear-yes  yes-bg">YES</span><span class="serial-chileren" data-method="setTop"  data-index="17" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
             '        </div>\n' +
             '<div class="question-hear-two">\n' +
-           '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
+            '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
             '            <p class="question-charge-lower"><span class="hear-lower-yes  yes-bg">YES</span><span class="hear-lower-no">NO</span></p>\n' +
             '        </div>\n' +
             '        <ul class="question-hear-list">\n' +
@@ -314,7 +321,7 @@
                     , maxWidth: 780
                     , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#setTop
                     , content: '<div class="happen-content">' + text + '</div>'
-                    ,id: 'layerDemo'+index
+                    , id: 'layerDemo' + index
                     , btnAlign: 'c' //按钮居中
                     , shade: 0 //不显示遮罩
                     , yes: function () {
@@ -343,7 +350,7 @@
                         }
                     }
                 });
-                if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
                     layer.full(indexLayer)
                 }
             }
@@ -448,21 +455,86 @@
             data: params,
             dataType: "json",
             success: function (data) {
-                layer.msg(params);
-                if($("#type").val() == 'A') {
-                    window.location.href= 'airPods.html';
+                var orderData = {
+                    "total": 515.5,
+                    "goods": [{
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
+                        "sku": "1GLRFB",
+                        "price": "200.00"
+                    }, {
+                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
+                        "sku": "1GLT2",
+                        "price": "55.00"
+                    }, {
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
+                        "sku": "1GRRFB",
+                        "price": "200.00"
+                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
+                    "services": [{
+                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
+                        "sku": "1GLT2",
+                        "price": "55.00"
+                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
+                    "deposits": [{
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
+                        "sku": "1GLRFB",
+                        "price": "200.00"
+                    }, {
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
+                        "sku": "1GRRFB",
+                        "price": "200.00"
+                    }],
+                    "shipping": "5.50",
+                    "tax": "0.00"
+                };
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+                if ($("#type").val() == 'A') {
+                    window.location.href = 'airPods.html';
                 } else {
-                    window.location.href= 'charging.html';
+                    window.location.href = 'charging.html';
                 }
             },
             error: function (data) {
-                layer.msg('提交失败');
-                if($("#type").val() == 'A') {
-                    window.location.href= 'airPods.html';
+                layer.msg('Submission Failed');
+                var orderData = {
+                    "total": 515.5,
+                    "goods": [{
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
+                        "sku": "1GLRFB",
+                        "price": "200.00"
+                    }, {
+                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
+                        "sku": "1GLT2",
+                        "price": "55.00"
+                    }, {
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
+                        "sku": "1GRRFB",
+                        "price": "200.00"
+                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
+                    "services": [{
+                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
+                        "sku": "1GLT2",
+                        "price": "55.00"
+                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
+                    "deposits": [{
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
+                        "sku": "1GLRFB",
+                        "price": "200.00"
+                    }, {
+                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
+                        "sku": "1GRRFB",
+                        "price": "200.00"
+                    }],
+                    "shipping": "5.50",
+                    "tax": "0.00"
+                };
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+                if ($("#type").val() == 'A') {
+                    window.location.href = 'airPods.html';
                 } else {
-                    window.location.href= 'charging.html';
+                    window.location.href = 'charging.html';
                 }
-                window.event.returnValue=false;
+                window.event.returnValue = false;
             }
         });
     });

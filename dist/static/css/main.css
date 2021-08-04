@@ -507,7 +507,7 @@
 }
 
 .maintain-page4 {
-    padding-top: 120px;
+    padding-top: 90px;
 
 }
 
@@ -522,17 +522,20 @@
 .maintain-bill .quote {
     text-align: left;
     margin-top: 28px;
+    margin-bottom: 10px;
 }
 
 .maintain-bill .quote-list {
     color: #6e6e73;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 1.7;
+    line-height: 2.2;
     border-bottom: 1px solid #6e6e73;
-    margin-top: 6px;
+    font-size: 16px;
+    padding-bottom: 10px;
 }
-
+.maintain-bill .quote-list-top {
+    padding-bottom: 0;
+    border-bottom: none;
+}
 .maintain-bill .quote-list li {
     display: flex;
     justify-content: space-between;
@@ -566,7 +569,7 @@
 }
 
 .maintain-page5 {
-    padding-top: 120px;
+    padding-top: 90px;
 }
 
 /*问卷逻辑页面样式*/

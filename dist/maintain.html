@@ -452,6 +452,18 @@
         });
     });
     $(function () {
+        var orderData = JSON.parse(localStorage.getItem("orderData"));
+        $('#taxNum').text('$' + orderData.tax);
+        $('#shippingNum').text('$' + orderData.shipping);
+        $('#totalNum').text('$' + orderData.total);
+        let quoteListStr = '';
+        let orderArr = orderData.goods;
+        for (var i = 0; i< orderArr.length; i++) {
+            quoteListStr += '<li>\n' +
+                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
+                '            </li>'
+        }
+        $('.quote-list-top').html(quoteListStr);
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
             var curStatus = $("#status").val();

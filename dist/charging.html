@@ -59,22 +59,17 @@
         <h3>We will replace your Charging Case</h3>
         <p class="zs">***</p>
         <h5 class="quote">Here’s your estimated quote:</h5>
+        <ul class="quote-list quote-list-top"></ul>
         <ul class="quote-list">
             <li>
-                <span>Service Fee - Charging Case, 1st Gen, Tier 1</span><span>$59.99</span>
+                <span>Shipping</span><span id="shippingNum">$0.00</span>
             </li>
             <li>
-                <span>Replacement Deposit - Charging Case, 1st Gen, RFB</span><span>$59.99</span>
-            </li>
-            <li>
-                <span>Shipping</span><span>$5.99</span>
-            </li>
-            <li>
-                <span>Tax</span><span>$5.99</span>
+                <span>Tax</span><span id="taxNum">$0.00</span>
             </li>
         </ul>
         <div class="quote-total">
-            <span class="label">Total</span><span>$131.96</span>
+            <span class="label">Total</span><span id="totalNum">$0.00</span>
         </div>
         <p class="quote-lower">We will charge a deposit of the product you are</p>
         <p>replacing so that we can send you the replacement</p>
@@ -89,6 +84,18 @@
 <script src="static/js/search.js" type="application/javascript"></script>
 <script>
     $(function () {
+        var orderData = JSON.parse(localStorage.getItem("orderData"));
+        $('#taxNum').text('$' + orderData.tax);
+        $('#shippingNum').text('$' + orderData.shipping);
+        $('#totalNum').text('$' + orderData.total);
+        let quoteListStr = '';
+        let orderArr = orderData.goods;
+        for (var i = 0; i< orderArr.length; i++) {
+            quoteListStr += '<li>\n' +
+                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
+                '            </li>'
+        }
+        $('.quote-list-top').html(quoteListStr);
         $('.serial-form-btn').on("click",function () {
             window.location.href= 'maintain.html';
             window.event.returnValue=false;
