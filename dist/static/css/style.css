@@ -78,14 +78,14 @@ li {
 
 .toggle-btn .line:nth-child(1) {
     position: absolute;
-    top: 14px;
+    top: 18px;
     left: calc(50% - 9px);
 
 }
 
 .toggle-btn .line:nth-child(2) {
     position: absolute;
-    top: 26px;
+    top: 30px;
     left: calc(50% - 9px);
 }
 

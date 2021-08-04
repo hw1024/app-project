@@ -324,7 +324,7 @@
 
     .happen-content {
         padding: 20px 10px 30px;
-        width: 100%;
+        width: auto;
         overflow: hidden
     }
 
