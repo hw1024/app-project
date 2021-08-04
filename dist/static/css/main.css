@@ -786,6 +786,7 @@
 .happen-content {
     padding: 20px 38px 30px;
     width: 680px;
+    min-height: 430px;
     overflow: hidden
 }
 
