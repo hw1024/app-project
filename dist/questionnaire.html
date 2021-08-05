@@ -169,7 +169,8 @@
         var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();
-            window.location.href= 'happening.html?code=' + code;
+            localStorage.setItem("sn", code);
+            window.location.href= 'happening.html';
             window.event.returnValue=false;
         } else {
             $(".error-text").show();

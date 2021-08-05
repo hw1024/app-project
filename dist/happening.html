@@ -99,10 +99,9 @@
 <script src="static/layui/layui.js" type="application/javascript"></script>
 <script>
     $(function () {
-        $("#code").val(getQueryVariable('code'));
-        var codeValue = getQueryVariable('code');
+        var codeValue = localStorage.getItem("sn");
+        $("#code").val(codeValue);
         var subCode = codeValue.substr(-4);
-        console.log(subCode)
         if (subCode == 'H8TT') {
             $("#yourProduct").text('AirPods, 1st Gen');
         } else if (subCode == 'LX2Y') {
@@ -448,7 +447,7 @@
             type: $("#category").val(),
             level: $("#level").val()
         }
-        console.log(params)
+        localStorage.setItem("info", JSON.stringify(params));
         $.ajax({
             type: "POST",
             url: "/api/order/getInfo",

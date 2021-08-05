@@ -51,7 +51,6 @@
     <div class="section-content maintain-page1">
         <h4>Shipping</h4>
         <p>Where should we send your replacement product?</p>
-        <input hidden="hidden" type="checkbox" name="status" id="status" value="A"/>
         <form class="layui-form" action="">
             <div class="layui-form-item mob-box">
                 <div class="layui-inline layui-inline-active">
@@ -183,7 +182,7 @@
                 <div class="layui-inline">
                     <label class="layui-form-label">Expiration, Date</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="expiration" id="expiration" lay-verify="date"
+                        <input type="text" name="expiration" id="expiration" lay-verify="expiration"
                                placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -445,6 +444,7 @@
     });
     $(function () {
         var orderData = JSON.parse(localStorage.getItem("orderData"));
+        var userInfo = JSON.parse(localStorage.getItem("info"));
         $('.taxNum').text('$' + orderData.tax);
         $('.shippingNum').text('$' + orderData.shipping);
         $('.totalNum').text('$' + orderData.total);
@@ -458,23 +458,25 @@
         $('.quote-list-top').html(quoteListStr);
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
-            var curStatus = $("#status").val();
             var orderData = {}
-            $.extend(orderData, serialData1, serialData2);
+            $.extend(orderData, serialData1, serialData2, userInfo);
             $.ajax({
                 type: "POST",
                 url: "/api/order/create",
                 data: JSON.stringify(orderData),
                 dataType: "json",
                 success: function (data) {
-                    if (curStatus == 'A') {
+                    layer.msg(data.msg);
+                    localStorage.setItem("orderSn", data.order_sn);
+                    if (userInfo.position == 'A') {
                         $("#maintain-page4").show();
                     } else {
                         $("#maintain-page5").show();
                     }
                 },
                 error: function (data) {
-                    if (curStatus == 'A') {
+                    layer.msg('Submission Failed');
+                    if (userInfo.position == 'A') {
                         $("#maintain-page4").show();
                     } else {
                         $("#maintain-page5").show();
