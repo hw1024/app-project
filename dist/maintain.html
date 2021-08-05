@@ -467,7 +467,7 @@
                 dataType: "json",
                 success: function (data) {
                     layer.msg(data.msg);
-                    localStorage.setItem("orderSn", data.order_sn);
+                    localStorage.setItem("orderSn", data.data.order_sn);
                     if (userInfo.position == 'A') {
                         $("#maintain-page4").show();
                     } else {

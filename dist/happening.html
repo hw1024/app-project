@@ -454,44 +454,14 @@
             data: params,
             dataType: "json",
             success: function (data) {
-                var orderData = {
-                    "total": 515.5,
-                    "goods": [{
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
-                        "sku": "1GLRFB",
-                        "price": "200.00"
-                    }, {
-                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
-                        "sku": "1GLT2",
-                        "price": "55.00"
-                    }, {
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
-                        "sku": "1GRRFB",
-                        "price": "200.00"
-                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
-                    "services": [{
-                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
-                        "sku": "1GLT2",
-                        "price": "55.00"
-                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
-                    "deposits": [{
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
-                        "sku": "1GLRFB",
-                        "price": "200.00"
-                    }, {
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
-                        "sku": "1GRRFB",
-                        "price": "200.00"
-                    }],
-                    "shipping": "5.50",
-                    "tax": "0.00"
-                };
+                var orderData = data.data;
                 localStorage.setItem("orderData", JSON.stringify(orderData));
                 if ($("#type").val() == 'A') {
                     window.location.href = 'airPods.html';
                 } else {
                     window.location.href = 'charging.html';
                 }
+                window.event.returnValue = false;
             },
             error: function (data) {
                 layer.msg('Submission Failed');
