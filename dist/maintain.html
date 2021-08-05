@@ -56,14 +56,14 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">First Name</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="first_name" lay-verify="required" autocomplete="off"
+                        <input type="text" name="first_name" lay-verify="required" lay-reqtext="Please enter First Name" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">Last Name</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="last_name" lay-verify="required" autocomplete="off"
+                        <input type="text" name="last_name" lay-verify="required" lay-reqtext="Please enter Last Name" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
@@ -71,7 +71,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="street_address" lay-verify="required" autocomplete="off"
+                    <input type="text" name="street_address" lay-verify="required" lay-reqtext="Please enter Street Address"  autocomplete="off"
                            placeholder=""
                            class="layui-input">
                 </div>
@@ -79,7 +79,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Apt, Suite, Bldg</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="spt" lay-verify="required" placeholder="" autocomplete="off"
+                    <input type="text" name="spt" lay-verify="required" lay-reqtext="Please enter Apt, Suite, Bldg"  placeholder="" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -87,13 +87,13 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="state" id="state" lay-filter="state" lay-verify="required"></select>
+                        <select name="state" id="state" lay-filter="state" lay-verify="required" lay-reqtext="Please Select State"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="city" id="city" lay-filter="city" lay-verify="required"></select>
+                        <select name="city" id="city" lay-filter="city" lay-verify="required" lay-reqtext="Please Select City"></select>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Email Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder=""
+                    <input type="text" name="email" lay-verify="emailCode" lay-reqtext="Please enter Correct mailbox format" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">We send repair status</div>
@@ -124,7 +124,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Phone Number</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="phone" placeholder="" autocomplete="off"
+                    <input type="text" name="phone" lay-verify="phoneNumber" placeholder="" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -196,7 +196,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Street Address</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_street" id="billing_street" lay-verify="required" autocomplete="off"
+                    <input type="text" name="billing_street" id="billing_street" lay-reqtext="Please enter Street Address" lay-verify="required" autocomplete="off"
                            placeholder=""
                            class="layui-input">
                 </div>
@@ -204,7 +204,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">Apt, Suite, Bldg</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="billing_apt" id="billing_apt" lay-verify="required" autocomplete="off" placeholder=""
+                    <input type="text" name="billing_apt" id="billing_apt" lay-reqtext="Please enter Apt, Suite, Bldg" lay-verify="required" autocomplete="off" placeholder=""
                            class="layui-input">
                 </div>
             </div>
@@ -212,14 +212,14 @@
                 <div class="layui-inline  layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="billing_state" lay-filter="billing_state" id="billing_state"
+                        <select name="billing_state" lay-filter="billing_state" lay-reqtext="Please Select State" id="billing_state"
                                 lay-verify="required"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="billing_city" id="billing_city" lay-verify="required"> </select>
+                        <select name="billing_city" id="billing_city"  lay-reqtext="Please Select City" lay-verify="required"> </select>
                     </div>
                 </div>
             </div>
@@ -352,8 +352,16 @@
         form.verify({
             zipCode: [
                 /^\d{6}$/
-                ,'zip code Must be 6 digits'
-            ]
+                ,'Zip code Must be 6 digits'
+            ],
+            emailCode: [
+                /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/
+                ,'Please enter correct email address'
+            ],
+            phoneNumber: [
+                /^(\+?1)?[2-9]\d{2}[2-9](?!11)\d{6}$/
+                ,'Please enter the correct phone number format'
+            ],
         });
         var stateArr = [];
         var cityArr = [];
