@@ -304,7 +304,8 @@
 .section-contact {
     display: flex;
     align-items: flex-end;
-    margin-top: 510px;
+    margin-top: 470px;
+    margin-bottom: 40px;
 }
 
 .section-contact li {
@@ -465,9 +466,11 @@
 }
 
 .maintain-page3 {
-    padding-top: 120px;
+    padding-top: 140px;
 }
-
+.section-form-page3 {
+    padding-top: 80px;
+}
 .serial-number-btn {
     cursor: pointer;
 }

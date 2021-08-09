@@ -5,8 +5,16 @@
         width: calc(100% - 30px);
     }
 
+    .section-form {
+        height: 100vh;
+    }
+
     .page1-top {
         height: 216px;
+    }
+
+    .section-form-page3 {
+        padding-top: 20px;
     }
 
     .section-content p {
