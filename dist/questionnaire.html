@@ -15,8 +15,13 @@
 <!-- 菜单导航部分 -->
 <div class="nav">
     <a href="index.html" class="logo"></a>
-    <a href="javascript:void(0)" class="text">Questionnaire</a>
-    <a href="faq.html" class="text">FAQ</a>
+    <a href="index.html" class="text">InstantPods</a>
+    <a href="index.html?#works" class="text">How it works?</a>
+    <a href="faq.html" class="text">FAQs</a>
+    <a href="index.html?#contact" class="text">Shipping & Delivery</a>
+    <a href="index.html?#contact" class="text">After Repair</a>
+    <a href="index.html?#contact" class="text">Local Customer</a>
+    <a href="index.html?#contact" class="text">Contact US</a>
     <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
     <label for="choose" class="toggle-btn">
         <span class="line"></span>
@@ -37,9 +42,13 @@
                 <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No Found</a>
             </div>
             <div class="nav-list nav-box">
-                <a href="index.html" class="nav-text">Home</a>
-                <a href="javascript:void(0)" class="nav-text">Questionnaire</a>
-                <a href="faq.html" class="nav-text">FAQ</a>
+                <a href="index.html" class="nav-text">InstantPods</a>
+                <a href="index.html?#works" class="nav-text">How it works?</a>
+                <a href="faq.html" class="nav-text">FAQs</a>
+                <a href="index.html?#contact" class="nav-text">Shipping & Delivery</a>
+                <a href="index.html?#contact" class="nav-text">After Repair</a>
+                <a href="index.html?#contact" class="nav-text">Local Customer</a>
+                <a href="index.html?#contact" class="nav-text">Contact US</a>
             </div>
         </div>
     </div>
@@ -48,13 +57,17 @@
 <section class="section" id="repairStart">
     <div class="section-content page3" style="padding-top: 94px">
         <h3>We need your serial <br> number to get started.</h3>
-        <form class="serial-number-form" action="#" method="post" novalidate="">
+        <div class="serial-number-form" novalidate="">
             <div class="serial-number-wrapper">
                 <label for="serial-number" class="serial-number-label">Enter your serial number</label>
-                <input type="text" name="sno" class="serial-number" id="serial-number" value="">
-                <p class="error-text">The last 4 digits of the serial number must be one of H8TT, LX2Y, JMMT, LKKT, 0C6L</p>
+                <input type="text" name="sno" class="serial-number" id="serial-number"  onkeydown="keyup_submit(event);" value="">
+                <p class="error-text">We’re 
+                    sorry, but this serial number isn’t 
+                    valid. Please check your information 
+                    and try again.</p>
                 <div class="serial-number-article"><a href="javascript: void(0);" data-method="offset" data-type="auto"
-                                                      data-title="说明书" class="serial-number-btn">How
+                                                      data-title="How to find your 
+                                                      serial number" class="serial-number-btn">How
                     to find your serial number ></a>
                 </div>
             </div>
@@ -161,9 +174,27 @@
         });
 
     });
+    function keyup_submit(e){ 
+        var evt = window.event || e; 
+        if (evt.keyCode == 13){
+            var code = $("#serial-number").val();
+            var subCode = code.substr(-4)
+            var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
+            if(isInArray(codeArr, subCode)) {
+                $(".error-text").hide();
+                localStorage.setItem("sn", code);
+                window.location.href= 'happening.html';
+                window.event.returnValue=false;
+            } else {
+                $(".error-text").show();
+                return false;
+            }
+        }
+    }
     $("#serial-btn").on("click", function () {
         var code = $("#serial-number").val();
-        var subCode = code.substr(-4)
+        var subCode = code.substr(-4);
+        subCode = subCode.toUpperCase();
         var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();

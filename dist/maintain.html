@@ -15,8 +15,13 @@
 <!-- 菜单导航部分 -->
 <div class="nav">
     <a href="index.html" class="logo"></a>
-    <a href="questionnaire.html" class="text">Questionnaire</a>
-    <a href="faq.html" class="text">FAQ</a>
+    <a href="index.html" class="text">InstantPods</a>
+    <a href="index.html?#works" class="text">How it works?</a>
+    <a href="faq.html" class="text">FAQs</a>
+    <a href="index.html?#contact" class="text">Shipping & Delivery</a>
+    <a href="index.html?#contact" class="text">After Repair</a>
+    <a href="index.html?#contact" class="text">Local Customer</a>
+    <a href="index.html?#contact" class="text">Contact US</a>
     <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
     <label for="choose" class="toggle-btn">
         <span class="line"></span>
@@ -37,9 +42,13 @@
                 <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No Found</a>
             </div>
             <div class="nav-list nav-box">
-                <a href="index.html" class="nav-text">Home</a>
-                <a href="questionnaire.html" class="nav-text">Questionnaire</a>
-                <a href="faq.html" class="nav-text">FAQ</a>
+                <a href="index.html" class="nav-text">InstantPods</a>
+                <a href="index.html?#works" class="nav-text">How it works?</a>
+                <a href="faq.html" class="nav-text">FAQs</a>
+                <a href="index.html?#contact" class="nav-text">Shipping & Delivery</a>
+                <a href="index.html?#contact" class="nav-text">After Repair</a>
+                <a href="index.html?#contact" class="nav-text">Local Customer</a>
+                <a href="index.html?#contact" class="nav-text">Contact US</a>
             </div>
         </div>
     </div>
@@ -85,13 +94,17 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="state" id="state" lay-filter="state" lay-verify="required" lay-reqtext="Please Select State"></select>
+                        <input type="text" name="state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"
+                           class="layui-input">
+                        <!-- <select name="state" id="state" lay-filter="state" lay-verify="required" lay-reqtext="Please Select State"></select> -->
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="city" id="city" lay-filter="city" lay-verify="required" lay-reqtext="Please Select City"></select>
+                        <input type="text" name="city" lay-verify="required" lay-reqtext="Please Select City"  placeholder="" autocomplete="off"
+                           class="layui-input">
+                        <!-- <select name="city" id="city" lay-filter="city" lay-verify="required" lay-reqtext="Please Select City"></select> -->
                     </div>
                 </div>
             </div>
@@ -126,8 +139,8 @@
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <div class=" button-wrapper">
+            <div class="layui-form-item" style="text-align: center;">
+                <div class=" button-wrapper" style="margin: 10px auto;padding-bottom: 10px;">
                     <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn1">Continue
                     </button>
                 </div>
@@ -210,14 +223,18 @@
                 <div class="layui-inline  layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <select name="billing_state" lay-filter="billing_state" lay-reqtext="Please Select State" id="billing_state"
-                                lay-verify="required"></select>
+                        <input type="text" name="billing_state" id="billing_state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"
+                        class="layui-input">
+                        <!-- <select name="billing_state" lay-filter="billing_state" lay-reqtext="Please Select State" id="billing_state"
+                                lay-verify="required"></select> -->
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <select name="billing_city" id="billing_city"  lay-reqtext="Please Select City" lay-verify="required"> </select>
+                        <input type="text" name="billing_city"  id="billing_city" lay-verify="required" lay-reqtext="Please Select City"  placeholder="" autocomplete="off"
+                        class="layui-input">
+                        <!-- <select name="billing_city" id="billing_city"  lay-reqtext="Please Select City" lay-verify="required"> </select> -->
                     </div>
                 </div>
             </div>
@@ -237,8 +254,8 @@
                     </select>
                 </div>
             </div>
-            <div class="layui-form-item">
-                <div class=" button-wrapper">
+            <div class="layui-form-item" style="text-align: center;">
+                <div class=" button-wrapper" style="margin: 10px auto;padding-bottom: 10px;">
                     <button type="submit" class="serial-form-btn" lay-submit="" lay-filter="serial-btn2">Continue
                     </button>
                 </div>
@@ -349,8 +366,8 @@
         });
         form.verify({
             zipCode: [
-                /^\d{6}$/
-                ,'Zip code Must be 6 digits'
+                /^\d{5}$/
+                ,'Zip code Must be 5 digits'
             ],
             emailCode: [
                 /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/
@@ -363,49 +380,49 @@
         });
         var stateArr = [];
         var cityArr = [];
-        var stateData = window.stateData;
-        for (var key in stateData) {
-            stateArr.push(stateData[key])
-        }
-        $("#state").html("<option value='-'>Please Select</option>");
-        $("#billing_state").html("<option value='-'>Please Select</option>");
-        for (var i = 0; i < stateArr.length; i++) {
-            $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
-            $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
-            $("#billing_city").html("<option value='-'>Please Select</option>");
-            $("#city").html("<option value='-'>Please Select</option>");
-        }
-        form.render('select');
-        form.on('select(state)', function (data) {
-            $("#city").html("<option value='-'>Please Select</option>");
-            for (var i = 0; i < stateArr.length; i++) {
-                if (stateArr[i].code == data.value) {
-                    var children = stateArr[i].children;
-                    for (var val in children) {
-                        cityArr.push(children[val])
-                    }
-                    for (var j = 0; j < cityArr.length; j++) {
-                        $("#city").append(new Option(cityArr[j].code, cityArr[j].code));
-                    }
-                    form.render('select');
-                }
-            }
-        });
-        form.on('select(billing_state)', function (data) {
-            $("#billing_city").html("<option value='-'>Please Select</option>");
-            for (var i = 0; i < stateArr.length; i++) {
-                if (stateArr[i].code == data.value) {
-                    var children = stateArr[i].children;
-                    for (var val in children) {
-                        cityArr.push(children[val])
-                    }
-                    for (var j = 0; j < cityArr.length; j++) {
-                        $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
-                    }
-                    form.render('select');
-                }
-            }
-        });
+        // var stateData = window.stateData;
+        // for (var key in stateData) {
+        //     stateArr.push(stateData[key])
+        // }
+        // $("#state").html("<option value='-'>Please Select</option>");
+        // $("#billing_state").html("<option value='-'>Please Select</option>");
+        // for (var i = 0; i < stateArr.length; i++) {
+        //     $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
+        //     $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
+        //     $("#billing_city").html("<option value='-'>Please Select</option>");
+        //     $("#city").html("<option value='-'>Please Select</option>");
+        // }
+        // form.render('select');
+        // form.on('select(state)', function (data) {
+        //     $("#city").html("<option value='-'>Please Select</option>");
+        //     for (var i = 0; i < stateArr.length; i++) {
+        //         if (stateArr[i].code == data.value) {
+        //             var children = stateArr[i].children;
+        //             for (var val in children) {
+        //                 cityArr.push(children[val])
+        //             }
+        //             for (var j = 0; j < cityArr.length; j++) {
+        //                 $("#city").append(new Option(cityArr[j].code, cityArr[j].code));
+        //             }
+        //             form.render('select');
+        //         }
+        //     }
+        // });
+        // form.on('select(billing_state)', function (data) {
+        //     $("#billing_city").html("<option value='-'>Please Select</option>");
+        //     for (var i = 0; i < stateArr.length; i++) {
+        //         if (stateArr[i].code == data.value) {
+        //             var children = stateArr[i].children;
+        //             for (var val in children) {
+        //                 cityArr.push(children[val])
+        //             }
+        //             for (var j = 0; j < cityArr.length; j++) {
+        //                 $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
+        //             }
+        //             form.render('select');
+        //         }
+        //     }
+        // });
         form.on('submit(serial-btn1)', function (data) {
             window.serialData1 = data.field;
             $("#maintain-page1").hide();
@@ -417,21 +434,22 @@
                 $('#billing_street').val(window.serialData1.street_address);
                 $('#billing_apt').val(window.serialData1.spt);
                 $('#billing_state').val(window.serialData1.state);
-                form.render('select');
+                $('#billing_city').val(window.serialData1.city);
                 $('#billing_zip').val(window.serialData1.zip);
-                for (var i = 0; i < stateArr.length; i++) {
-                    if (stateArr[i].code == window.serialData1.state) {
-                        var children = stateArr[i].children;
-                        for (var val in children) {
-                            cityArr.push(children[val])
-                        }
-                        for (var j = 0; j < cityArr.length; j++) {
-                            $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
-                        }
-                        $('#billing_city').val(window.serialData1.city);
-                        form.render('select');
-                    }
-                }
+
+                // for (var i = 0; i < stateArr.length; i++) {
+                //     if (stateArr[i].code == window.serialData1.state) {
+                //         var children = stateArr[i].children;
+                //         for (var val in children) {
+                //             cityArr.push(children[val])
+                //         }
+                //         for (var j = 0; j < cityArr.length; j++) {
+                //             $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
+                //         }
+                //         $('#billing_city').val(window.serialData1.city);
+                //         form.render('select');
+                //     }
+                // }
             } else {
                 $('#billing_street').val('');
                 $('#billing_apt').val('');
