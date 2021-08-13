@@ -22,7 +22,9 @@
         font-size: 14px;
         letter-spacing: 0;
     }
-
+    .layui-form-item-phone {
+        text-align: center;
+    }
     .section-faq {
         text-align: left;
         font-size: 14px;
