@@ -722,6 +722,9 @@
     width: 100%;
     cursor: pointer;
     text-decoration: none;
+    -webkit-box-shadow: 0 0 2px #c2c2c2;
+    box-shadow: 0 0 2px #c2c2c2;
+    border-radius: 4px;
 }
 
 .serial-list .button-content-container .button-content-img {
@@ -729,6 +732,7 @@
     width: 100%;
     max-width: 240px;
     margin: 0 auto;
+    border-radius: 4px;
 }
 
 .serial-list .button-content-container .button-content-desc {
