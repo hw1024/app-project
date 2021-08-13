@@ -94,9 +94,9 @@
                 <div class="layui-inline layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"
-                           class="layui-input">
-                        <!-- <select name="state" id="state" lay-filter="state" lay-verify="required" lay-reqtext="Please Select State"></select> -->
+<!--                        <input type="text" name="state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"-->
+<!--                           class="layui-input">-->
+                         <select name="state" id="state" lay-filter="state" lay-verify="required" lay-reqtext="Please Select State"></select>
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -223,16 +223,16 @@
                 <div class="layui-inline  layui-inline-active">
                     <label class="layui-form-label">State</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="billing_state" id="billing_state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"
-                        class="layui-input">
-                        <!-- <select name="billing_state" lay-filter="billing_state" lay-reqtext="Please Select State" id="billing_state"
-                                lay-verify="required"></select> -->
+<!--                        <input type="text" name="billing_state" id="billing_state" lay-verify="required" lay-reqtext="Please Select State"  placeholder="" autocomplete="off"-->
+<!--                        class="layui-input">-->
+                        <select name="billing_state" lay-filter="billing_state" id="billing_state"
+                                ></select>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">City</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="billing_city"  id="billing_city" lay-verify="required" lay-reqtext="Please Select City"  placeholder="" autocomplete="off"
+                        <input type="text" name="billing_city"  id="billing_city"  placeholder="" autocomplete="off"
                         class="layui-input">
                         <!-- <select name="billing_city" id="billing_city"  lay-reqtext="Please Select City" lay-verify="required"> </select> -->
                     </div>
@@ -379,20 +379,18 @@
             ],
         });
         var stateArr = [];
-        var cityArr = [];
-        // var stateData = window.stateData;
-        // for (var key in stateData) {
-        //     stateArr.push(stateData[key])
-        // }
-        // $("#state").html("<option value='-'>Please Select</option>");
-        // $("#billing_state").html("<option value='-'>Please Select</option>");
-        // for (var i = 0; i < stateArr.length; i++) {
-        //     $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
-        //     $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
-        //     $("#billing_city").html("<option value='-'>Please Select</option>");
-        //     $("#city").html("<option value='-'>Please Select</option>");
-        // }
-        // form.render('select');
+        // var cityArr = [];
+        var stateData = window.stateData;
+        for (var key in stateData) {
+            stateArr.push(stateData[key])
+        }
+        $("#state").html("<option value='-'>Please Select</option>");
+        $("#billing_state").html("<option value='-'>Please Select</option>");
+        for (var i = 0; i < stateArr.length; i++) {
+            $("#state").append(new Option(stateArr[i].code, stateArr[i].code));
+            $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
+        }
+        form.render('select');
         // form.on('select(state)', function (data) {
         //     $("#city").html("<option value='-'>Please Select</option>");
         //     for (var i = 0; i < stateArr.length; i++) {
@@ -436,6 +434,7 @@
                 $('#billing_state').val(window.serialData1.state);
                 $('#billing_city').val(window.serialData1.city);
                 $('#billing_zip').val(window.serialData1.zip);
+                form.render('select');
 
                 // for (var i = 0; i < stateArr.length; i++) {
                 //     if (stateArr[i].code == window.serialData1.state) {
@@ -456,6 +455,7 @@
                 $('#billing_state').val('');
                 $('#billing_city').val('');
                 $('#billing_zip').val('');
+                form.render('select');
             }
         });
         form.on('submit(serial-btn2)', function (data) {
