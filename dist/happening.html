@@ -32,7 +32,7 @@
             <div class="search-input">
                 <div class="icon" id="search-btn"></div>
                 <input type="text" name="searchName" id="searchName" placeholder="search name"/>
-                <span class="search-close">取消</span>
+                <span class="search-close">Cancel</span>
             </div>
             <hr/>
             <div class="nav-list search-list">
@@ -57,6 +57,8 @@
         <input hidden="hidden" type="text" name="desc" id="desc" value=""/>
         <!-- 问题小类-->
         <input hidden="hidden" type="text" name="subCategory" id="subCategory" value=""/>
+        <!-- 问题小类-->
+        <input hidden="hidden" type="text" name="back" id="back" value=""/>
         <!-- 问题类型-->
         <input hidden="hidden" type="text" name="type" id="type" value=""/>
         <!-- 耳机类别-->
@@ -142,10 +144,10 @@
             '                    <p class="question-charge-text" style="border-bottom: 1px solid #6e6e73">Is AirPods connecting to your phone? </p>\n' +
             '                    <p class="question-charge-lower"><span class="connecting-btn yes-bg">YES</span><span  class="serial-chileren" data-method="setTop"  data-index="18" data-title="AirPods won’t charge"  data-type="auto" data-item="children12">NO</span></p>\n' +
             '                </div>\n' +
-            '                <div class="question-connecting">\n' +
+            '                <div style="height: 0;"><div class="question-connecting">\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                    <p class="question-lower"><span class="side-needs" data-level="T1" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T1" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T1" data-category="B" data-status="A">Both Sides</span></p>\n' +
-            '                </div>\n' +
+            '                </div></div>\n' +
             '            </div>\n' +
             '            <div class="question-back-right">\n' +
             '                <p class="question-back-probably">You probably have a faulty charging case. Try to charge your AirPods again with a known good charging case.\n' +
@@ -166,10 +168,10 @@
             '                    <p class="question-charge-text">Is AirPods connecting to your phone? </p>\n' +
             '                    <p class="question-charge-lower connecting-btn-yes"><span class="connecting-btn  yes-bg">YES</span></p>\n' +
             '                </div>\n' +
-            '                <div class="question-connecting">\n' +
+            '                 <div style="height: 0;"><div class="question-connecting">\n' +
             '                    <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                    <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T2" data-category="R" data-status="A">Right</span><span  class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
-            '                </div>\n' +
+            '                </div></div>\n' +
             '            </div>\n' +
             '            <div class="question-back-right">\n' +
             '                <p class="question-back-probably">You probably have a faulty charging case. Try to charge your AirPods again with a known good charging case.\n' +
@@ -188,11 +190,11 @@
             '            <p class="text">Is AirPods connecting to your phone? </p>\n' +
             '            <p class="question-charge-lower"><span class="question-hear-yes  yes-bg">YES</span><span class="serial-chileren" data-method="setTop"  data-index="17" data-title="AirPods Battery Service"  data-type="auto" data-item="children31">NO</span></p>\n' +
             '        </div>\n' +
-            '<div class="question-hear-two">\n' +
+            '<div style="height: 0;"><div class="question-hear-two">\n' +
             '            <p class="sound">Can you still hear sound from your AirPods?</p>\n' +
             '            <p class="question-charge-lower"><span class="hear-lower-yes  yes-bg">YES</span><span class="hear-lower-no">NO</span></p>\n' +
-            '        </div>\n' +
-            '        <ul class="question-hear-list">\n' +
+            '        </div></div>\n' +
+            '        <div style="height: 0;"><ul class="question-hear-list">\n' +
             '            <li class="hears-yes">\n' +
             '                <p class="question-replaced">Which side of your AirPods needs to be replaced? </p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T1" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T1" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T1" data-category="B" data-status="A">Both Sides</span></p>\n' +
@@ -201,7 +203,7 @@
             '                <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '                <p class="question-lower"><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </li>\n' +
-            '        </ul>';
+            '        </ul></div>';
         var children31 = '<div class="question-hear question-hear-active">\n' +
             '            <div class="question-replaced-top"><p style="margin-bottom: 24px">Is AirPods connecting to your phone? </p>\n' +
             '            <p class="question-charge-lower question-phone-no"><span>NO</span></p></div>\n' +
@@ -226,13 +228,13 @@
         var children7 = '<div class="question-needs-box"><p style="padding: 16px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
             '        <p class="question-think" style="border-top: 1px solid #6e6e73"><span class="question-needs-ok">Ok</span><span class="close let-think" >Let me think about it</span></p></div>\n' +
-            '        <div class="question-needs question-need2">\n' +
+            '        <div style="height: 0;"><div class="question-needs question-need2">\n' +
             '            <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
-            '            <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T3" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
-            '        </div>';
+            '            <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-back="Y" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T3" data-back="Y" data-category="R" data-back="Y" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
+            '        </div></div>';
         var children8 = '  <p style="padding: 18px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
             '        </p>\n' +
-            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="side-needs" data-level="T3" data-category="" data-status="C">Ok</span><span class="close let-think">Let me think about it</span></p>';
+            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="side-needs" data-back="Y" data-level="T3" data-category="" data-status="C">Ok</span><span class="close let-think">Let me think about it</span></p>';
         var children9 = ' <div style="margin: 18px auto 0;padding: 12px 40px;max-width: 250px; " class="question-title side-needs" data-level="T3" data-category="" data-status="C">Order charging compartment</div>';
         var children10 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
@@ -440,12 +442,14 @@
         $("#type").val(othis.data('status'));
         $("#category").val(othis.data('category'));
         $("#level").val(othis.data('level'));
+        $("#back").val(othis.data('back'));
         event.preventDefault();
         event.stopPropagation();
         var params = {
             sn: $("#code").val(),
             desc: $("#desc").val(),
             subCategory: $("#subCategory").val(),
+            back:  $("#back").val(),
             position: $("#type").val(),
             type: $("#category").val(),
             level: $("#level").val()

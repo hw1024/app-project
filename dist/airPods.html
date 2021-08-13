@@ -32,7 +32,7 @@
             <div class="search-input">
                 <div class="icon" id="search-btn"></div>
                 <input type="text" name="searchName" id="searchName" placeholder="search name"/>
-                <span class="search-close">取消</span>
+                <span class="search-close">Cancel</span>
             </div>
             <hr/>
             <div class="nav-list search-list">
@@ -115,12 +115,18 @@
 <script src="static/js/search.js" type="application/javascript"></script>
 <script>
     $(function () {
+        var userInfo = JSON.parse(localStorage.getItem("info"));
         var orderData = JSON.parse(localStorage.getItem("orderData"));
         $('#taxNum').text('$' + orderData.tax);
         $('#shippingNum').text('$' + orderData.shipping);
         $('#totalNum').text('$' + orderData.total);
-        $(".no-need").show();
-        $(".need").hide();
+        if(userInfo.level == 'T3') {
+            $(".no-need").show();
+            $(".need").hide();
+        } else {
+            $(".no-need").hide();
+            $(".need").show();
+        }
         let quoteListStr = '';
         let orderArr = orderData.goods;
         for (var i = 0; i< orderArr.length; i++) {
