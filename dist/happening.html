@@ -240,7 +240,7 @@
             'you can still purchase our service \n' +
             'replacement at a competitive price.\n' +
             '        </p>\n' +
-            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="side-needs" data-back="Y" data-level="T3" data-category="" data-status="C">Go to cart</span></p>';
+            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="question-needs-ok" data-back="Y" data-level="T3" data-category="" data-status="C">Go to cart</span></p>';
         var children9 = ' <div style="margin: 18px auto 0;padding: 12px 40px;max-width: 250px; " class="question-title side-needs" data-level="T3" data-category="" data-status="C">Order charging compartment</div>';
         var children10 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
@@ -404,8 +404,8 @@
     })
 
     $(document).delegate('.question-needs-ok', 'click', function (event) {
-        $('.question-need2').addClass('active');
-        $(".question-needs-box").hide();
+        window.location.href= 'check.html';
+        window.event.returnValue=false;
         event.preventDefault();
         event.stopPropagation();
     })
@@ -470,51 +470,33 @@
                 var orderData = data.data;
                 localStorage.setItem("orderData", JSON.stringify(orderData));
                 if ($("#type").val() == 'A') {
-                    window.location.href = 'airPods.html';
+                    window.location.href = 'trade.html';
                 } else {
-                    window.location.href = 'charging.html';
+                    window.location.href = 'trade.html';
                 }
                 window.event.returnValue = false;
             },
             error: function (data) {
                 layer.msg('Submission Failed');
                 var orderData = {
-                    "total": 515.5,
+                    "total": '$24.00',
                     "goods": [{
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
+                        "name": "Replacement, Charging Case, 2nd Gen",
                         "sku": "1GLRFB",
-                        "price": "200.00"
+                        "price": "$59.99"
                     }, {
-                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
+                        "name": "*Trade in: Charging Case, AirPods 2nd Gen",
                         "sku": "1GLT2",
-                        "price": "55.00"
-                    }, {
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
-                        "sku": "1GRRFB",
-                        "price": "200.00"
-                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
-                    "services": [{
-                        "name": "Service Fee - AirPods, 1st Gen, Left, T2",
-                        "sku": "1GLT2",
-                        "price": "55.00"
-                    }, {"name": "Service Fee - AirPods, 1st Gen, Right, T2", "sku": "1GRT2", "price": "55.00"}],
-                    "deposits": [{
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Left, RFB",
-                        "sku": "1GLRFB",
-                        "price": "200.00"
-                    }, {
-                        "name": "Replacement Deposit - AirPods, 1st Gen, Right, RFB",
-                        "sku": "1GRRFB",
-                        "price": "200.00"
+                        "price": "-$30.00"
                     }],
                     "shipping": "5.50",
                     "tax": "0.00"
                 };
                 localStorage.setItem("orderData", JSON.stringify(orderData));
                 if ($("#type").val() == 'A') {
-                    window.location.href = 'airPods.html';
+                    window.location.href = 'trade.html';
                 } else {
-                    window.location.href = 'charging.html';
+                    window.location.href = 'trade.html';
                 }
                 window.event.returnValue = false;
             }

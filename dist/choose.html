@@ -167,6 +167,8 @@
         event.stopPropagation();
     })
     $(document).delegate('.question-charge-no', 'click', function (event) {
+		window.location.href= 'check.html';
+		window.event.returnValue=false;
         event.preventDefault();
         event.stopPropagation();
     })
