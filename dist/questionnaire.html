@@ -76,7 +76,7 @@
                     <div class="button-label">Continue</div>
                 </button>
             </div>
-        </form>
+        </div>
     </div>
 </section>
 
@@ -199,7 +199,7 @@
         if(isInArray(codeArr, subCode)) {
             $(".error-text").hide();
             localStorage.setItem("sn", code);
-            window.location.href= 'happening.html';
+            window.location.href= 'choose.html';
             window.event.returnValue=false;
         } else {
             $(".error-text").show();

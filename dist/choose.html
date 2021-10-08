@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>AirPods</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/media.css"/>
+</head>
+
+<body>
+<!-- 菜单导航部分 -->
+<div class="nav">
+    <a href="index.html" class="logo"></a>
+    <a href="index.html" class="text">InstantPods</a>
+    <a href="index.html?#works" class="text">How it works?</a>
+    <a href="faq.html" class="text">FAQs</a>
+    <a href="index.html?#contact" class="text">Shipping & Delivery</a>
+    <a href="index.html?#contact" class="text">After Repair</a>
+    <a href="index.html?#contact" class="text">Local Customer</a>
+    <a href="index.html?#contact" class="text">Contact US</a>
+    <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
+    <label for="choose" class="toggle-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+    </label>
+    <!-- 菜单导航中，隐藏的变成移动端后才显示的菜单 -->
+    <div class="nav-content">
+        <div class="nav-page">
+            <div class="search-input">
+                <div class="icon" id="search-btn"></div>
+                <input type="text" name="searchName" id="searchName" placeholder="search name"/>
+                <span class="search-close">Cancel</span>
+            </div>
+            <hr/>
+            <div class="nav-list search-list">
+                <h4 style="margin-top: 12px;font-size: 18px;">Quick Links</h4>
+                <a href="javascript:void(0)" class="nav-text search-result">No Found</a>
+                <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No
+                    Found</a>
+            </div>
+            <div class="nav-list nav-box">
+                <a href="index.html" class="nav-text">Home</a>
+                <a href="questionnaire.html" class="nav-text">Questionnaire</a>
+                <a href="faq.html" class="nav-text">FAQ</a>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section">
+    <div class="section-content page5">
+        <!-- 序列号-->
+        <input hidden="hidden" type="text" name="code" id="code" value=""/>
+        <!-- 问题大类-->
+        <input hidden="hidden" type="text" name="desc" id="desc" value=""/>
+        <!-- 问题小类-->
+        <input hidden="hidden" type="text" name="subCategory" id="subCategory" value=""/>
+        <!-- 问题小类-->
+        <input hidden="hidden" type="text" name="back" id="back" value=""/>
+        <!-- 问题类型-->
+        <input hidden="hidden" type="text" name="type" id="type" value=""/>
+        <!-- 耳机类别-->
+        <input hidden="hidden" type="text" name="category" id="category" value=""/>
+        <!-- 问题级别-->
+        <input hidden="hidden" type="text" name="level" id="level" value=""/>
+        <!-- 问题类型-->
+        <h3 class="serial-title happen-box">What’s happening with <br> your AirPods?</h3>
+        <p class="serial-product">Your Product: <span id="yourProduct">AirPods, 2nd Gen</span></p>
+        <div class="choose-box">
+            <div class="choose-left">
+                <img class="section-img" src="static/images/page/promo-icon5.png" alt="promo5">
+            </div>
+            <div class="choose-right">
+                <div class="top">Choose your replacement.</div>
+                <ul class="choose-list">
+                    <li data-type="AirPod Left">
+                        <span>AirPod Left</span>
+                        <span>$69</span>
+                    </li>
+                    <li data-type="AirPod Right">
+                        <span>AirPod Right</span>
+                        <span>$69</span>
+                    </li>
+                    <li data-type="AirPods Both Sides">
+                        <span>AirPods Both Sides</span>
+                        <span>$138</span>
+                    </li>
+                    <li data-type="Charging Case">
+                        <span>Charging Case</span>
+                        <span>$69</span>
+                    </li>
+                </ul>
+                <div class="text">
+                    <div class="desc">Do you want to Trade In your bad
+                        AirPod for credit?</div>
+                    <a class="trade see-trade-btn" data-method="offset" data-type="auto"
+                       data-title="How does InstantPods Trade In Works?" href="javascript: void(0);">See how trade-in works</a>
+                </div>
+                <div class="question-charge-lower">
+                    <span class="question-charge-yes  yes-bg">YES</span>
+                    <span class="question-charge-no">NO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="static/js/jquery.min.js" type="application/javascript"></script>
+<script src="static/js/search.js" type="application/javascript"></script>
+<script src="static/layui/layui.js" type="application/javascript"></script>
+<script>
+    $(function () {
+        var codeValue = localStorage.getItem("sn");
+        $("#code").val(codeValue);
+        var subCode = codeValue.substr(-4);
+        if (subCode == 'H8TT') {
+            $("#yourProduct").text('AirPods, 1st Gen');
+        } else if (subCode == 'LX2Y') {
+            $("#yourProduct").text('AirPods, 2nd Gen');
+        } else if (subCode == 'JMMT') {
+            $("#yourProduct").text('AirPods, 2nd Gen');
+        } else {
+            $("#yourProduct").text('AirPods Pro');
+        }
+    })
+    var active = {
+        offset: function (othis) {
+            var type = othis.data('type');
+            var title = othis.data('title');
+            var text = '<div class="choose-faq">\n' +
+                '<h5>1. See what your faulty AirPod is worth</h5>\n' +
+                '<p>When you order the replacement AirPods, answer a few questions to get your estimated trade-in value.</p>\n' +
+                '<h5>2. Ship your faulty AirPods to us within 14 days.</h5>\n' +
+                '<p>After your replacements arrives, use the included return label and packaging to send back your bad AirPods to us within 14 days.</p>\n' +
+                '<h5>3. Get refund credited to your original method of payment.</h5>\n' +
+                '<p>Once we receive your bad AirPods, we will inspect and verify its condition. If everything checks out, your trade in is complete and we will credit your original payment method. If your returned AirPods does not match the condition you described, you’ll receive an email with next steps.</p>\n' +
+                '<h5>What if the AirPods I returned does not match the condition I described or it was confirmed counterfeit?</h5>\n' +
+                '<p>If the condition of your AirPods doesn’t match what you described, a new estimated trade-in value will be provided. You’ll have the option to either accept this revised quote or reject it. If you reject it, your device will be returned to you at a flat rate shipping fee.</p>\n' +
+                '</div>';
+            var indexLayer = layer.open({
+                type: 1
+                , title: title
+                , maxWidth: 650
+                , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                , id: 'layerDemo' + type //防止重复弹出
+                , content: '<div style="padding: 20px 10px 30px;">' + text + '</div>'
+                , btnAlign: 'c' //按钮居中
+                , shade: 0 //不显示遮罩
+                , yes: function () {
+                    layer.closeAll();
+                }
+            });
+            if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                layer.full(indexLayer)
+            }
+        }
+    }
+    $('.see-trade-btn').on('click', function () {
+        var othis = $(this), method = othis.data('method');
+        active[method] ? active[method].call(this, othis) : '';
+    });
+    $(document).delegate('.question-charge-yes', 'click', function (event) {
+        window.location.href= 'happening.html';
+        window.event.returnValue=false;
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $(document).delegate('.question-charge-no', 'click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    })
+    $('.choose-list li').on('click', function () {
+        var that = $(this), type = that.data('type');
+        that.addClass('active');
+        that.siblings().removeClass('active');
+        localStorage.setItem("chooseType", type);
+    })
+
+</script>
+
+</body>
+
+</html>
