@@ -209,6 +209,10 @@
         font-size: 12px;
     }
 
+    .maintain-bill .quote-top-list li {
+        font-size: 14px;
+    }
+
     .maintain-bill .quote-total {
         font-size: 14px;
     }
@@ -336,5 +340,15 @@
     .serial-ques-list li a {
         color: #1d1d1f;
         text-decoration: none;
+    }
+
+    .choose-box .choose-left {
+        width: 100px;
+        margin-right: 20px;
+    }
+
+    .choose-box .choose-left .section-img {
+        width: 100px;
+        margin-top: 60px;
     }
 }

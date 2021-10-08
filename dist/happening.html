@@ -225,16 +225,22 @@
             '                <p class="question-lower" ><span class="side-needs" data-level="T2" data-category="L" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T2" data-category="R" data-status="A">Right</span><span class="side-needs" data-level="T2" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '            </div>\n' +
             '        </div>';
-        var children7 = '<div class="question-needs-box"><p style="padding: 16px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+        var children7 = '<div class="question-needs-box"><p style="padding: 16px 30px;">Unfortunately physically damaged \n' +
+            'product has no trade-in value. However, \n' +
+            'you can still purchase our service \n' +
+            'replacement at a competitive price.\n' +
             '        </p>\n' +
-            '        <p class="question-think" style="border-top: 1px solid #6e6e73"><span class="question-needs-ok">Ok</span><span class="close let-think" >Let me think about it</span></p></div>\n' +
+            '        <p class="question-think" style="border-top: 1px solid #6e6e73"><span class="question-needs-ok">Go to cart</span></p></div>\n' +
             '        <div style="height: 0;"><div class="question-needs question-need2">\n' +
             '            <p class="question-replaced">Which side of your AirPods needs to be replaced?</p>\n' +
             '            <p class="question-lower"><span class="side-needs" data-level="T3" data-category="L" data-back="Y" data-status="A">Left</span><span class="side-needs yes-bg" data-level="T3" data-back="Y" data-category="R" data-back="Y" data-status="A">Right</span><span class="side-needs" data-level="T3" data-category="B" data-status="A">Both Sides</span></p>\n' +
             '        </div></div>';
-        var children8 = '  <p style="padding: 18px 30px;">Your product is non-repairable. We can offer you a replacement at a competitive price and you don’t have to return yours.\n' +
+        var children8 = '  <p style="padding: 18px 30px;">Unfortunately physically damaged \n' +
+            'product has no trade-in value. However, \n' +
+            'you can still purchase our service \n' +
+            'replacement at a competitive price.\n' +
             '        </p>\n' +
-            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="side-needs" data-back="Y" data-level="T3" data-category="" data-status="C">Ok</span><span class="close let-think">Let me think about it</span></p>';
+            '        <p class="question-think"  style="border-top: 1px solid #6e6e73"><span  class="side-needs" data-back="Y" data-level="T3" data-category="" data-status="C">Go to cart</span></p>';
         var children9 = ' <div style="margin: 18px auto 0;padding: 12px 40px;max-width: 250px; " class="question-title side-needs" data-level="T3" data-category="" data-status="C">Order charging compartment</div>';
         var children10 = '<div class="question-hear question-hear-active">\n' +
             '            <div>\n' +
@@ -258,8 +264,8 @@
             '        </ul>';
         var question3 = ' <ul class="serial-ques-list">\n' +
             '            <li class="serial-chileren" data-method="setTop" data-index="11" data-title="AirPods physically damaged" data-type="auto" data-item="children7">AirPods physically damaged</li>\n' +
-            '            <li class="serial-chileren" data-method="setTop" data-index="12" data-title="AirPods water damage" data-type="auto" data-item="children7">AirPods water damage</li>\n' +
             '            <li class="li-active serial-chileren" data-method="setTop" data-index="13" data-title="Charging Case physically damaged" data-type="auto" data-item="children8">Charging Case physically damaged</li>\n' +
+            '            <li class="serial-chileren" data-method="setTop" data-index="12" data-title="AirPods water damage" data-type="auto" data-item="children7">AirPods water damage</li>\n' +
             '            <li class="serial-chileren" data-method="setTop" data-index="14" data-title="Charging Case water damage" data-type="auto" data-item="children8">Charging Case water damage</li>\n' +
             '        </ul>'
         var question4 = ' <ul class="serial-ques-list">\n' +
@@ -293,10 +299,10 @@
                         text = children8
                         break;
                     case 'children9':
-                        text = children9
+                        text = children8
                         break;
                     case 'children10':
-                        text = children10
+                        text = children8
                         break;
                     case 'children12':
                         text = children12

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>AirPods</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/media.css"/>
+</head>
+
+<body>
+<!-- 菜单导航部分 -->
+<div class="nav">
+    <a href="index.html" class="logo"></a>
+    <a href="index.html" class="text">InstantPods</a>
+    <a href="index.html?#works" class="text">How it works?</a>
+    <a href="faq.html" class="text">FAQs</a>
+    <a href="index.html?#contact" class="text">Shipping & Delivery</a>
+    <a href="index.html?#contact" class="text">After Repair</a>
+    <a href="index.html?#contact" class="text">Local Customer</a>
+    <a href="index.html?#contact" class="text">Contact US</a>
+    <input hidden="hidden" type="checkbox" name="choose" id="choose" value=""/>
+    <label for="choose" class="toggle-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+    </label>
+    <!-- 菜单导航中，隐藏的变成移动端后才显示的菜单 -->
+    <div class="nav-content">
+        <div class="nav-page">
+            <div class="search-input">
+                <div class="icon" id="search-btn"></div>
+                <input type="text" name="searchName" id="searchName" placeholder="search name"/>
+                <span class="search-close">Cancel</span>
+            </div>
+            <hr/>
+            <div class="nav-list search-list">
+                <h4 style="margin-top: 12px;font-size: 18px;">Quick Links</h4>
+                <a href="javascript:void(0)" class="nav-text search-result">No Found</a>
+                <a style="border-bottom: 1px solid #333;" href="javascript:void(0)" class="nav-text search-faq-result">No Found</a>
+            </div>
+            <div class="nav-list nav-box">
+                <a href="index.html" class="nav-text">InstantPods</a>
+                <a href="index.html?#works" class="nav-text">How it works?</a>
+                <a href="faq.html" class="nav-text">FAQs</a>
+                <a href="index.html?#contact" class="nav-text">Shipping & Delivery</a>
+                <a href="index.html?#contact" class="nav-text">After Repair</a>
+                <a href="index.html?#contact" class="nav-text">Local Customer</a>
+                <a href="index.html?#contact" class="nav-text">Contact US</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<section class="section">-->
+<!--    <div class="section-content page21">-->
+<!--        <h3 class="serial-title">We will replace your AirPods</h3>-->
+<!--        <p class="serial-product">To ensure the best experiences possible, we will send you the replacement product first. We will charge your credit card to secure a deposit for the replacement product, and we will refund it once we receive your returned product.-->
+<!--        </p>-->
+<!--        <div>I am comfortable with that</div>-->
+<!--        <div>I need to think about it.</div>-->
+<!--    </div>-->
+<!--</section>-->
+<section class="section">
+    <div class="section-content maintain-bill maintain-page5">
+        <h3>Ready to check out</h3>
+        <ul style="margin-top: 70px;" class="quote-list quote-list-top"></ul>
+        <ul class="quote-list">
+            <li>
+                <span>Shipping</span><span id="shippingNum">$0.00</span>
+            </li>
+            <li>
+                <span>Tax</span><span id="taxNum">$0.00</span>
+            </li>
+        </ul>
+        <div class="quote-total">
+            <span class="label">Total</span><span id="totalNum">$0.00</span>
+        </div>
+        <div class=" button-wrapper button-wrapper1">
+            <button type="button" class="serial-form-btn serial-form-btn1" >Check Out</button>
+        </div>
+    </div>
+</section>
+<script src="static/js/jquery.min.js" type="application/javascript"></script>
+<script src="static/js/search.js" type="application/javascript"></script>
+<script>
+    $(function () {
+        var userInfo = JSON.parse(localStorage.getItem("info"));
+        var orderData = JSON.parse(localStorage.getItem("orderData"));
+        $('#taxNum').text('$' + orderData.tax);
+        $('#shippingNum').text('$' + orderData.shipping);
+        $('#totalNum').text('$' + orderData.total);
+        if(userInfo.level == 'T3') {
+            $(".no-need").show();
+            $(".need").hide();
+        } else {
+            $(".no-need").hide();
+            $(".need").show();
+        }
+        let quoteListStr = '';
+        let orderArr = orderData.goods;
+        for (var i = 0; i< orderArr.length; i++) {
+            quoteListStr += '<li>\n' +
+                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
+                '            </li>'
+        }
+        $('.quote-list-top').html(quoteListStr);
+        $('.serial-form-btn').on("click",function () {
+            window.location.href= 'maintain.html';
+            window.event.returnValue=false;
+        })
+    })
+</script>
+</body>
+
+</html>

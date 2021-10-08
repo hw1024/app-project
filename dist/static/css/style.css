@@ -267,6 +267,7 @@ li {
     .search-close {
         width: 50px;
         line-height: 37px;
+        margin-right: 8px;
     }
     .nav-list a.search-faq-result {
         display: none;
