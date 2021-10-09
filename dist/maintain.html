@@ -161,7 +161,14 @@
 <section class="section section-form" id="maintain-page2">
     <div class="section-content maintain-page2 maintain-bill">
         <h4>Here’s your estimated quote:</h4>
-        <ul class="quote-list quote-list-top"></ul>
+        <ul class="quote-list quote-list-top">
+			<li class="goods">
+			    <span class="name"></span><span class="price"></span>
+			</li>
+			<li class="trade-in">
+			   <span class="name"></span><span class="price" style="color: red"></span>
+			</li>
+		</ul>
         <ul class="quote-list">
             <li>
                 <span>Shipping</span><span class="shippingNum">$0.00</span>
@@ -277,7 +284,14 @@
     <div class="section-content maintain-page3">
         <h4>Here’s your estimated quote:</h4>
         <div class="maintain-bill" style="margin-top: 10px">
-            <ul class="quote-list quote-list-top"></ul>
+            <ul class="quote-list quote-list-top">
+				<li class="goods">
+				    <span class="name"></span><span class="price"></span>
+				</li>
+				<li class="trade-in">
+				   <span class="name"></span><span class="price" style="color: red"></span>
+				</li>
+			</ul>
             <ul class="quote-list">
                 <li>
                     <span>Shipping</span><span  class="shippingNum">$0.00</span>
@@ -319,7 +333,14 @@
         <p>ensure the quality of the repair and best</p>
         <p>customer experience.</p>
         <h5 class="quote">Here’s your estimated quote:</h5>
-        <ul class="quote-list quote-list-top"></ul>
+        <ul class="quote-list quote-list-top">
+			<li class="goods">
+			    <span class="name"></span><span class="price"></span>
+			</li>
+			<li class="trade-in">
+			   <span class="name"></span><span class="price" style="color: red"></span>
+			</li>
+		</ul>
         <ul class="quote-list">
             <li>
                 <span>Shipping</span><span class="shippingNum">$0.00</span>
@@ -343,7 +364,14 @@
         <h3>We will replace your Charging Case</h3>
         <p class="zs">***</p>
         <h5 class="quote">Here’s your estimated quote:</h5>
-        <ul class="quote-list quote-list-top"></ul>
+        <ul class="quote-list quote-list-top">
+			<li class="goods">
+			    <span class="name"></span><span class="price"></span>
+			</li>
+			<li class="trade-in">
+			   <span class="name"></span><span class="price" style="color: red"></span>
+			</li>
+		</ul>
         <ul class="quote-list">
             <li>
                 <span>Shipping</span><span class="shippingNum">$0.00</span>
@@ -400,36 +428,6 @@
             $("#billing_state").append(new Option(stateArr[i].code, stateArr[i].code));
         }
         form.render('select');
-        // form.on('select(state)', function (data) {
-        //     $("#city").html("<option value='-'>Please Select</option>");
-        //     for (var i = 0; i < stateArr.length; i++) {
-        //         if (stateArr[i].code == data.value) {
-        //             var children = stateArr[i].children;
-        //             for (var val in children) {
-        //                 cityArr.push(children[val])
-        //             }
-        //             for (var j = 0; j < cityArr.length; j++) {
-        //                 $("#city").append(new Option(cityArr[j].code, cityArr[j].code));
-        //             }
-        //             form.render('select');
-        //         }
-        //     }
-        // });
-        // form.on('select(billing_state)', function (data) {
-        //     $("#billing_city").html("<option value='-'>Please Select</option>");
-        //     for (var i = 0; i < stateArr.length; i++) {
-        //         if (stateArr[i].code == data.value) {
-        //             var children = stateArr[i].children;
-        //             for (var val in children) {
-        //                 cityArr.push(children[val])
-        //             }
-        //             for (var j = 0; j < cityArr.length; j++) {
-        //                 $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
-        //             }
-        //             form.render('select');
-        //         }
-        //     }
-        // });
         form.on('submit(serial-btn1)', function (data) {
             window.serialData1 = data.field;
             $("#maintain-page1").hide();
@@ -444,20 +442,6 @@
                 $('#billing_city').val(window.serialData1.city);
                 $('#billing_zip').val(window.serialData1.zip);
                 form.render('select');
-
-                // for (var i = 0; i < stateArr.length; i++) {
-                //     if (stateArr[i].code == window.serialData1.state) {
-                //         var children = stateArr[i].children;
-                //         for (var val in children) {
-                //             cityArr.push(children[val])
-                //         }
-                //         for (var j = 0; j < cityArr.length; j++) {
-                //             $("#billing_city").append(new Option(cityArr[j].code, cityArr[j].code));
-                //         }
-                //         $('#billing_city').val(window.serialData1.city);
-                //         form.render('select');
-                //     }
-                // }
             } else {
                 $('#billing_street').val('');
                 $('#billing_apt').val('');
@@ -481,14 +465,16 @@
         $('.taxNum').text('$' + orderData.tax);
         $('.shippingNum').text('$' + orderData.shipping);
         $('.totalNum').text('$' + orderData.total);
-        let quoteListStr = '';
-        let orderArr = orderData.goods;
-        for (var i = 0; i< orderArr.length; i++) {
-            quoteListStr += '<li>\n' +
-                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
-                '            </li>'
-        }
-        $('.quote-list-top').html(quoteListStr);
+      let goodsObj = orderData.goods;
+      let tradeInObj = orderData.trade_in;
+      $('.quote-list-top .goods .name').text(goodsObj.name);
+      $('.quote-list-top .goods .price').text('$' + goodsObj.price);
+      if(tradeInObj != null && tradeInObj != '' && tradeInObj != []) {
+      	$('.quote-list-top .trade-in .name').text('*Trade in: ' + tradeInObj.name);
+      	$('.quote-list-top .trade-in .price').text('-$' + tradeInObj.price);
+      	$('.trade-in-top .name').text(tradeInObj.name);
+      	$('.trade-in-top .price').text('$' + tradeInObj.price);
+      }
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
 			var goodsId = localStorage.getItem("goodsId");
@@ -501,24 +487,21 @@
             $.ajax({
                 type: "POST",
                 url: "http://admin.theinstantpods.com/api/order/create",
-                data: JSON.stringify(orderData),
+                data: orderData,
                 dataType: "json",
                 success: function (data) {
-                    layer.msg(data.msg);
-                    localStorage.setItem("orderSn", data.data.order_sn);
-                    if (userInfo.position == 'A') {
-                        $("#maintain-page4").show();
-                    } else {
-                        $("#maintain-page5").show();
-                    }
+					if(data.code+ '' === '1') {
+						localStorage.clear();
+						if (userInfo.position == 'A') {
+						    $("#maintain-page4").show();
+						} else {
+						    $("#maintain-page5").show();
+						}
+					}
+					layer.msg(data.msg);
                 },
                 error: function (data) {
-                    layer.msg('Submission Failed');
-                    if (userInfo.position == 'A') {
-                        $("#maintain-page4").show();
-                    } else {
-                        $("#maintain-page5").show();
-                    }
+                  layer.msg('Submission Failed');
                 }
             });
 

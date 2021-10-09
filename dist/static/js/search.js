@@ -94,9 +94,9 @@ $(function () {
             $('.search-result').attr('href', 'javascript:void(0);')
         }
     })
-	var chooseShop = JSON.parse(localStorage.getItem("chooseShop"));
+	var userInfo = JSON.parse(localStorage.getItem("info"));
 	$('.wallet').on('click', function (event) {
-		if(chooseShop && chooseShop.id !== '') {
+		if(userInfo && userInfo.goods_id !== '') {
 			window.location.href= 'trade.html';
 			window.event.returnValue=false;
 		} else {

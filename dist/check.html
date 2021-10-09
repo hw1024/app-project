@@ -73,7 +73,14 @@
 <section class="section">
     <div class="section-content maintain-bill maintain-page5">
         <h3>Ready to check out</h3>
-        <ul style="margin-top: 70px;" class="quote-list quote-list-top"></ul>
+        <ul style="margin-top: 70px;" class="quote-list quote-list-top">
+			<li class="goods">
+			    <span class="name"></span><span class="price"></span>
+			</li>
+			<li class="trade-in">
+			   <span class="name"></span><span class="price" style="color: red"></span>
+			</li>
+		</ul>
         <ul class="quote-list">
             <li>
                 <span>Shipping</span><span id="shippingNum">$0.00</span>
@@ -99,21 +106,17 @@
         $('#taxNum').text('$' + orderData.tax);
         $('#shippingNum').text('$' + orderData.shipping);
         $('#totalNum').text('$' + orderData.total);
-        // if(userInfo.level == 'T3') {
-        //     $(".no-need").show();
-        //     $(".need").hide();
-        // } else {
-        //     $(".no-need").hide();
-        //     $(".need").show();
-        // }
-        let quoteListStr = '';
-        let orderArr = orderData.goods;
-        for (var i = 0; i< orderArr.length; i++) {
-            quoteListStr += '<li>\n' +
-                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
-                '            </li>'
-        }
-        $('.quote-list-top').html(quoteListStr);
+		  let goodsObj = orderData.goods;
+		  let tradeInObj = orderData.trade_in;
+		  $('.quote-list-top .goods .name').text(goodsObj.name);
+		  $('.quote-list-top .goods .price').text('$' + goodsObj.price);
+		  if(tradeInObj == null || tradeInObj == '' || tradeInObj == []) {
+			  $('.trade-in').hide()
+		  } else {
+			$('.quote-list-top .trade-in .name').text('*Trade in: ' + tradeInObj.name);
+			$('.quote-list-top .trade-in .price').text('-$' + tradeInObj.price);
+			 $('.trade-in').show() 
+		  }
         $('.serial-form-btn').on("click",function () {
             window.location.href= 'maintain.html';
             window.event.returnValue=false;

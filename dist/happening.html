@@ -512,14 +512,14 @@
 				if(data.code+ '' === '1') {
 					var orderData = data.data;
 					localStorage.setItem("orderData", JSON.stringify(orderData));
-					// window.location.href = 'trade.html';
-					// window.event.returnValue = false;
+					window.location.href = 'trade.html';
+					window.event.returnValue = false;
 				} else {
 					layer.msg(data.msg);
 				}
             },
             error: function (data) {
-               layer.msg(data.msg);
+               layer.msg('Submission Failed');
             }
         });
     });

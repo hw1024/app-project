@@ -77,13 +77,20 @@
             <li>
                 <span>Trade-in Product</span><span>Trade-in Value</span>
             </li>
-            <li>
-                <span>Charging Case, AirPods 2nd Gen</span><span>$30.00</span>
+            <li class="trade-in-top">
+                <span class="name"></span><span class="price"></span>
             </li>
         </ul>
         <div class="remove">Decline Trade In</div>
         <h5 class="quote">Here’s your estimated quote:</h5>
-        <ul class="quote-list quote-list-top"></ul>
+        <ul class="quote-list quote-list-top">
+			<li class="goods">
+			    <span class="name"></span><span class="price"></span>
+			</li>
+			<li class="trade-in">
+			   <span class="name"></span><span class="price" style="color: red"></span>
+			</li>
+		</ul>
         <ul class="quote-list">
             <li>
                 <span>Shipping</span><span id="shippingNum">$0.00</span>
@@ -109,21 +116,24 @@
         $('#taxNum').text('$' + orderData.tax);
         $('#shippingNum').text('$' + orderData.shipping);
         $('#totalNum').text('$' + orderData.total);
-        if(userInfo.level == 'T3') {
-            $(".no-need").show();
-            $(".need").hide();
-        } else {
-            $(".no-need").hide();
-            $(".need").show();
-        }
-        let quoteListStr = '';
-        let orderArr = orderData.goods;
-        for (var i = 0; i< orderArr.length; i++) {
-            quoteListStr += '<li>\n' +
-                '                <span>' + orderArr[i].name + '</span><span>' + orderArr[i].price + '</span>\n' +
-                '            </li>'
-        }
-        $('.quote-list-top').html(quoteListStr);
+		if(orderData.trade_in == null) {
+			$(".remove").hide();
+				localStorage.setItem("isTradeIn", 0);
+		} else {
+			$(".remove").show()
+				localStorage.setItem("isTradeIn", 1);
+		}
+        let goodsObj = orderData.goods;
+		let tradeInObj = orderData.trade_in;
+        $('.quote-list-top .goods .name').text(goodsObj.name);
+		$('.quote-list-top .goods .price').text('$' + goodsObj.price);
+		if(tradeInObj != null) {
+			$('.quote-list-top .trade-in .name').text('*Trade in: ' + tradeInObj.name);
+			$('.quote-list-top .trade-in .price').text('-$' + tradeInObj.price);
+			$('.trade-in-top .name').text(tradeInObj.name);
+			$('.trade-in-top .price').text('$' + tradeInObj.price);
+		}
+	
         $('.serial-form-btn').on("click",function () {
             window.location.href= 'check.html';
             window.event.returnValue=false;
@@ -131,7 +141,12 @@
 		$('.remove').on("click",function () {
 			$('.remove').hide();
 			$(".quote-top-list").hide();
-			$(".quote-list-top li").eq(1).hide();
+			$(".quote-list-top .trade-in").hide();
+			orderData.total = Number(orderData.total) + Number(orderData.trade_in.price);
+			orderData.trade_in = null;
+			localStorage.setItem("orderData", JSON.stringify(orderData));
+			localStorage.setItem("isTradeIn", 0);
+			$('#totalNum').text('$' + orderData.total);
 		})
     })
 </script>
