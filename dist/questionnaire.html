@@ -213,39 +213,21 @@
 			}
 			$.ajax({
 			    type: "POST",
-			    url: "/api/order/getOrder",
+			    url: "http://admin.theinstantpods.com/api/order/goods",
 			    data: params,
 			    dataType: "json",
 			    success: function (data) {
-			        var chooseData = data.data;
-			        localStorage.setItem("chooseData", JSON.stringify(chooseData));
-			        window.location.href= 'choose.html';
-			        window.event.returnValue=false;
+					if(data.code+ '' === '1') {
+						var chooseData = data.data;
+						localStorage.setItem("chooseData", JSON.stringify(chooseData));
+						window.location.href= 'choose.html';
+						window.event.returnValue=false;
+					} else {
+						layer.msg(data.msg);
+					}
 			    },
 			    error: function (data) {
-			        layer.msg('Submission Failed');
-			        var chooseData = {
-			            "goods": [{
-			                "name": "AirPod Left",
-			                "id": "1",
-			                "price": "$69"
-			            }, {
-			                "name": "AirPod Right",
-			                "id": "2",
-			                "price": "$69"
-			            }, {
-			                "name": "AirPods Both Sides",
-			                "id": "3",
-			                "price": "$138"
-			            }, {
-			                "name": "Charging Case",
-			                "id": "4",
-			                "price": "$69"
-			            }],
-			        };
-			        localStorage.setItem("chooseData", JSON.stringify(chooseData));
-					window.location.href= 'choose.html';
-					window.event.returnValue=false;
+			        layer.msg(data.msg);
 			    }
 			});
         } else {

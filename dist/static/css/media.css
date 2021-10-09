@@ -354,12 +354,12 @@
     }
 
     .choose-box .choose-left {
-        width: 100px;
+        width: 80px;
         margin-right: 20px;
     }
 
     .choose-box .choose-left .section-img {
-        width: 100px;
+        width: 80px;
         margin-top: 60px;
     }
 }

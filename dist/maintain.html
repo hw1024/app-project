@@ -491,11 +491,16 @@
         $('.quote-list-top').html(quoteListStr);
         $("#repair-btn").on("click", function () {
             $("#maintain-page3").hide();
-            var orderData = {}
+			var goodsId = localStorage.getItem("goodsId");
+			var isTradeInValue = localStorage.getItem("isTradeIn");
+            var orderData = {
+				goods_id: goodsId,
+				is_trade_in: isTradeInValue,
+			}
             $.extend(orderData, serialData1, serialData2, userInfo);
             $.ajax({
                 type: "POST",
-                url: "/api/order/create",
+                url: "http://admin.theinstantpods.com/api/order/create",
                 data: JSON.stringify(orderData),
                 dataType: "json",
                 success: function (data) {

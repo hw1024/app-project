@@ -413,8 +413,37 @@
     })
 
     $(document).delegate('.question-needs-ok', 'click', function (event) {
-        window.location.href= 'check.html';
-        window.event.returnValue=false;
+		var params = {
+			goods_id: localStorage.getItem("goodsId"),
+			is_trade_in: localStorage.getItem("isTradeIn"),
+		    sn: $("#code").val(),
+		    desc: $("#desc").val(),
+		    subCategory: $("#subCategory").val(),
+		    back:  $("#back").val(),
+		    position: $("#type").val(),
+		    type: $("#category").val(),
+		    level: $("#level").val()
+		}
+		localStorage.setItem("info", JSON.stringify(params));
+		$.ajax({
+		    type: "POST",
+		    url: "http://admin.theinstantpods.com/api/order/getInfo",
+		    data: params,
+		    dataType: "json",
+		    success: function (data) {
+				if(data.code+ '' === '1') {
+					var orderData = data.data;
+					localStorage.setItem("orderData", JSON.stringify(orderData));
+					// window.location.href= 'check.html';
+					// window.event.returnValue=false;
+				} else {
+					layer.msg(data.msg);
+				}
+		    },
+		    error: function (data) {
+		       layer.msg(data.msg);
+		    }
+		});
         event.preventDefault();
         event.stopPropagation();
     })
@@ -453,14 +482,18 @@
     })
 
     $(document).delegate('.side-needs', 'click', function (event) {
+		var goodsId = localStorage.getItem("goodsId");
+		var isTradeInValue = localStorage.getItem("isTradeIn");
         var othis = $(this);
-        $("#type").val(othis.data('status'));
-        $("#category").val(othis.data('category'));
+        $("#type").val(othis.data('status')) + '';
+        $("#category").val(othis.data('category')) + '';
         $("#level").val(othis.data('level'));
         $("#back").val(othis.data('back'));
         event.preventDefault();
         event.stopPropagation();
         var params = {
+			goods_id: goodsId,
+			is_trade_in: isTradeInValue,
             sn: $("#code").val(),
             desc: $("#desc").val(),
             subCategory: $("#subCategory").val(),
@@ -472,42 +505,21 @@
         localStorage.setItem("info", JSON.stringify(params));
         $.ajax({
             type: "POST",
-            url: "/api/order/getInfo",
+            url: "http://admin.theinstantpods.com/api/order/getInfo",
             data: params,
             dataType: "json",
             success: function (data) {
-                var orderData = data.data;
-                localStorage.setItem("orderData", JSON.stringify(orderData));
-                if ($("#type").val() == 'A') {
-                    window.location.href = 'trade.html';
-                } else {
-                    window.location.href = 'trade.html';
-                }
-                window.event.returnValue = false;
+				if(data.code+ '' === '1') {
+					var orderData = data.data;
+					localStorage.setItem("orderData", JSON.stringify(orderData));
+					// window.location.href = 'trade.html';
+					// window.event.returnValue = false;
+				} else {
+					layer.msg(data.msg);
+				}
             },
             error: function (data) {
-                layer.msg('Submission Failed');
-                var orderData = {
-                    "total": '24.00',
-                    "goods": [{
-                        "name": "Replacement, Charging Case, 2nd Gen",
-                        "sku": "1GLRFB",
-                        "price": "$59.99"
-                    }, {
-                        "name": "*Trade in: Charging Case, AirPods 2nd Gen",
-                        "sku": "1GLT2",
-                        "price": "-$30.00"
-                    }],
-                    "shipping": "5.50",
-                    "tax": "0.00"
-                };
-                localStorage.setItem("orderData", JSON.stringify(orderData));
-                if ($("#type").val() == 'A') {
-                    window.location.href = 'trade.html';
-                } else {
-                    window.location.href = 'trade.html';
-                }
-                window.event.returnValue = false;
+               layer.msg(data.msg);
             }
         });
     });

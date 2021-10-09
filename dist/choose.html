@@ -123,7 +123,7 @@
 		let chooseArr = chooseData.goods;
 		for (var i = 0; i< chooseArr.length; i++) {
 		    chooseListStr += '<li data-id="' + chooseArr[i].id + '" data-name="' + chooseArr[i].name + '" data-price="' + chooseArr[i].price + '">\n' +
-		        '                <span>' + chooseArr[i].name + '</span><span>' + chooseArr[i].price + '</span>\n' +
+		        '                <span>' + chooseArr[i].name + '</span><span>$' + chooseArr[i].price + '</span>\n' +
 		        '            </li>'
 		}
 		$('.choose-list').html(chooseListStr);
@@ -185,53 +185,46 @@
 			layer.msg('Please Choose your replacement.');
 			return false;
 		}
-		var params = {
-		    id: selectId,
-			whether: type,
+		var whether = type+ '' === 'yes' ? 1: 0
+		localStorage.setItem("goodsId", selectId);
+		localStorage.setItem("isTradeIn", whether);
+		if(type+ '' === 'yes') {
+			window.location.href= 'happening.html';
+		} else {
+			var params = {
+				goods_id: localStorage.getItem("goodsId"),
+				is_trade_in:  localStorage.getItem("isTradeIn"),
+			    sn: localStorage.getItem("sn"),
+			    desc:'',
+			    subCategory: '',
+			    back: '',
+			    position: '',
+			    type: '',
+			    level: ''
+			}
+			localStorage.setItem("info", JSON.stringify(params));
+			$.ajax({
+			    type: "POST",
+			    url: "http://admin.theinstantpods.com/api/order/getInfo",
+			    data: params,
+			    dataType: "json",
+			    success: function (data) {
+					if(data.code+ '' === '1') {
+						var orderData = data.data;
+						localStorage.setItem("orderData", JSON.stringify(orderData));
+						window.location.href= 'check.html';
+					} else {
+						layer.msg(data.msg);
+					}
+			    },
+			    error: function (data) {
+			       layer.msg(data.msg);
+			    }
+			});
 		}
-		$.ajax({
-		    type: "POST",
-		    url: "/api/order/getOrder",
-		    data: params,
-		    dataType: "json",
-		    success: function (data) {
-		       if(type === 'yes') {
-		       	window.location.href= 'happening.html';
-		       } else {
-		       	window.location.href= 'check.html';
-		       }
-		       window.event.returnValue=false;
-		       event.preventDefault();
-		       event.stopPropagation();
-		    },
-		    error: function (data) {
-		        layer.msg('Submission Failed');
-				console.log(type)
-				if(type+ '' === 'yes') {
-					window.location.href= 'happening.html';
-				} else {
-					var orderData = {
-					    "total": '24.00',
-					    "goods": [{
-					        "name": "Replacement, Charging Case, 2nd Gen",
-					        "sku": "1GLRFB",
-					        "price": "$59.99"
-					    }, {
-					        "name": "*Trade in: Charging Case, AirPods 2nd Gen",
-					        "sku": "1GLT2",
-					        "price": "-$30.00"
-					    }],
-					    "shipping": "5.50",
-					    "tax": "0.00"
-					};
-					localStorage.setItem("orderData", JSON.stringify(orderData));
-					window.location.href= 'check.html';
-				}
-				window.event.returnValue=false;
-				event.preventDefault();
-				event.stopPropagation();
-		    }
-		});
+		window.event.returnValue=false;
+		event.preventDefault();
+		event.stopPropagation();
 	})
 </script>
 
