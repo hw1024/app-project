@@ -15,7 +15,7 @@
 <div class="nav">
 <div class="nav-right">
 		<a href="javascript:void(0)" class="wallet"></a>
-		<a href="javascript:void(0)" class="logo"></a>
+		<a href="index.html" class="logo"></a>
 	</div>
     <a href="index.html" class="text">InstantPods</a>
     <a href="index.html?#works" class="text">How it works?</a>
@@ -80,24 +80,7 @@
             </div>
             <div class="choose-right">
                 <div class="top">Choose your replacement.</div>
-                <ul class="choose-list">
-                    <li data-type="AirPod Left">
-                        <span>AirPod Left</span>
-                        <span>$69</span>
-                    </li>
-                    <li data-type="AirPod Right">
-                        <span>AirPod Right</span>
-                        <span>$69</span>
-                    </li>
-                    <li data-type="AirPods Both Sides">
-                        <span>AirPods Both Sides</span>
-                        <span>$138</span>
-                    </li>
-                    <li data-type="Charging Case">
-                        <span>Charging Case</span>
-                        <span>$69</span>
-                    </li>
-                </ul>
+                <ul class="choose-list"></ul>
                 <div class="text">
                     <div class="desc">Do you want to Trade In your bad
                         AirPod for credit?</div>
@@ -105,8 +88,8 @@
                        data-title="How does InstantPods Trade In Works?" href="javascript: void(0);">See how trade-in works</a>
                 </div>
                 <div class="question-charge-lower">
-                    <span class="question-charge-yes  yes-bg">YES</span>
-                    <span class="question-charge-no">NO</span>
+                    <span class="question-charge question-charge-yes yes-bg" data-type="yes">YES</span>
+                    <span class="question-charge question-charge-no"  data-type="no">NO</span>
                 </div>
             </div>
         </div>
@@ -118,6 +101,7 @@
 <script>
     $(function () {
         var codeValue = localStorage.getItem("sn");
+		var chooseData = JSON.parse(localStorage.getItem("chooseData"));
         $("#code").val(codeValue);
         var subCode = codeValue.substr(-4);
         if (subCode == 'H8TT') {
@@ -129,6 +113,14 @@
         } else {
             $("#yourProduct").text('AirPods Pro');
         }
+		let chooseListStr = '';
+		let chooseArr = chooseData.goods;
+		for (var i = 0; i< chooseArr.length; i++) {
+		    chooseListStr += '<li data-id="' + chooseArr[i].id + '" data-name="' + chooseArr[i].name + '" data-price="' + chooseArr[i].price + '">\n' +
+		        '                <span>' + chooseArr[i].name + '</span><span>' + chooseArr[i].price + '</span>\n' +
+		        '            </li>'
+		}
+		$('.choose-list').html(chooseListStr);
     })
     var active = {
         offset: function (othis) {
@@ -166,25 +158,75 @@
         var othis = $(this), method = othis.data('method');
         active[method] ? active[method].call(this, othis) : '';
     });
-    $(document).delegate('.question-charge-yes', 'click', function (event) {
-        window.location.href= 'happening.html';
-        window.event.returnValue=false;
-        event.preventDefault();
-        event.stopPropagation();
-    })
-    $(document).delegate('.question-charge-no', 'click', function (event) {
-		window.location.href= 'check.html';
-		window.event.returnValue=false;
-        event.preventDefault();
-        event.stopPropagation();
-    })
-    $('.choose-list li').on('click', function () {
-        var that = $(this), type = that.data('type');
+	var selectId = ''
+	$(document).delegate('.choose-list li', 'click', function (event) {
+        var that = $(this), id = that.data('id'), name = that.data('name'), price = that.data('price');
+		var shop = {
+			id: id,
+			name: name,
+			price: price
+		};
+		selectId = id;
         that.addClass('active');
         that.siblings().removeClass('active');
-        localStorage.setItem("chooseType", type);
+        localStorage.setItem("chooseShop", JSON.stringify(shop));
+		event.preventDefault();
+		event.stopPropagation();
     })
-
+	$(document).delegate('.question-charge', 'click', function (event) {
+		var that = $(this), type = that.data('type');
+		if(selectId === '') {
+			layer.msg('Please Choose your replacement.');
+			return false;
+		}
+		var params = {
+		    id: selectId,
+			whether: type,
+		}
+		$.ajax({
+		    type: "POST",
+		    url: "/api/order/getOrder",
+		    data: params,
+		    dataType: "json",
+		    success: function (data) {
+		       if(type === 'yes') {
+		       	window.location.href= 'happening.html';
+		       } else {
+		       	window.location.href= 'check.html';
+		       }
+		       window.event.returnValue=false;
+		       event.preventDefault();
+		       event.stopPropagation();
+		    },
+		    error: function (data) {
+		        layer.msg('Submission Failed');
+				console.log(type)
+				if(type+ '' === 'yes') {
+					window.location.href= 'happening.html';
+				} else {
+					var orderData = {
+					    "total": '24.00',
+					    "goods": [{
+					        "name": "Replacement, Charging Case, 2nd Gen",
+					        "sku": "1GLRFB",
+					        "price": "$59.99"
+					    }, {
+					        "name": "*Trade in: Charging Case, AirPods 2nd Gen",
+					        "sku": "1GLT2",
+					        "price": "-$30.00"
+					    }],
+					    "shipping": "5.50",
+					    "tax": "0.00"
+					};
+					localStorage.setItem("orderData", JSON.stringify(orderData));
+					window.location.href= 'check.html';
+				}
+				window.event.returnValue=false;
+				event.preventDefault();
+				event.stopPropagation();
+		    }
+		});
+	})
 </script>
 
 </body>

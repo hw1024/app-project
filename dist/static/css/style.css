@@ -116,6 +116,45 @@ li {
     overflow: hidden;
 }
 
+.nav-shop-content {
+    display: none;
+    position: fixed;
+    width: 100vw;
+	height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.2);
+    transition: all .8s;
+	padding-top: 50px;
+    overflow: hidden;
+}
+.shop-content {
+	width: 1150px;
+	margin: auto;
+	position: relative;
+}
+.nav-shop-content .shop-arrow {
+	position: absolute;
+	right: 29px;
+	top: -9px;
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid #ffffff;
+}
+.nav-shop-content .shop-empty {
+	text-align: center;
+	width: 300px;
+	border-radius: 4px;
+	    height: 50px;
+	    line-height: 50px;
+	    background: #ffffff;
+	font-size: 18px;
+	position: absolute;
+	    right: 0;
+}
+
 .nav-content .nav-page {
     width: 100%;
 }

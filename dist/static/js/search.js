@@ -94,4 +94,20 @@ $(function () {
             $('.search-result').attr('href', 'javascript:void(0);')
         }
     })
+	var chooseShop = JSON.parse(localStorage.getItem("chooseShop"));
+	$('.wallet').on('click', function (event) {
+		if(chooseShop && chooseShop.id !== '') {
+			window.location.href= 'trade.html';
+			window.event.returnValue=false;
+		} else {
+			$('.nav-shop-content').show();
+		}
+	   event.preventDefault();
+	   event.stopPropagation();
+	})
+	$('.nav-shop-content').on('click', function (event) {
+		$('.nav-shop-content').hide();
+		event.preventDefault();
+		event.stopPropagation();
+	})
 })

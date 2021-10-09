@@ -16,7 +16,18 @@
     .section-form-page3 {
         padding-top: 20px;
     }
-
+	.shop-content {
+		width: auto;
+		margin: auto;
+	}
+	.nav-shop-content .shop-empty {
+		text-align: center;
+		border-radius: 0px;
+		width: 100%;
+	}
+	.nav-shop-content .shop-arrow {
+		right: 14px;
+	}
     .section-content p {
         line-height: 1.42859;
         font-size: 14px;
