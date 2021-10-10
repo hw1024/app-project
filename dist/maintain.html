@@ -476,7 +476,6 @@
       	$('.trade-in-top .price').text('$' + tradeInObj.price);
       }
         $("#repair-btn").on("click", function () {
-            $("#maintain-page3").hide();
 			var goodsId = localStorage.getItem("goodsId");
 			var isTradeInValue = localStorage.getItem("isTradeIn");
             var orderData = {
@@ -491,6 +490,7 @@
                 dataType: "json",
                 success: function (data) {
 					if(data.code+ '' === '1') {
+						$("#maintain-page3").hide();
 						localStorage.clear();
 						if (userInfo.position == 'A') {
 						    $("#maintain-page4").show();

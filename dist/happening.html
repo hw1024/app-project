@@ -434,8 +434,8 @@
 				if(data.code+ '' === '1') {
 					var orderData = data.data;
 					localStorage.setItem("orderData", JSON.stringify(orderData));
-					// window.location.href= 'check.html';
-					// window.event.returnValue=false;
+					window.location.href= 'check.html';
+					window.event.returnValue=false;
 				} else {
 					layer.msg(data.msg);
 				}
@@ -482,8 +482,6 @@
     })
 
     $(document).delegate('.side-needs', 'click', function (event) {
-		var goodsId = localStorage.getItem("goodsId");
-		var isTradeInValue = localStorage.getItem("isTradeIn");
         var othis = $(this);
         $("#type").val(othis.data('status')) + '';
         $("#category").val(othis.data('category')) + '';
@@ -492,8 +490,8 @@
         event.preventDefault();
         event.stopPropagation();
         var params = {
-			goods_id: goodsId,
-			is_trade_in: isTradeInValue,
+			goods_id: localStorage.getItem("goodsId"),
+			is_trade_in: localStorage.getItem("isTradeIn"),
             sn: $("#code").val(),
             desc: $("#desc").val(),
             subCategory: $("#subCategory").val(),
@@ -502,6 +500,7 @@
             type: $("#category").val(),
             level: $("#level").val()
         }
+		console.log(params, localStorage.getItem("isTradeIn"))
         localStorage.setItem("info", JSON.stringify(params));
         $.ajax({
             type: "POST",

@@ -116,20 +116,24 @@
         $('#taxNum').text('$' + orderData.tax);
         $('#shippingNum').text('$' + orderData.shipping);
         $('#totalNum').text('$' + orderData.total);
-		if(orderData.trade_in == null) {
+		if(orderData.trade_in == null || orderData.trade_in == []  || orderData.trade_in == '') {
 			$(".remove").hide();
 			$(".quote-top-list").hide();
-				localStorage.setItem("isTradeIn", 0);
+			localStorage.setItem("isTradeIn", 0);
+			userInfo.is_trade_in = 0;
+			localStorage.setItem("info", JSON.stringify(userInfo));
 		} else {
 			$(".remove").show()
 			$(".quote-top-list").show();
 			localStorage.setItem("isTradeIn", 1);
+			userInfo.is_trade_in = 1;
+			localStorage.setItem("info", JSON.stringify(userInfo));
 		}
         let goodsObj = orderData.goods;
 		let tradeInObj = orderData.trade_in;
         $('.quote-list-top .goods .name').text(goodsObj.name);
 		$('.quote-list-top .goods .price').text('$' + goodsObj.price);
-		if(tradeInObj != null) {
+		if(tradeInObj != null && orderData.trade_in != [] && orderData.trade_in != '') {
 			$('.quote-list-top .trade-in .name').text('*Trade in: ' + tradeInObj.name);
 			$('.quote-list-top .trade-in .price').text('-$' + tradeInObj.price);
 			$('.trade-in-top .name').text(tradeInObj.name);
