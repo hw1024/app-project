@@ -191,9 +191,29 @@
             var codeArr = ['H8TT', 'LX2Y', 'JMMT', 'LKKT', '0C6L']
             if(isInArray(codeArr, subCode)) {
                 $(".error-text").hide();
-                localStorage.setItem("sn", code);
-                window.location.href= 'happening.html';
-                window.event.returnValue=false;
+               localStorage.setItem("sn", code);
+               var params = {
+                   sn: code,
+               }
+               $.ajax({
+                   type: "POST",
+                   url: "http://admin.theinstantpods.com/api/order/goods",
+                   data: params,
+                   dataType: "json",
+                   success: function (data) {
+               		if(data.code+ '' === '1') {
+               			var chooseData = data.data;
+               			localStorage.setItem("chooseData", JSON.stringify(chooseData));
+               			window.location.href= 'choose.html';
+               			window.event.returnValue=false;
+               		} else {
+               			layer.msg(data.msg);
+               		}
+                   },
+                   error: function (data) {
+                       layer.msg(data.msg);
+                   }
+               });
             } else {
                 $(".error-text").show();
                 return false;
