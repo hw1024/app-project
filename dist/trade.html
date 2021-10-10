@@ -118,10 +118,12 @@
         $('#totalNum').text('$' + orderData.total);
 		if(orderData.trade_in == null) {
 			$(".remove").hide();
+			$(".quote-top-list").hide();
 				localStorage.setItem("isTradeIn", 0);
 		} else {
 			$(".remove").show()
-				localStorage.setItem("isTradeIn", 1);
+			$(".quote-top-list").show();
+			localStorage.setItem("isTradeIn", 1);
 		}
         let goodsObj = orderData.goods;
 		let tradeInObj = orderData.trade_in;
